@@ -5,8 +5,8 @@
         </div>
         <span class="fs-4 fw-bold ms-3">Voronkely</span>
     </a>
-    <div class="d-grid gap-2 mb-4">
-        <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Membre</a>
+    <div class="d-grid gap-2 mb-4 mt-3">
+        <a href="/membres" class="btn btn-outline-light btn-lg text-start fw-semibold">Membre</a>
         <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Assurance</a>
         <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Presence</a>
         <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Rakitra</a>

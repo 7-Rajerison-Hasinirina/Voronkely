@@ -1,4 +1,8 @@
+com/voronkely/entity/Membre.class
 com/voronkely/config/SecurityConfig.class
 com/voronkely/config/JspConfig.class
+com/voronkely/controller/MembreController.class
+com/voronkely/service/MembreService.class
+com/voronkely/repository/MembreRepository.class
 com/voronkely/VoronkelyApplication.class
 com/voronkely/controller/DashboardController.class

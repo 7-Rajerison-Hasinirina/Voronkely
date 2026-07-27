@@ -2,3 +2,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/JspConfig.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/SecurityConfig.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/DashboardController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Membre.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MembreRepository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MembreService.java

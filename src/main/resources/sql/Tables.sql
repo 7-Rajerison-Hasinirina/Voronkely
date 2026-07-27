@@ -1,0 +1,5 @@
+CREATE TABLE membre (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom_prenom TEXT NOT NULL,
+    reference TEXT GENERATED ALWAYS AS ('REF' || id) STORED
+);

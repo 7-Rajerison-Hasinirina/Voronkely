@@ -16,7 +16,7 @@ Technologies:
 - Creation des tables necessaires : 
     - Tables.sql
         - role
-        - membre ( manana reference : REF + id , ex: REF1)
+[ok]        - membre ( manana reference : REF + id , ex: REF1)
         - status ( actif , inactif )
         - talenta
         - fiche_presence
@@ -69,10 +69,20 @@ Technologies:
 [ok]
 
 
+
 - Module 2: Formulaire insertion nouvel membre
-    - Creation de bouton ( dans le navbar )
-    - Creation de la formulaire en jsp
-    - Insertion 
+    - Tables.sql:
+        - membre 
+    - Membre.java
+    - MembreReposiory.java
+    - MembreService.java
+    - MembreController.java
+    * Fonctionnalites: 
+        - Creation de bouton ( dans le navbar ) : membre : /membres 
+        - Creation de la formulaire en jsp : membre-form.jsp
+        - Insertion
+[ok]
+
 
 
 - Module 3: Affichage par defaut de la liste des membres dans le dashboard 
