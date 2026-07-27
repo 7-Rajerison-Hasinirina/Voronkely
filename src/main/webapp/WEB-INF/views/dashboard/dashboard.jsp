@@ -8,20 +8,27 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #f1fdf6;
         }
         .header-top {
-            background-color: #ffffff;
-            border-bottom: 1px solid #dee2e6;
+            background-color: #0f5132;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
         }
-        .header-title {
-            color: #198754;
+        .header-top .header-title {
+            color: #ffffff;
             font-weight: 700;
+        }
+        .header-top small {
+            color: rgba(255,255,255,0.75);
         }
         .card-dashboard {
             border: 1px solid #e9ecef;
             border-radius: 0.75rem;
             box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.04);
+        }
+        .btn-outline-success {
+            border-width: 2px;
         }
     </style>
 </head>

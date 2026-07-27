@@ -66,6 +66,7 @@ Technologies:
         - Gauche: Logo Voronkely
         - Droite: Logo Mpanazava 
     - epacement d'affichage : a droite 
+[ok]
 
 
 - Module 2: Formulaire insertion nouvel membre
