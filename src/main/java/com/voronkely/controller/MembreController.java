@@ -41,4 +41,10 @@ public class MembreController {
         membreService.findById(id).ifPresent(membre -> model.addAttribute("membre", membre));
         return "membre/view";
     }
+
+    @GetMapping("/membres/{id}/fiche")
+    public String ficheMembre(@PathVariable Long id, Model model) {
+        membreService.findById(id).ifPresent(membre -> model.addAttribute("membre", membre));
+        return "membre/fiche-membre";
+    }
 }

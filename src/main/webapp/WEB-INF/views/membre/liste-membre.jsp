@@ -47,6 +47,9 @@
                         </div>
                         <h5 class="card-title mb-1">${membre.nomPrenom}</h5>
                         <p class="text-muted mb-0">Référence : <strong>${membre.reference}</strong></p>
+                        <div class="mt-3">
+                            <a href="/membres/${membre.id}/fiche" class="btn btn-outline-success btn-sm">Fiche individuelle</a>
+                        </div>
                     </div>
                 </div>
             </div>
