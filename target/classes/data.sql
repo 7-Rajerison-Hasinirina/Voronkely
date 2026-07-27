@@ -1,2 +1,0 @@
--- Initial SQL script for Voronkely.
--- No seed data required yet.
