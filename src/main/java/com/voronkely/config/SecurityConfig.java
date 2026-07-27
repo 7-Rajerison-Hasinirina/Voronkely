@@ -11,13 +11,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/", "/bootstrap/**", "/images/**", "/js/**", "/css/**").permitAll()
-                .anyRequest().permitAll()
-            )
-            .csrf(csrf -> csrf.disable())
-            .formLogin(form -> form.disable())
-            .httpBasic(httpBasic -> httpBasic.disable());
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/", "/bootstrap/**", "/images/**", "/js/**", "/css/**").permitAll()
+                        .anyRequest().permitAll())
+                .csrf(csrf -> csrf.disable())
+                .formLogin(form -> form.disable())
+                .httpBasic(httpBasic -> httpBasic.disable());
 
         return http.build();
     }
