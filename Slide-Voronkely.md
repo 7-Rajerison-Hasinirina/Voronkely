@@ -88,6 +88,7 @@ Technologies:
 - Module 3: Affichage par defaut de la liste des membres dans le dashboard 
     - photo en card : avec (profile feminine par defaut )
     - Nom et prenom 
+[ok]
 
 
 - Module 4: membre en format card -> afficahge de fiche individuelle , sinon : ajouter une fiche individuelle 
