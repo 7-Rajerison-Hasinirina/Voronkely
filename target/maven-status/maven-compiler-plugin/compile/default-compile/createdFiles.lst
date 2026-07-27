@@ -1,2 +1,4 @@
+com/voronkely/config/SecurityConfig.class
 com/voronkely/config/JspConfig.class
 com/voronkely/VoronkelyApplication.class
+com/voronkely/controller/DashboardController.class

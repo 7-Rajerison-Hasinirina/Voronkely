@@ -1,2 +1,4 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/VoronkelyApplication.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/JspConfig.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/SecurityConfig.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/DashboardController.java

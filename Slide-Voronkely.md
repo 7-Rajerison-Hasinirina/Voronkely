@@ -10,6 +10,7 @@ Technologies:
 - Creation de la base avec SQLite : voronkely.db
 - Realisation de fonctionnement : connexion avec la base + migration 
 - Depot sur git
+[ok] ---------------
 
 ## 2- Conception relationnelle:
 - Creation des tables necessaires : 
@@ -58,13 +59,13 @@ Technologies:
 ### PART 01:
 - Module 1: 
     - utilisation complete pour design : bootstrap :
-        - theme verte 
+        - theme verte + background blanc 
     - navbar : barre de navigation laterale gauche
     - header: 
         - Titre : Voronkely Ankadimbahoaka 
         - Gauche: Logo Voronkely
         - Droite: Logo Mpanazava 
-    - epacement : a droite 
+    - epacement d'affichage : a droite 
 
 
 - Module 2: Formulaire insertion nouvel membre
