@@ -10,7 +10,7 @@
         <relativePath/>
     </parent>
     <groupId>com</groupId>
-    <artifactId>mkalymlam</artifactId>
+    <artifactId>voronkely</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name/>
     <description/>
@@ -54,10 +54,11 @@
             <version>3.0.1</version>
         </dependency>
 
-        <!-- Base de données -->
+        <!-- SQLite JDBC -->
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.42.0.0</version>
             <scope>runtime</scope>
         </dependency>
 
