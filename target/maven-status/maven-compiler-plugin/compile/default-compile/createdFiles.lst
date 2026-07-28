@@ -1,8 +1,12 @@
+com/voronkely/entity/FichePresence.class
+com/voronkely/repository/FichePresenceRepository.class
+com/voronkely/service/FichePresenceService.class
 com/voronkely/entity/Membre.class
 com/voronkely/repository/FicheForm2Repository.class
 com/voronkely/service/FicheForm6Service.class
 com/voronkely/repository/FicheForm5Repository.class
 com/voronkely/service/FicheForm2Service.class
+com/voronkely/controller/FichePresenceController.class
 com/voronkely/entity/FicheForm6.class
 com/voronkely/service/FicheForm4Service.class
 com/voronkely/config/SecurityConfig.class

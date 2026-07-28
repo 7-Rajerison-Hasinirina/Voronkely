@@ -91,3 +91,12 @@ CREATE TABLE fiche_form6 (
     fanamarihana TEXT,
     FOREIGN KEY (id_membre) REFERENCES membre(id)
 );
+
+
+CREATE TABLE fiche_presence (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_membre INTEGER NOT NULL,
+    date_presence DATE NOT NULL,
+    present BOOLEAN NOT NULL DEFAULT 0,
+    FOREIGN KEY (id_membre) REFERENCES membre(id)
+);

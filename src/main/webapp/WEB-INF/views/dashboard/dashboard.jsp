@@ -15,6 +15,11 @@
             color: #ffffff;
             border-bottom: 1px solid rgba(255,255,255,0.12);
         }
+        /* .header-top {
+    min-height: 120px;
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.08);
+} */
         .header-top .header-title {
             color: #ffffff;
             font-weight: 700;
@@ -39,22 +44,43 @@
             <jsp:include page="navbar.jsp" />
         </div>
         <div class="col ps-0">
-            <header class="header-top d-flex justify-content-between align-items-center px-4 py-3">
-                <div class="d-flex align-items-center gap-3">
-                    <img src="/static/images/logo-voronkely.png" alt="Logo Voronkely" width="56" height="56" class="rounded-circle border">
-                    <div>
-                        <h1 class="h4 mb-0 header-title">Voronkely Ankadimbahoaka</h1>
-                        <small class="text-muted">Dashboard principal</small>
-                    </div>
+        <header class="header-top d-flex justify-content-between align-items-center px-5 py-4">
+            <div class="d-flex align-items-center">
+
+                <div>
+                    <h1 class="h3 mb-1 fw-bold text-white">
+                        Mpanazava FJKM Ankadimbahoaka
+                    </h1>
+                    <small class="text-white-50">
+                        Accueil
+                    </small>
                 </div>
-                <div class="d-flex align-items-center gap-3">
-                    <div class="text-end">
-                        <div class="fw-semibold">Mpanazava</div>
-                        <small class="text-muted">Bienvenue</small>
+            </div>
+
+            <div class="d-flex align-items-center gap-4">
+
+                <div class="text-end">
+
+                    <div class="fw-semibold text-white">
+                        Voronkely
                     </div>
-                    <img src="/static/images/logo-mpanazava.png" alt="Logo Mpanazava" width="48" height="48" class="rounded-circle border">
+
+                    <small class="text-yellow-50">
+                        Sampana Mavo 
+                    </small>
+
                 </div>
-            </header>
+
+
+                <img src="${pageContext.request.contextPath}/images/logo-voronkely.png"
+                    alt="Logo Voronkely"
+                    width="90"
+                    height="90"
+                    class="rounded-circle border shadow-sm">
+
+            </div>
+
+        </header>
 
             <main class="p-4">
                 <div class="row g-4">
