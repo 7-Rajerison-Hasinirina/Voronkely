@@ -16,7 +16,7 @@ Technologies:
 - Creation des tables necessaires : 
     - Tables.sql
         - role
-        - membre ( manana reference : REF + id , ex: REF1)
+[ok]        - membre ( manana reference : REF + id , ex: REF1)
         - status ( actif , inactif )
         - talenta
         - fiche_presence
@@ -66,85 +66,125 @@ Technologies:
         - Gauche: Logo Voronkely
         - Droite: Logo Mpanazava 
     - epacement d'affichage : a droite 
+[ok]
+
 
 
 - Module 2: Formulaire insertion nouvel membre
-    - Creation de bouton ( dans le navbar )
-    - Creation de la formulaire en jsp
-    - Insertion 
+    - Tables.sql:
+        - membre 
+    - Membre.java
+    - MembreReposiory.java
+    - MembreService.java
+    - MembreController.java
+    * Fonctionnalites: 
+        - Creation de bouton ( dans le navbar ) : membre : /membres 
+        - Creation de la formulaire en jsp : membre-form.jsp
+        - Insertion
+[ok]
+
 
 
 - Module 3: Affichage par defaut de la liste des membres dans le dashboard 
     - photo en card : avec (profile feminine par defaut )
     - Nom et prenom 
+[ok]
 
 
-- Module 4: membre en format card -> afficahge de fiche individuelle , sinon : ajouter une fiche individuelle 
+
+- Module 4: membre en format card -> afficahge de fiche individuelle , sinon : ajouter une fiche individuelle : fiche-membre.jsp 
+[ok]
+
 
 
 - Module 5: 
+apres clique sur le bouotn Creer une fiche individuelle 
+
+    ouvre une page fiche-form1.jsp :
+    contenant 
+
+    les 6 formulaires comme suit 
+    une longue formulaire 
+     on va utiliser un js ici ( a metre tout ces js dans un dosssier fiche-individuelle.js dans static/javascript )
     - Creation de la fiche individuelle 
         - Form 1:
             * mikasika azy manokana
-                - image ( nullable )
-                - nom_prenom
-                - fiantsoana
-                - adresse 
-                - nom_pere
-                - profession_pere
-                - telephone_pere
-                - fb_pere
-                - lien_fb_pere ( nullable )
-                - nom_mere 
-                - profession_mere
-                - telephone_mere
-                - fb_mere
-                - lien_fb_mere ( nullable )
-                - nb_ray_tampo
-                - rang_ray_tampo
+                - id_membre ( reference )
+                - image  varchar 200( nullable )
+                - fiantsoana varchar 100
+                - adresse varchar 100
+                - nom_pere text
+                - profession_pere text
+                - telephone_pere text
+                - fb_pere text 
+                - lien_fb_pere ( nullable ) text
+                - nom_mere text
+                - profession_mere text
+                - telephone_mere text 
+                - fb_mere text 
+                - lien_fb_mere  text ( nullable )
+                - nb_ray_tampo int not null
+                - rang_ray_tampo int not null
             * mikasika ny fitaizam-pinoana
-                - religion
-                - fiangonana
-                - sekoly_alahady
-                - kilasy
-                - batisa
+                - religion varchar 50 
+                - fiangonana varchar 100
+                - sekoly_alahady boolen 
+                - kilasy varchar 50 
+                - batisa boolean 
             * mikasika ny toe-tena sy ny fahasalaman 
-                - sakafo_tsy_zaka
-                - fanafody_tsy_zaka
-                - famarihana_hafa
+                - sakafo_tsy_zaka text 
+                - fanafody_tsy_zaka text 
+                - famarihana_hafa text 
             * mikasika ny fikambanana
-                - daty_nidirana
-                - daty_fanekena
-                - toerana_nanaovana_fanekena
-                - daty_nialana
-                - antony_nialana
+                - daty_nidirana date
+                - daty_fanekena date
+                - toerana_nanaovana_fanekena text 
+                - daty_nialana date
+                - antony_nialana text 
+                Bouton : Suivant -> enregistrement dans la table fiche_form1
+
         - Form 2: ( saisie multiple )
             * mikasika ny toe-tena sy ny fahasalamana
-                - aretina_mpahazo
-                - fanafody_fanmpiasa
+                - aretina_mpahazo varchar 100
+                - fanafody_fanmpiasa varchar 100
+                ( on va utilsier un javascript permettant de faire un saisie multiple )
+                Bouton Suivant dans table fiche_form2
+
         - Form 3: 
             * toetra amam-pihetsika fototra
-                - toetra_mahafinaritra
-                - toetra_manahirana
-                - zavatra_tiana
-                - zavatra_tsy_tiana
+                - toetra_mahafinaritra text
+                - toetra_manahirana text
+                - zavatra_tiana text
+                - zavatra_tsy_tiana text
+                 ( on va utilsier un javascript permettant de faire un saisie multiple )
+                Bouton Suivant -> table fiche_form3
+
         - Form 4:
             * mikasika ny fianarana
-                - taona
-                - sekoly
-                - kilasy
-                - taranja_manavanana
-                - taranja_manahirana
+                - taona int
+                - sekoly varchar 50 
+                - kilasy varchar 50 
+                - taranja_manavanana text
+                - taranja_manahirana text 
+              ( on va utilsier un javascript permettant de faire un saisie multiple )
+                Bouton Suivant -> table fiche_form4
+
         - Form 5:
             * mikasika ny talenta
-                - anarana
-                - daty_nanomezana
-                - talenta_nomena
+                - anarana varchar 100
+                - daty_nanomezana date
+                - talenta_nomena text
+                ( on va utilsier un javascript permettant de faire un saisie multiple )
+                Bouton Suivant -> fiche_form5
+
         - Form 6:
             * mikasika ny fifampidinihana tamin'ny Ray amann-dReny
-                - daty
-                - votoatin-draharaha
-                - fanamarihana 
+                - daty date 
+                - votoatin-draharaha text 
+                - fanamarihana text
+                Bouton Terminé -> fiche_form6 
+
+fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp 
 
 
 - Module 6: Affichage et restructuration de la fiche 

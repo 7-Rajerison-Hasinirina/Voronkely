@@ -1,50 +1,31 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px; min-height: 100vh;">
-    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4">Voronkely</span>
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 250px; min-height: 100vh; background-color: #0f5132;">
+    <a href="#" class="d-flex align-items-center mb-4 text-white text-decoration-none">
+        <div class="rounded-circle bg-white text-success d-flex align-items-center justify-content-center" style="width: 42px; height: 42px;">
+            V
+        </div>
+        <span class="fs-4 fw-bold ms-3">Voronkely</span>
     </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-                Membre
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link link-dark">
-                Assurance
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link link-dark">
-                Présence
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link link-dark">
-                Rakitra
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link link-dark">
-                Adidy
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link link-dark">
-                Agenda
-            </a>
-        </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="/static/images/profile-placeholder.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>Utilisateur</strong>
-        </a>
-        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
-            <li><a class="dropdown-item" href="#">Profil</a></li>
-            <li><a class="dropdown-item" href="#">Paramètres</a></li>
-        </ul>
+    <div class="d-grid gap-2 mb-4 mt-3">
+        <a href="/membres" class="btn btn-outline-light btn-lg text-start fw-semibold">Membre</a>
+        <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Assurance</a>
+        <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Presence</a>
+        <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Rakitra</a>
+        <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Adidy</a>
+        <a href="#" class="btn btn-outline-light btn-lg text-start fw-semibold">Agenda</a>
+    </div>
+    <div class="mt-auto pt-4">
+        <div class="p-3 rounded-4" style="background-color: rgba(255,255,255,0.08);">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="bg-white rounded-circle" style="width: 36px; height: 36px;"></div>
+                <div>
+                    <div class="fw-semibold">Utilisateur</div>
+                    <small class="text-white-50">Connecté</small>
+                </div>
+            </div>
+            <div class="d-grid gap-2 mt-3">
+                <a href="#" class="btn btn-sm btn-outline-light">Profil</a>
+                <a href="#" class="btn btn-sm btn-outline-light">Paramètres</a>
+            </div>
+        </div>
     </div>
 </div>
