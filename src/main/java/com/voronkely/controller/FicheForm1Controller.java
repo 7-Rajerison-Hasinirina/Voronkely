@@ -8,6 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 public class FicheForm1Controller {
@@ -25,15 +32,26 @@ public class FicheForm1Controller {
     }
 
     @GetMapping("/fiche1/new")
-    public String createForm(Model model) {
-        model.addAttribute("fiche", new FicheForm1());
-        return "fiche/fiche1-form";
+    public String createForm(@RequestParam(required = false) Long idMembre, Model model) {
+        FicheForm1 fiche = new FicheForm1();
+        fiche.setIdMembre(idMembre);
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        return "fiche/fiche-form1";
     }
 
     @PostMapping("/fiche1")
-    public String create(@ModelAttribute FicheForm1 fiche) {
+    public String create(@ModelAttribute FicheForm1 fiche,
+                         @RequestParam(value = "imageFile", required = false) MultipartFile imageFile) throws IOException {
+        if (imageFile != null && !imageFile.isEmpty()) {
+            String filename = Paths.get(imageFile.getOriginalFilename()).getFileName().toString();
+            Path imagesDirectory = Paths.get("src/main/resources/static/images");
+            Files.createDirectories(imagesDirectory);
+            imageFile.transferTo(imagesDirectory.resolve(filename));
+            fiche.setImage(filename);
+        }
         service.save(fiche);
-        return "redirect:/fiche1";
+        return "redirect:/fiche2/new?idMembre=" + fiche.getIdMembre();
     }
 
     @GetMapping("/fiche1/{id}")

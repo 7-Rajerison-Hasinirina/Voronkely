@@ -97,7 +97,6 @@ Technologies:
 
 
 
-
 - Module 5: 
 apres clique sur le bouotn Creer une fiche individuelle 
 

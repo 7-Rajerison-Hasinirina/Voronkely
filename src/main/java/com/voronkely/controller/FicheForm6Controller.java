@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class FicheForm6Controller {
@@ -25,15 +26,18 @@ public class FicheForm6Controller {
     }
 
     @GetMapping("/fiche6/new")
-    public String createForm(Model model) {
-        model.addAttribute("fiche", new FicheForm6());
-        return "fiche/fiche6-form";
+    public String createForm(@RequestParam Long idMembre, Model model) {
+        FicheForm6 fiche = new FicheForm6();
+        fiche.setIdMembre(idMembre);
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        return "fiche/fiche-form6";
     }
 
     @PostMapping("/fiche6")
     public String create(@ModelAttribute FicheForm6 fiche) {
         service.save(fiche);
-        return "redirect:/fiche6";
+        return "redirect:/membres/" + fiche.getIdMembre() + "/fiche";
     }
 
     @GetMapping("/fiche6/{id}")

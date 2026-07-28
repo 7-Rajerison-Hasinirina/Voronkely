@@ -24,6 +24,14 @@ public class FicheForm3Service {
         return repository.findById(id);
     }
 
+    public Optional<FicheForm3> findByIdMembre(Long idMembre) {
+        return repository.findFirstByIdMembreOrderByIdDesc(idMembre);
+    }
+
+    public List<FicheForm3> findAllByIdMembre(Long idMembre) {
+        return repository.findByIdMembreOrderByIdAsc(idMembre);
+    }
+
     public FicheForm3 save(FicheForm3 f) {
         return repository.save(f);
     }
