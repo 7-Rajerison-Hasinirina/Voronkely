@@ -31,12 +31,12 @@ Technologies:
         - mouvement_rakitra
         - mouvement_assurance
         - mouvement_adidy
-        - fiche_form1
-        - fiche_form2
-        - fiche_form3
-        - fiche_form4
-        - fiche_form5
-        - fiche_form6
+[ok]        - fiche_form1
+[ok]        - fiche_form2
+[ok]        - fiche_form3
+[ok]        - fiche_form4
+[ok]        - fiche_form5
+[ok]        - fiche_form6
         - numero_trimestre
         - fiche_technique
         - fiche_technique_info
@@ -98,14 +98,6 @@ Technologies:
 
 
 - Module 5: 
-apres clique sur le bouotn Creer une fiche individuelle 
-
-    ouvre une page fiche-form1.jsp :
-    contenant 
-
-    les 6 formulaires comme suit 
-    une longue formulaire 
-     on va utiliser un js ici ( a metre tout ces js dans un dosssier fiche-individuelle.js dans static/javascript )
     - Creation de la fiche individuelle 
         - Form 1:
             * mikasika azy manokana
@@ -185,9 +177,12 @@ apres clique sur le bouotn Creer une fiche individuelle
                 Bouton Terminé -> fiche_form6 
 
 fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp 
+[ok]
+
 
 
 - Module 6: Affichage et restructuration de la fiche 
+[ok]
 
 
 - Module 7: Modification de la fiche individuelle :
@@ -196,6 +191,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 
 - Module 8: Export en PDF nom_prenom.PDF de la fiche sous forme de la fiche comme dans un papier
+[ok]
 
 
 
@@ -674,9 +670,9 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 
 # IREO MIANDRY KELY
-- PART : 
-    - Module : 
-    - Fonctionnalite: 
+- PART : 01
+    - Module : 7
+    - Fonctionnalite: Modificaiton de la fiche -> revenir a la formulaire 
 --------------------------------------------------------------
 - PART : 
     - Module : 

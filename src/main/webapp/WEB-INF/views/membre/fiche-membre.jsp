@@ -157,28 +157,38 @@
         <div class="card-body p-4 p-lg-5">
             <section class="info-section">
                 <h2 class="h5 section-title">Membre</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover align-middle info-table">
-                        <tbody>
-                        <tr>
-                            <th scope="row">Nom et prénoms</th>
-                            <td>${membre.nomPrenom}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Référence</th>
-                            <td>${membre.reference}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Image</th>
-                            <td>
-                                <c:choose>
-                                    <c:when test="${not empty fiche1.image}">${fiche1.image}</c:when>
-                                    <c:otherwise>Aucune image</c:otherwise>
-                                </c:choose>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-8">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover align-middle info-table mb-0">
+                                <tbody>
+                                <tr>
+                                    <th scope="row">Nom et prénoms</th>
+                                    <td>${membre.nomPrenom}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Référence</th>
+                                    <td>${membre.reference}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <c:choose>
+                            <c:when test="${not empty fiche1.image}">
+                                <img src="${pageContext.request.contextPath}/images/${fiche1.image}"
+                                    alt="Photo du membre"
+                                    class="img-fluid img-thumbnail shadow-sm"
+                                    style="max-width:220px; max-height:260px; object-fit:cover;">
+                            </c:when>
+                            <c:otherwise>
+                                <div class="border rounded p-5 bg-light text-muted">
+                                    Aucune image
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
                 </div>
             </section>
 
@@ -200,12 +210,40 @@
                             <tr><th scope="row">Profession père</th><td>${fiche1.professionPere}</td></tr>
                             <tr><th scope="row">Téléphone père</th><td>${fiche1.telephonePere}</td></tr>
                             <tr><th scope="row">Facebook père</th><td>${fiche1.fbPere}</td></tr>
-                            <tr><th scope="row">Lien Facebook père</th><td>${fiche1.lienFbPere}</td></tr>
+                            <tr>
+                            <th scope="row">Lien Facebook père</th>
+                                <td>
+                                    <c:choose>
+                                        <c:when test="${not empty fiche1.lienFbPere}">
+                                            <a href="${fiche1.lienFbPere}" target="_blank" rel="noopener noreferrer">
+                                                ${fiche1.lienFbPere}
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            Aucun lien
+                                        </c:otherwise>
+                                    </c:choose>
+                                </td>
+                            </tr>
                             <tr><th scope="row">Nom mère</th><td>${fiche1.nomMere}</td></tr>
                             <tr><th scope="row">Profession mère</th><td>${fiche1.professionMere}</td></tr>
                             <tr><th scope="row">Téléphone mère</th><td>${fiche1.telephoneMere}</td></tr>
                             <tr><th scope="row">Facebook mère</th><td>${fiche1.fbMere}</td></tr>
-                            <tr><th scope="row">Lien Facebook mère</th><td>${fiche1.lienFbMere}</td></tr>
+                            <tr>
+                                <th scope="row">Lien Facebook mère</th>
+                                <td>
+                                    <c:choose>
+                                        <c:when test="${not empty fiche1.lienFbMere}">
+                                            <a href="${fiche1.lienFbMere}" target="_blank" rel="noopener noreferrer">
+                                                ${fiche1.lienFbMere}
+                                            </a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            Aucun lien
+                                        </c:otherwise>
+                                    </c:choose>
+                                </td>
+                            </tr>
                             <tr><th scope="row">Nb ray tampo</th><td>${fiche1.nbRayTampo}</td></tr>
                             <tr><th scope="row">Rang ray tampo</th><td>${fiche1.rangRayTampo}</td></tr>
                             </tbody>
@@ -235,89 +273,166 @@
 
                 <section class="info-section">
                     <h2 class="h5 section-title">Santé</h2>
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover align-middle info-table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Sakafo tsy zaka</th>
+                                    <th>Fanafody tsy zaka</th>
+                                    <th>Famarihana hafa</th>
+                                </tr>
+                            </thead>
                             <tbody>
-                            <tr><th scope="row">Sakafo tsy zaka</th><td>${fiche1.sakafoTsyZaka}</td></tr>
-                            <tr><th scope="row">Fanafody tsy zaka</th><td>${fiche1.fanafodyTsyZaka}</td></tr>
-                            <tr><th scope="row">Famarihana hafa</th><td>${fiche1.famarihanaHafa}</td></tr>
+                                <tr>
+                                    <td>${fiche1.sakafoTsyZaka}</td>
+                                    <td>${fiche1.fanafodyTsyZaka}</td>
+                                    <td>${fiche1.famarihanaHafa}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
             </c:if>
 
-            <c:if test="${not empty fiche2}">
+
+            <c:if test="${not empty fiche2List}">
                 <section class="info-section">
                     <h2 class="h5 section-title">Aretina sy fanafody</h2>
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover align-middle info-table">
+                            <thead class="table-light">
+                            <tr>
+                                <th>Aretina mpahazo</th>
+                                <th>Fanafody fampiasa</th>
+                            </tr>
+                            </thead>
                             <tbody>
-                            <tr><th scope="row">Aretina mpahazo</th><td>${fiche2.aretinaMpahazo}</td></tr>
-                            <tr><th scope="row">Fanafody fampiasa</th><td>${fiche2.fanafodyFampiasa}</td></tr>
+                            <c:forEach items="${fiche2List}" var="f">
+                                <tr>
+                                    <td>${f.aretinaMpahazo}</td>
+                                    <td>${f.fanafodyFampiasa}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
                 </section>
             </c:if>
 
-            <c:if test="${not empty fiche3}">
+
+            <c:if test="${not empty fiche3List}">
                 <section class="info-section">
                     <h2 class="h5 section-title">Toetra sy zavatra tiany</h2>
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover align-middle info-table">
+                            <thead class="table-light">
+                            <tr>
+                                <th>Toetra mahafinaritra</th>
+                                <th>Toetra manahirana</th>
+                                <th>Zavatra tiana</th>
+                                <th>Zavatra tsy tiana</th>
+                            </tr>
+                            </thead>
                             <tbody>
-                            <tr><th scope="row">Toetra mahafinaritra</th><td>${fiche3.toetraMahafinaritra}</td></tr>
-                            <tr><th scope="row">Toetra manahirana</th><td>${fiche3.toetraManahirana}</td></tr>
-                            <tr><th scope="row">Zavatra tiana</th><td>${fiche3.zavatraTiana}</td></tr>
-                            <tr><th scope="row">Zavatra tsy tiana</th><td>${fiche3.zavatraTsyTiana}</td></tr>
+                            <c:forEach items="${fiche3List}" var="f">
+                                <tr>
+                                    <td>${f.toetraMahafinaritra}</td>
+                                    <td>${f.toetraManahirana}</td>
+                                    <td>${f.zavatraTiana}</td>
+                                    <td>${f.zavatraTsyTiana}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
                 </section>
             </c:if>
 
-            <c:if test="${not empty fiche4}">
+
+            <c:if test="${not empty fiche4List}">
                 <section class="info-section">
                     <h2 class="h5 section-title">Scolarité</h2>
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover align-middle info-table">
+                            <thead class="table-light">
+                            <tr>
+                                <th>Taona</th>
+                                <th>Sekoly</th>
+                                <th>Kilasy</th>
+                                <th>Taranja manavanana</th>
+                                <th>Taranja manahirana</th>
+                            </tr>
+                            </thead>
                             <tbody>
-                            <tr><th scope="row">Taona</th><td>${fiche4.taona}</td></tr>
-                            <tr><th scope="row">Sekoly</th><td>${fiche4.sekoly}</td></tr>
-                            <tr><th scope="row">Kilasy</th><td>${fiche4.kilasy}</td></tr>
-                            <tr><th scope="row">Taranja manavanana</th><td>${fiche4.taranjaManavanana}</td></tr>
-                            <tr><th scope="row">Taranja manahirana</th><td>${fiche4.taranjaManahirana}</td></tr>
+                            <c:forEach items="${fiche4List}" var="f">
+                                <tr>
+                                    <td>${f.taona}</td>
+                                    <td>${f.sekoly}</td>
+                                    <td>${f.kilasy}</td>
+                                    <td>${f.taranjaManavanana}</td>
+                                    <td>${f.taranjaManahirana}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
                 </section>
             </c:if>
 
-            <c:if test="${not empty fiche5}">
+
+            <c:if test="${not empty fiche5List}">
                 <section class="info-section">
                     <h2 class="h5 section-title">Talenta</h2>
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover align-middle info-table">
+                            <thead class="table-light">
+                            <tr>
+                                <th>Anarana</th>
+                                <th>Daty nanomezana</th>
+                                <th>Talenta nomena</th>
+                            </tr>
+                            </thead>
                             <tbody>
-                            <tr><th scope="row">Anarana</th><td>${fiche5.anarana}</td></tr>
-                            <tr><th scope="row">Daty nanomezana</th><td>${fiche5.datyNanomezana}</td></tr>
-                            <tr><th scope="row">Talenta nomena</th><td>${fiche5.talentaNomena}</td></tr>
+                            <c:forEach items="${fiche5List}" var="f">
+                                <tr>
+                                    <td>${f.anarana}</td>
+                                    <td>${f.datyNanomezana}</td>
+                                    <td>${f.talentaNomena}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>
                 </section>
             </c:if>
 
-            <c:if test="${not empty fiche6}">
-                <section class="info-section mb-0">
+
+            <c:if test="${not empty fiche6List}">
+                <section class="info-section">
                     <h2 class="h5 section-title">Fifampidinihana tamin'ny Ray aman-dReny</h2>
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover align-middle info-table">
+                            <thead class="table-light">
+                            <tr>
+                                <th>Daty</th>
+                                <th>Votoatin-draharaha</th>
+                                <th>Fanamarihana</th>
+                            </tr>
+                            </thead>
                             <tbody>
-                            <tr><th scope="row">Daty</th><td>${fiche6.daty}</td></tr>
-                            <tr><th scope="row">Votoatin-draharaha</th><td>${fiche6.votoatinDraharaha}</td></tr>
-                            <tr><th scope="row">Fanamarihana</th><td>${fiche6.fanamarihana}</td></tr>
+                            <c:forEach items="${fiche6List}" var="f">
+                                <tr>
+                                    <td>${f.daty}</td>
+                                    <td>${f.votoatinDraharaha}</td>
+                                    <td>${f.fanamarihana}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

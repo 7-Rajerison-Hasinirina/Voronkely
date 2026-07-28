@@ -8,6 +8,10 @@ import com.voronkely.service.FicheForm4Service;
 import com.voronkely.service.FicheForm5Service;
 import com.voronkely.service.FicheForm6Service;
 import com.voronkely.service.MembreService;
+import java.util.*;
+
+import java.util.HashMap;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,9 +46,27 @@ public class MembreController {
         this.ficheForm6Service = ficheForm6Service;
     }
 
+    // @GetMapping("/membres")
+    // public String listMembres(Model model) {
+    //     model.addAttribute("membres", membreService.findAll());
+    //     return "membre/liste-membre";
+    // }
+
     @GetMapping("/membres")
     public String listMembres(Model model) {
-        model.addAttribute("membres", membreService.findAll());
+
+        List<Membre> membres = membreService.findAll();
+
+        Map<Long, String> images = new HashMap<>();
+
+        for (Membre membre : membres) {
+            ficheForm1Service.findByIdMembre(membre.getId())
+                    .ifPresent(fiche -> images.put(membre.getId(), fiche.getImage()));
+        }
+
+        model.addAttribute("membres", membres);
+        model.addAttribute("images", images);
+
         return "membre/liste-membre";
     }
 

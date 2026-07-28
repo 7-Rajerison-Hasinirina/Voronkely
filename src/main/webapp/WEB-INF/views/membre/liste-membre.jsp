@@ -37,24 +37,43 @@
         </div>
     </div>
 
-    <div class="row g-4">
-        <c:forEach items="${membres}" var="membre">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card member-card h-100">
-                    <div class="card-body text-center">
-                        <div class="avatar-placeholder rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
-                            ${fn:substring(membre.nomPrenom, 0, 1)}
-                        </div>
-                        <h5 class="card-title mb-1">${membre.nomPrenom}</h5>
-                        <p class="text-muted mb-0">Référence : <strong>${membre.reference}</strong></p>
-                        <div class="mt-3">
-                            <a href="/membres/${membre.id}/fiche" class="btn btn-outline-success btn-sm">Fiche individuelle</a>
-                        </div>
-                    </div>
+<div class="row g-4">
+    <c:forEach items="${membres}" var="membre">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card member-card h-100">
+                <div class="card-body text-center">
+
+                    <c:choose>
+                        <c:when test="${not empty images[membre.id]}">
+                            <img src="${pageContext.request.contextPath}/images/${images[membre.id]}"
+                                 alt="${membre.nomPrenom}"
+                                 class="rounded-circle mx-auto d-block mb-3 shadow-sm"
+                                 style="width:90px; height:90px; object-fit:cover; border:3px solid #d6eadc;">
+                        </c:when>
+                        <c:otherwise>
+                            <div class="avatar-placeholder rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                                ${fn:substring(membre.nomPrenom, 0, 1)}
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+
+                    <h5 class="card-title mb-1">${membre.nomPrenom}</h5>
+
+                    <p class="text-muted mb-3">
+                        Référence :
+                        <strong>${membre.reference}</strong>
+                    </p>
+
+                    <a href="/membres/${membre.id}/fiche"
+                       class="btn btn-outline-success btn-sm">
+                        Fiche individuelle
+                    </a>
+
                 </div>
             </div>
-        </c:forEach>
-    </div>
+        </div>
+    </c:forEach>
+</div>
 </div>
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
