@@ -27,12 +27,12 @@
 
         <a href="#"
            class="btn btn-outline-light btn-lg text-start fw-semibold">
-            Presence
+            Rakitra
         </a>
 
-        <a href="#"
+        <a href="/presence/liste"
            class="btn btn-outline-light btn-lg text-start fw-semibold">
-            Rakitra
+            Presence
         </a>
 
         <a href="#"

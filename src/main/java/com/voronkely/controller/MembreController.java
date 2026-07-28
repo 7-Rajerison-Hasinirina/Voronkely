@@ -46,27 +46,18 @@ public class MembreController {
         this.ficheForm6Service = ficheForm6Service;
     }
 
-    // @GetMapping("/membres")
-    // public String listMembres(Model model) {
-    //     model.addAttribute("membres", membreService.findAll());
-    //     return "membre/liste-membre";
-    // }
+
 
     @GetMapping("/membres")
     public String listMembres(Model model) {
-
         List<Membre> membres = membreService.findAll();
-
         Map<Long, String> images = new HashMap<>();
-
         for (Membre membre : membres) {
             ficheForm1Service.findByIdMembre(membre.getId())
                     .ifPresent(fiche -> images.put(membre.getId(), fiche.getImage()));
         }
-
         model.addAttribute("membres", membres);
         model.addAttribute("images", images);
-
         return "membre/liste-membre";
     }
 

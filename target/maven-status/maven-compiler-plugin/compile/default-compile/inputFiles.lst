@@ -8,6 +8,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheForm4Controller.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheForm5Controller.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheForm6Controller.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FichePresenceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm1.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm2.java
@@ -15,6 +16,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm4.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm5.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm6.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FichePresence.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Membre.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm1Repository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm2Repository.java
@@ -22,6 +24,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm4Repository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm5Repository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm6Repository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FichePresenceRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MembreRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm1Service.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm2Service.java
@@ -29,4 +32,5 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm4Service.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm5Service.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm6Service.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FichePresenceService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MembreService.java

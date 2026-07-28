@@ -44,49 +44,43 @@
             <jsp:include page="navbar.jsp" />
         </div>
         <div class="col ps-0">
-<header class="header-top d-flex justify-content-between align-items-center px-5 py-4">
+        <header class="header-top d-flex justify-content-between align-items-center px-5 py-4">
+            <div class="d-flex align-items-center">
 
-    <!-- Partie gauche : titre -->
-    <div class="d-flex align-items-center">
-
-        <div>
-            <h1 class="h3 mb-1 fw-bold text-white">
-                Mpanazava FJKM Ankadimbahoaka
-            </h1>
-
-            <small class="text-white-50">
-                Dashboard principal
-            </small>
-        </div>
-
-    </div>
-
-
-    <!-- Partie droite : utilisateur + logo Voronkely -->
-    <div class="d-flex align-items-center gap-4">
-
-        <div class="text-end">
-
-            <div class="fw-semibold text-white">
-                Mpanazava
+                <div>
+                    <h1 class="h3 mb-1 fw-bold text-white">
+                        Mpanazava FJKM Ankadimbahoaka
+                    </h1>
+                    <small class="text-white-50">
+                        Accueil
+                    </small>
+                </div>
             </div>
 
-            <small class="text-white-50">
-                Bienvenue
-            </small>
+            <div class="d-flex align-items-center gap-4">
 
-        </div>
+                <div class="text-end">
+
+                    <div class="fw-semibold text-white">
+                        Voronkely
+                    </div>
+
+                    <small class="text-yellow-50">
+                        Sampana Mavo 
+                    </small>
+
+                </div>
 
 
-        <img src="${pageContext.request.contextPath}/images/logo-voronkely.png"
-             alt="Logo Voronkely"
-             width="90"
-             height="90"
-             class="rounded-circle border shadow-sm">
+                <img src="${pageContext.request.contextPath}/images/logo-voronkely.png"
+                    alt="Logo Voronkely"
+                    width="90"
+                    height="90"
+                    class="rounded-circle border shadow-sm">
 
-    </div>
+            </div>
 
-</header>
+        </header>
 
             <main class="p-4">
                 <div class="row g-4">

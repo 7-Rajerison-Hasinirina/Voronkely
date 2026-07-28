@@ -19,7 +19,7 @@ Technologies:
 [ok]        - membre ( manana reference : REF + id , ex: REF1)
         - status ( actif , inactif )
         - talenta
-        - fiche_presence
+[ok]        - fiche_presence
         - agenda ( listes des activites )
         - visite_parent
         - type_assurance ( ex: RAD, beazina, mpiandraikitra )
@@ -197,6 +197,12 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 ### PART 02:
 - Module 1: Presence hebdomadaire 
+    - fiche_presence:
+        * id
+        * id_membre
+        * date_presence
+        * present ( true / false ) 
+
     - Creation de bouton Suivi de presence  dans le navbar 
     - Dans la page de presence: 
         - date
@@ -206,6 +212,8 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
             - eleve3: []
             ...
         - bouton Sauvegarder -> enregistrement dans la table fiche_presence
+[ok]
+
 
 
 - Module 2: Presence via une formulaire ( dans la page de presence )
@@ -217,6 +225,8 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - date 
         - presente : []   ( true/false)
         - bouoton Sauvegarder -> enregistrement dans la table fiche_presence
+[ok]
+
 
 
 - Module 3: Consultation de presence + filtre 
@@ -224,9 +234,11 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         -> DROITE affiche sa fiche de presence ( grouper par mois si possible )
         -> GAUCHE affiche la graphe ( x: mois , y: nombre de presence: )
     - filtre date min et date max 
-    - Affichge en card de presence par semaine ( avec pagination )
-        - image 
-        - nom et prenoms 
+    1- ajout de bouoton: Voir presence jsute au bas de 'checkbox' dans le card: dans la page-presence
+    2- creation de page presence/detail-presence.jsp :
+        - affichage de l'information de membre ( nomprenom, reference, image )
+[ok]
+
 
 
 - Module 4: Liste des eleves ayant le nombre de presence <= 2 pour le mois dernier
@@ -672,7 +684,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 # IREO MIANDRY KELY
 - PART : 01
     - Module : 7
-    - Fonctionnalite: Modificaiton de la fiche -> revenir a la formulaire 
+    - Fonctionnalite: Modificaiton de la fiche -> revenir a la formulaire + Suppression
 --------------------------------------------------------------
 - PART : 
     - Module : 
