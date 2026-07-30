@@ -21,7 +21,7 @@ Technologies:
         - talenta
 [ok]        - fiche_presence
         - agenda ( listes des activites )
-        - visite_parent
+[ok]        - visite_parent
         - type_assurance ( ex: RAD, beazina, mpiandraikitra )
         - type_adidy
         - assurance
@@ -246,13 +246,17 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - images 
         - nom et prenom
         - bouton : Fiche individuelle
-        - lien fb:
-            - lien facebook pere
-            - lien facebook mere 
+
+[ok]
 
 
 - Module 5: Visite de parents
-    - Ajout de bouton : 'Visite de parents' dans le navbar
+    - creation de table 'visite_parent' :
+        - id
+        - id_membre
+        - date_visite
+        - statut ( En attente , Termine )
+    - Ajout de bouton : 'Visite de parents' dans la fiche-membre.jsp 
     - Creation de la page pour la visite de parents 
         - filtre :
             - par reference
@@ -262,29 +266,48 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
             - nom et prenom
             - bouton 'Voir plus'
                 Voir plus -> ouvre une page affichant le tableua de presnece pour cet eleve : fiche_form6 
+[ok]
+
 
 
 ### PART 03: 
 - Module 1: Rakitra
+    - table a creer: 'rakitra':
+        - rakitra:
+            * id
+            * montant
+            * montant_restant
+            * date_ajout
+        - mouvement_rakitra: 
+            * id
+            * id_rakitra
+            * montant_a_deduire
+            * motif_utilisation
+            * type_mouvement 'ENTREE', "SORTIE"
     - ajout de bouton 'Rakitra' dans le navbar
-    - Creation de la page pour le gestion de rakitra
+    - on affiche un bouton : 'Nouvel rakitra' dans rakitra/page-rakitra.jsp qui ouvre rakitra/rakitra-form.jsp 
+    - Creation de la page pour le gestion de rakitra rakitra/rakitra-form.jsp 
+
         - bouton 'Nouvel rakitra' -> ouvre une form_rakitra ( formulaire pour isnerer le montant de rakitra )
         - form_rakitra:
             * date 
             * montant
             * montant_restant
             * bouton : enregistrer -> table rakitra 
+[ok]
 
 
-- Module 2: Affichge de tabelau historique rakitra 
+- Module 2: Affichge de tabelau historique rakitra : dans rakitra/page-rakitra.jsp
     - date 
     - montant
-    - montant_restante : montant - SUM montant_a_deduire
+    - montant_restante : montant - SUM montant_a_deduire dans la table mouvement_rakitra  ( s'il n'y en a pas, on prend 0 le montant_a_deduire)
     - 'Voir detail'
+[ok]
+
 
 
 - Module 3: Si rakitra : tsy lany 
-    - Clique sur bouton 'Voir detail' 
+    - Clique sur bouton 'Voir detail' -> ouvre une mouvement-rakira.jsp 
     - Creation de la formulaire mouvement rakitra: ( en recuperation de cet id_rakitra )
         - montant actuel ( le montant restant )
         - montant a deduire
@@ -292,11 +315,14 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - motif_utilisation
         - type_mouvement
         - bouton: Enregistrer -> mouvement_rakitra 
+[ok]
 
 
-- Module 4: Montant global via rakitra
+- Module 4: Montant global via rakitra 
     - filtre date min max
     - affichge de montant globaal 
+[ok]
+
 
 
 ### PART 04:
@@ -688,7 +714,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 --------------------------------------------------------------
 - PART : 
     - Module : 
-    - Fonctionnalite: 
+    - Fonctionnalite: Planification de visites de parents 
 --------------------------------------------------------------
 - PART : 
     - Module : 

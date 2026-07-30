@@ -251,6 +251,11 @@
             Retour vers dashboard
         </a>
 
+        <a href="${pageContext.request.contextPath}/presence/gestion-absence"
+        class="btn btn-warning btn-lg px-5 shadow">
+            Gestion des absences
+        </a>
+
 
         <button type="submit"
                 class="btn btn-primary btn-lg px-5 shadow">

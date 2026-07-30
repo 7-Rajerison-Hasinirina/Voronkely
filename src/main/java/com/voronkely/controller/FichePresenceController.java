@@ -1,5 +1,6 @@
 package com.voronkely.controller;
 
+import com.voronkely.entity.FicheForm1;
 import com.voronkely.entity.FichePresence;
 import com.voronkely.entity.Membre;
 import com.voronkely.service.FichePresenceService;
@@ -212,9 +213,116 @@ public String detailPresence(
             "nombrePresence",
             nombrePresence
     );
-
-
-
     return "presence/detail-presence";
 }
+
+
+
+        @GetMapping("/gestion-absence")
+        public String gestionAbsences(Model model){
+        LocalDate aujourdHui = LocalDate.now();
+        LocalDate debutMoisDernier =
+                aujourdHui.minusMonths(1)
+                        .withDayOfMonth(1);
+
+
+        LocalDate finMoisDernier =
+                aujourdHui.withDayOfMonth(1)
+                        .minusDays(1);
+
+
+
+        List<Membre> membres =
+                membreService.findAll();
+
+
+
+        List<Membre> membresAbsents =
+                new ArrayList<>();
+
+
+        Map<Long, Long> nombrePresence =
+                new HashMap<>();
+
+
+        for(Membre membre : membres){
+
+
+                List<FichePresence> presences =
+                        fichePresenceService.findByMembre(
+                                membre.getId()
+                        );
+
+
+                long total =
+                        presences.stream()
+                        .filter(FichePresence::getPresent)
+                        .filter(p ->
+                                !p.getDatePresence()
+                                .isBefore(debutMoisDernier)
+                        )
+                        .filter(p ->
+                                !p.getDatePresence()
+                                .isAfter(finMoisDernier)
+                        )
+                        .count();
+
+
+
+                if(total <= 2){
+
+                membresAbsents.add(membre);
+
+                nombrePresence.put(
+                        membre.getId(),
+                        total
+                );
+
+                }
+
+        }
+
+
+
+        Map<Long, FicheForm1> fiches =
+                new HashMap<>();
+
+
+        for(Membre membre : membresAbsents){
+
+                ficheForm1Service.findByIdMembre(
+                        membre.getId()
+                )
+                .ifPresent(fiche ->
+                        fiches.put(
+                                membre.getId(),
+                                fiche
+                        )
+                );
+
+        }
+
+
+
+        model.addAttribute(
+                "membres",
+                membresAbsents
+        );
+
+
+        model.addAttribute(
+                "nombrePresence",
+                nombrePresence
+        );
+
+
+        model.addAttribute(
+                "fiches",
+                fiches
+        );
+
+
+        return "presence/gestion-absences";
+        }
+
 }

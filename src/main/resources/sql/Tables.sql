@@ -100,3 +100,35 @@ CREATE TABLE fiche_presence (
     present BOOLEAN NOT NULL DEFAULT 0,
     FOREIGN KEY (id_membre) REFERENCES membre(id)
 );
+
+
+CREATE TABLE visite_parent (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_membre BIGINT NOT NULL,
+    date_visite DATE NOT NULL,
+    statut VARCHAR(30) NOT NULL DEFAULT 'En attente',
+    CONSTRAINT fk_visite_parent_membre
+    FOREIGN KEY (id_membre)
+    REFERENCES membre(id)
+);
+
+
+CREATE TABLE rakitra (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    montant DECIMAL(12,2) NOT NULL,
+    montant_restant DECIMAL(12,2) NOT NULL,
+    date_ajout DATE NOT NULL
+);
+
+
+CREATE TABLE mouvement_rakitra (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_rakitra INTEGER NOT NULL,
+    montant_a_deduire DECIMAL(12,2) NOT NULL,
+    motif_utilisation TEXT NOT NULL,
+    type_mouvement VARCHAR(20) NOT NULL,
+    date_mouvement DATE NOT NULL,
+    CONSTRAINT fk_mouvement_rakitra
+        FOREIGN KEY(id_rakitra)
+        REFERENCES rakitra(id)
+);
