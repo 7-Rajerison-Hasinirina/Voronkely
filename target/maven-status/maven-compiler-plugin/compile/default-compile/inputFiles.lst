@@ -1,6 +1,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/VoronkelyApplication.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/JspConfig.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/SecurityConfig.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/AssuranceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/DashboardController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheForm1Controller.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheForm2Controller.java
@@ -12,9 +13,11 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MouvementRakitraController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/RakitraController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/TypeAssuranceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/VisiteParentController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/HistoriqueVisiteDto.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/MembreRechercheDto.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Assurance.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm1.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm2.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheForm3.java
@@ -25,7 +28,9 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Membre.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/MouvementRakitra.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Rakitra.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/TypeAssurance.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/VisiteParent.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/AssuranceRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm1Repository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm2Repository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheForm3Repository.java
@@ -36,7 +41,9 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MembreRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MouvementRakitraRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/RakitraRepository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/TypeAssuranceRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/VisiteParentRepository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/AssuranceService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm1Service.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm2Service.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheForm3Service.java
@@ -47,4 +54,5 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MembreService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MouvementRakitraService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/RakitraService.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/TypeAssuranceService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/VisiteParentService.java

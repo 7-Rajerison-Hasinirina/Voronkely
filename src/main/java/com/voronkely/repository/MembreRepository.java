@@ -57,5 +57,5 @@ public interface MembreRepository extends JpaRepository<Membre, Long> {
      * (conservée pour d'autres traitements éventuels)
      */
     Optional<Membre> findByReference(String reference);
-
+    // Membre findByReference(String reference);
 }

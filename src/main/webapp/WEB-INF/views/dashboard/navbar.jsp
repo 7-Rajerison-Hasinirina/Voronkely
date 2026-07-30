@@ -37,11 +37,9 @@
 
 
 
-        <a href="#"
-           class="btn btn-outline-light btn-lg text-start fw-semibold">
-
-            Assurance
-
+        <a href="${pageContext.request.contextPath}/assurance"
+            class="btn btn-outline-light btn-lg text-start fw-semibold">
+                Assurance
         </a>
 
 

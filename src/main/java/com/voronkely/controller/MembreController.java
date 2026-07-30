@@ -10,14 +10,13 @@ import com.voronkely.service.FicheForm6Service;
 import com.voronkely.service.MembreService;
 import java.util.*;
 
-import java.util.HashMap;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MembreController {
@@ -90,4 +89,17 @@ public class MembreController {
         model.addAttribute("fiche6List", ficheForm6Service.findAllByIdMembre(id));
         return "membre/fiche-membre";
     }
+
+
+@GetMapping("/api/membres/reference/{reference}")
+@ResponseBody
+public Membre chercherReference(
+        @PathVariable String reference
+){
+
+    return membreService
+            .findByReference(reference)
+            .orElseThrow();
+
+}
 }

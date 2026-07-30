@@ -132,3 +132,24 @@ CREATE TABLE mouvement_rakitra (
         FOREIGN KEY(id_rakitra)
         REFERENCES rakitra(id)
 );
+
+
+CREATE TABLE type_assurance (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    libelle TEXT NOT NULL
+);
+
+
+CREATE TABLE assurance (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_membre INTEGER NOT NULL,
+    montant DECIMAL(12,2) NOT NULL,
+    id_type_assurance INTEGER NOT NULL,
+    date DATE NOT NULL,
+    CONSTRAINT fk_assurance_membre
+        FOREIGN KEY(id_membre)
+        REFERENCES membre(id),
+    CONSTRAINT fk_assurance_type
+        FOREIGN KEY(id_type_assurance)
+        REFERENCES type_assurance(id)
+);

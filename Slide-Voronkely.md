@@ -339,6 +339,31 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
             * type_assurance 
             * date 
             * bouton : enregistrer -> table assurance 
+0- Creation de la table 
+- type_assurance:
+    * id 
+    * libelle
+- assurance:
+    * id 
+    * id_membre 
+    * montant
+    * id_type_assurance
+    * date
+- creer les entity , controler, service, repository de ces tables 
+1- on va regler le bouton Assurance dans le navbar.jsp 
+2- creer: assurance/page-assurance.jsp:
+    contenant le bouton : 'Nouvel assurance' -> ouvre une assurance-form.jsp
+        - form_assurance:
+            * reference_membre : 
+                - Affichge par javascript de l'information de cet membre
+                    - image ( profile feminine par defaut s'il n'y en a pas )
+                    - nom et prenom
+            * montant
+            * type_assurance 
+            * date 
+            * bouton : enregistrer -> table assurance 
+3- le js se trouve dans javascript/assurance.js
+
 
 
 - Module 2: Affichge de tabelau historique assurance
