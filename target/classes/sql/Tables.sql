@@ -153,3 +153,35 @@ CREATE TABLE assurance (
         FOREIGN KEY(id_type_assurance)
         REFERENCES type_assurance(id)
 );
+
+
+CREATE TABLE type_adidy (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    libelle TEXT NOT NULL UNIQUE
+);
+
+
+CREATE TABLE adidy (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_membre INTEGER NOT NULL,
+    id_type_adidy INTEGER NOT NULL,
+    montant DOUBLE NOT NULL,
+    montant_restant DOUBLE NOT NULL,
+    date_ajout DATE NOT NULL,
+    FOREIGN KEY (id_membre)
+        REFERENCES membre(id),
+    FOREIGN KEY (id_type_adidy)
+        REFERENCES type_adidy(id)
+);
+
+
+CREATE TABLE mouvement_adidy (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_adidy INTEGER NOT NULL,
+    motif_utilisation TEXT NOT NULL,
+    type_mouvement VARCHAR(30) NOT NULL,
+    montant DOUBLE NOT NULL,
+    date_mouvement DATE NOT NULL,
+    FOREIGN KEY (id_adidy)
+        REFERENCES adidy(id)
+);

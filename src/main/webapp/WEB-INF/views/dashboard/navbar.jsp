@@ -65,8 +65,8 @@
 
 
 
-        <a href="#"
-           class="btn btn-outline-light btn-lg text-start fw-semibold">
+        <a href="${pageContext.request.contextPath}/adidy"
+        class="btn btn-outline-light btn-lg text-start fw-semibold">
 
             Adidy
 
