@@ -4,6 +4,7 @@ import com.voronkely.entity.Adidy;
 import com.voronkely.repository.AdidyRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -76,6 +77,21 @@ public class AdidyService {
     public Double montantGlobalRestant() {
 
         return adidyRepository.montantGlobalRestant();
+
+    }
+
+
+    public List<Adidy> rechercher(
+        LocalDate dateMin,
+        LocalDate dateMax,
+        String reference
+    ) {
+
+        return adidyRepository.rechercher(
+                dateMin,
+                dateMax,
+                reference
+        );
 
     }
 

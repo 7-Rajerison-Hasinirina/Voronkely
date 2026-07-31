@@ -88,6 +88,136 @@ ${montantGlobal}
 
 
 
+
+<div class="card shadow mb-4">
+
+
+<div class="card-body">
+
+
+
+<form method="get"
+action="${pageContext.request.contextPath}/adidy">
+
+
+
+<div class="row">
+
+
+
+<div class="col-md-3">
+
+
+<label class="form-label">
+
+Date min
+
+</label>
+
+
+<input type="date"
+name="dateMin"
+class="form-control"
+value="${dateMin}">
+
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+
+<label class="form-label">
+
+Date max
+
+</label>
+
+
+<input type="date"
+name="dateMax"
+class="form-control"
+value="${dateMax}">
+
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+
+<label class="form-label">
+
+Référence membre
+
+</label>
+
+
+<input type="text"
+name="reference"
+class="form-control"
+placeholder="Référence membre"
+value="${reference}">
+
+
+</div>
+
+
+
+
+
+<div class="col-md-3 d-flex align-items-end">
+
+
+
+<button type="submit"
+class="btn btn-primary me-2">
+
+Rechercher
+
+</button>
+
+
+
+
+<a href="${pageContext.request.contextPath}/adidy"
+class="btn btn-secondary">
+
+Reset
+
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</form>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
 <div class="card shadow">
 
 
@@ -245,6 +375,8 @@ Voir détail
 
 
 </c:forEach>
+
+
 
 
 

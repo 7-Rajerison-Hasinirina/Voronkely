@@ -41,27 +41,52 @@ public class AdidyController {
 
 
 
-
-    @GetMapping
-    public String pageAdidy(Model model) {
-
-
-        model.addAttribute(
-                "adidys",
-                adidyService.findAll()
-        );
+@GetMapping
+public String pageAdidy(
+        Model model,
+        @RequestParam(required = false) LocalDate dateMin,
+        @RequestParam(required = false) LocalDate dateMax,
+        @RequestParam(required = false) String reference
+) {
 
 
-        model.addAttribute(
-                "montantGlobal",
-                adidyService.montantGlobalRestant()
-        );
+    model.addAttribute(
+            "adidys",
+            adidyService.rechercher(
+                    dateMin,
+                    dateMax,
+                    reference
+            )
+    );
 
 
-        return "adidy/page-adidy";
+    model.addAttribute(
+            "montantGlobal",
+            adidyService.montantGlobalRestant()
+    );
 
-    }
 
+    model.addAttribute(
+            "dateMin",
+            dateMin
+    );
+
+
+    model.addAttribute(
+            "dateMax",
+            dateMax
+    );
+
+
+    model.addAttribute(
+            "reference",
+            reference
+    );
+
+
+    return "adidy/page-adidy";
+
+}
 
 
 
