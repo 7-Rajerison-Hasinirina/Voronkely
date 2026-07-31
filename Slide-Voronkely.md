@@ -22,15 +22,15 @@ Technologies:
 [ok]        - fiche_presence
         - agenda ( listes des activites )
 [ok]        - visite_parent
-        - type_assurance ( ex: RAD, beazina, mpiandraikitra )
-        - type_adidy
-        - assurance
-        - adidy
-        - rakitra 
-        - type_mouvement
-        - mouvement_rakitra
+[ok]        - type_assurance ( ex: RAD, beazina, mpiandraikitra )
+[ok]        - type_adidy
+[ok]        - assurance
+[ok]        - adidy
+[ok]        - rakitra 
+[ok]        - type_mouvement
+[ok]        - mouvement_rakitra
         - mouvement_assurance
-        - mouvement_adidy
+[ok]        - mouvement_adidy
 [ok]        - fiche_form1
 [ok]        - fiche_form2
 [ok]        - fiche_form3
@@ -385,6 +385,19 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 ### PART 05:
 - Module 1 : Gestion adidy
+    1- creation de table adidy:
+        - id
+        - id_membre  ( on va faire la meme maniere la reecuperation de id_membre a partir de reference dans l'affichage , et  affichage a droit3 de image , nom prenom et reference de membre trouves )
+        - montant 
+        - montant_restant ( qui est par defaut = monant au moment d'insertion )
+        - date_ajout 
+    2- creation de mouvement_adidy :
+        - id
+        - id_adidy
+        - motif_utilisation
+        - type_mouvement
+        - date_mouvement
+
     - ajout de bouton 'adidy' dans le navbar
     - Creation de la page pour le gestion de adidy
         - bouton 'Nouvel adidy' -> ouvre une form_adidy ( formulaire pour isnerer le montant de adidy )
@@ -397,6 +410,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
             * type_adidy 
             * date 
             * bouton : enregistrer -> table adidy 
+[ok]
 
 
 - Module 2: Affichge de tabelau historique adidy
@@ -404,6 +418,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - nom_prenom
         - date 
         - montant
+[ok]
 
 
 - Module 3: Montant global via adidy
@@ -413,6 +428,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - adidy beazina
         - adidy mpiandraikitra
         - adidy RAD
+[ok]
 
 
 - Module 4: Si adidy : si montant > 0
@@ -425,10 +441,12 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - motif_utilisation
         - type_mouvement ( toujours sortie )
         - bouton: Enregistrer -> mouvement_adidy 
+[ok]
 
 
 - Module 5: Voir historique de l'utilisaiton de adidy:
     - tableau affichant les mouvement_adidy 
+[ok]
 
 
 ### PART 06: 
