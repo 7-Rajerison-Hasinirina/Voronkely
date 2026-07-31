@@ -363,6 +363,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
             * date 
             * bouton : enregistrer -> table assurance 
 3- le js se trouve dans javascript/assurance.js
+[ok]
 
 
 
@@ -373,29 +374,13 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - montant
 
 
-- Module 3: Montant global via assurance
+- Module 3: Montant global via assurance         - assurance globale
     - filtre date min max 
-    - affichge de montant de assurance  ( groué)
-        - assurance globale
+    - affichge de montant de assurance  ( groupé par id_type_assurance)
         - assurance beazina
         - assurance mpiandraikitra
         - assurance RAD
-
-
-- Module 4: Si assurance : si montant > 0
-    - Clique sur bouton 'Mouvement Assurance ' 
-    - Creation de la formulaire mouvement assurance:
-        - type_assurance : ex ( beazina )
-        - montant actuel ( le montant restant )
-        - montant a deduire
-        - montant restant : calculer par JS ( erreur: 'montant insuffisant' si  montant actuel - montant a deduire < 0 )
-        - motif_utilisation
-        - type_mouvement ( toujours sortie )
-        - bouton: Enregistrer -> mouvement_assurance 
-
-
-- Module 5: Voir historique de l'utilisaiton de assurance:
-    - tableau affichant les mouvement_assurance 
+[OK]
 
 
 ### PART 05:
@@ -741,9 +726,9 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
     - Module : 
     - Fonctionnalite: Planification de visites de parents 
 --------------------------------------------------------------
-- PART : 
-    - Module : 
-    - Fonctionnalite: 
+- PART : 04
+    - Module : 2 
+    - Fonctionnalite: rehcerhce de membre multiciritere 
 --------------------------------------------------------------
 - PART : 
     - Module : 

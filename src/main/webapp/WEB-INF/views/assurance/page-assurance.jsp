@@ -85,6 +85,13 @@ Suivi des assurances des membres
 
 <div>
 
+<a href="${pageContext.request.contextPath}/assurance/historique"
+   class="btn btn-warning me-2">
+
+Historique d'assurance
+
+</a>
+
 <a href="${pageContext.request.contextPath}/assurance/nouveau"
    class="btn btn-light">
 

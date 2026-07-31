@@ -4,6 +4,8 @@ import com.voronkely.entity.Assurance;
 import com.voronkely.repository.AssuranceRepository;
 
 import org.springframework.stereotype.Service;
+import java.time.LocalDate;
+import com.voronkely.dto.HistoriqueAssuranceDto;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -26,7 +28,42 @@ public class AssuranceService {
     }
 
 
+    // public List<HistoriqueAssuranceDto> historique(
 
+    //         LocalDate dateMin,
+
+    //         LocalDate dateMax){
+
+    //     // return assuranceRepository.historique(
+    //     //         dateMin,
+    //     //         dateMax);
+
+    //                     return assuranceRepository.historique(
+    //             );
+
+    // }
+
+
+    public List<HistoriqueAssuranceDto> historique() {
+        return assuranceRepository.historique();
+    }
+
+
+
+    public List<HistoriqueAssuranceDto> historique(
+
+            String reference,
+
+            LocalDate dateMin,
+
+            LocalDate dateMax){
+
+        return assuranceRepository.historique(
+                reference,
+                dateMin,
+                dateMax);
+
+    }
 
 
     public List<Assurance> findAll(){

@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const btnCreer = document.getElementById("btnCreer");
 
-    /**
-     * Remet le formulaire à zéro
-     */
     function vider() {
 
         idMembre.value = "";
@@ -25,9 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btnCreer.disabled = true;
     }
 
-    /**
-     * Recherche lorsqu'on tape une référence
-     */
     reference.addEventListener("keyup", function () {
 
         const valeur = this.value.trim();
@@ -39,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        fetch("/visite/recherche?reference=" + encodeURIComponent(valeur))
+        fetch("/assurance/recherche?reference=" + encodeURIComponent(valeur))
 
             .then(response => {
 
@@ -69,12 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (membre.image != null && membre.image !== "") {
 
                     photo.src = "/images/" + membre.image;
-
                     photo.style.display = "block";
 
                 } else {
 
                     photo.style.display = "none";
+                    photo.src = "";
 
                 }
 

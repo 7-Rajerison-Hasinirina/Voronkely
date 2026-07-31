@@ -9,6 +9,7 @@ com/voronkely/controller/FicheForm4Controller.class
 com/voronkely/repository/TypeAssuranceRepository.class
 com/voronkely/controller/MembreController.class
 com/voronkely/repository/FicheForm1Repository.class
+com/voronkely/dto/HistoriqueAssuranceDto.class
 com/voronkely/entity/TypeAssurance.class
 com/voronkely/service/FicheForm1Service.class
 com/voronkely/entity/FicheForm4.class

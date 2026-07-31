@@ -15,6 +15,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/RakitraController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/TypeAssuranceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/VisiteParentController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/HistoriqueAssuranceDto.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/HistoriqueVisiteDto.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/MembreRechercheDto.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Assurance.java
