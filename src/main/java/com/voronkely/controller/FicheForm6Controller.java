@@ -31,7 +31,29 @@ public class FicheForm6Controller {
         fiche.setIdMembre(idMembre);
         model.addAttribute("fiche", fiche);
         model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche6");
+        model.addAttribute("submitLabel", "Terminé");
         return "fiche/fiche-form6";
+    }
+
+    @GetMapping("/fiche6/edit")
+    public String editForm(@RequestParam Long idMembre, Model model) {
+        FicheForm6 fiche = service.findByIdMembre(idMembre).orElseGet(() -> {
+            FicheForm6 newFiche = new FicheForm6();
+            newFiche.setIdMembre(idMembre);
+            return newFiche;
+        });
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche6/edit");
+        model.addAttribute("submitLabel", "Enregistrer");
+        return "fiche/fiche-form6";
+    }
+
+    @PostMapping("/fiche6/edit")
+    public String edit(@ModelAttribute FicheForm6 fiche) {
+        service.save(fiche);
+        return "redirect:/membres/" + fiche.getIdMembre() + "/fiche";
     }
 
     @PostMapping("/fiche6")

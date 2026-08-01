@@ -137,6 +137,14 @@
             <a href="/fiche1/new?idMembre=${membre.id}" class="btn btn-success">Créer une fiche individuelle</a>
             <button type="button" class="btn btn-primary" onclick="window.print()">Export PDF</button>
         </div>
+        <div class="d-flex flex-wrap gap-2 mt-3">
+            <a href="/fiche1/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 1</a>
+            <a href="/fiche2/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 2</a>
+            <a href="/fiche3/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 3</a>
+            <a href="/fiche4/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 4</a>
+            <a href="/fiche5/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 5</a>
+            <a href="/fiche6/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 6</a>
+        </div>
     </div>
 
     <header class="page-header mb-4">

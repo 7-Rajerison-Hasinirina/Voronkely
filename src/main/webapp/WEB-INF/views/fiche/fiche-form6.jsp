@@ -12,21 +12,21 @@
     <div class="card shadow-sm">
         <div class="card-body">
             <h1 class="h4 mb-4">Form 6 - Fifampidinihana tamin'ny Ray aman-dReny</h1>
-            <form action="/fiche6" method="post">
+            <form action="${formAction}" method="post">
                 <input type="hidden" name="idMembre" value="${idMembre}">
                 <div class="mb-3">
                     <label class="form-label">Daty</label>
-                    <input type="date" class="form-control" name="daty">
+                    <input type="date" class="form-control" name="daty" value="${fiche.daty}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Votoatin-draharaha</label>
-                    <textarea class="form-control" name="votoatinDraharaha"></textarea>
+                    <textarea class="form-control" name="votoatinDraharaha">${fiche.votoatinDraharaha}</textarea>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Fanamarihana</label>
-                    <textarea class="form-control" name="fanamarihana"></textarea>
+                    <textarea class="form-control" name="fanamarihana">${fiche.fanamarihana}</textarea>
                 </div>
-                <button type="submit" class="btn btn-success">Terminé</button>
+                <button type="submit" class="btn btn-success">${submitLabel}</button>
             </form>
         </div>
     </div>

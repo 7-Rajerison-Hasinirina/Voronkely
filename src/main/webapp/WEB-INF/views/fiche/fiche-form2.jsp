@@ -12,17 +12,17 @@
     <div class="card shadow-sm">
         <div class="card-body">
             <h1 class="h4 mb-4">Form 2 - Mikasika ny toe-tena sy ny fahasalamana</h1>
-            <form action="/fiche2" method="post" data-repeatable>
+            <form action="${formAction}" method="post" data-repeatable>
                 <input type="hidden" name="idMembre" value="${idMembre}">
                 <div data-repeatable-rows>
                     <div class="row g-3 align-items-end mb-3" data-repeatable-row>
                         <div class="col-md-5">
                             <label class="form-label">Aretina mpahazo</label>
-                            <input type="text" class="form-control" name="aretinaMpahazo" maxlength="100">
+                            <input type="text" class="form-control" name="aretinaMpahazo" maxlength="100" value="${fiche.aretinaMpahazo}">
                         </div>
                         <div class="col-md-5">
                             <label class="form-label">Fanafody fampiasa</label>
-                            <input type="text" class="form-control" name="fanafodyFampiasa" maxlength="100">
+                            <input type="text" class="form-control" name="fanafodyFampiasa" maxlength="100" value="${fiche.fanafodyFampiasa}">
                         </div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-outline-danger w-100" data-remove-row>Supprimer</button>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-success" data-add-row>Ajouter</button>
-                    <button type="submit" class="btn btn-success">Suivant</button>
+                    <button type="submit" class="btn btn-success">${submitLabel}</button>
                 </div>
             </form>
         </div>

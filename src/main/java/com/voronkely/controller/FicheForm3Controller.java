@@ -29,16 +29,39 @@ public class FicheForm3Controller {
     @GetMapping("/fiche3/new")
     public String createForm(@RequestParam Long idMembre, Model model) {
         model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche3");
+        model.addAttribute("submitLabel", "Suivant");
         return "fiche/fiche-form3";
+    }
+
+    @GetMapping("/fiche3/edit")
+    public String editForm(@RequestParam Long idMembre, Model model) {
+        FicheForm3 fiche = service.findByIdMembre(idMembre).orElseGet(() -> {
+            FicheForm3 newFiche = new FicheForm3();
+            newFiche.setIdMembre(idMembre);
+            return newFiche;
+        });
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche3/edit");
+        model.addAttribute("submitLabel", "Enregistrer");
+        return "fiche/fiche-form3";
+    }
+
+    @PostMapping("/fiche3/edit")
+    public String edit(FicheForm3 fiche) {
+        service.save(fiche);
+        return "redirect:/membres/" + fiche.getIdMembre() + "/fiche";
     }
 
     @PostMapping("/fiche3")
     public String create(@RequestParam Long idMembre,
-                         @RequestParam(required = false) List<String> toetraMahafinaritra,
-                         @RequestParam(required = false) List<String> toetraManahirana,
-                         @RequestParam(required = false) List<String> zavatraTiana,
-                         @RequestParam(required = false) List<String> zavatraTsyTiana) {
-        int size = max(sizeOf(toetraMahafinaritra), sizeOf(toetraManahirana), sizeOf(zavatraTiana), sizeOf(zavatraTsyTiana));
+            @RequestParam(required = false) List<String> toetraMahafinaritra,
+            @RequestParam(required = false) List<String> toetraManahirana,
+            @RequestParam(required = false) List<String> zavatraTiana,
+            @RequestParam(required = false) List<String> zavatraTsyTiana) {
+        int size = max(sizeOf(toetraMahafinaritra), sizeOf(toetraManahirana), sizeOf(zavatraTiana),
+                sizeOf(zavatraTsyTiana));
         for (int i = 0; i < size; i++) {
             String mahafinaritra = valueAt(toetraMahafinaritra, i);
             String manahirana = valueAt(toetraManahirana, i);

@@ -30,14 +30,36 @@ public class FicheForm5Controller {
     @GetMapping("/fiche5/new")
     public String createForm(@RequestParam Long idMembre, Model model) {
         model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche5");
+        model.addAttribute("submitLabel", "Suivant");
         return "fiche/fiche-form5";
+    }
+
+    @GetMapping("/fiche5/edit")
+    public String editForm(@RequestParam Long idMembre, Model model) {
+        FicheForm5 fiche = service.findByIdMembre(idMembre).orElseGet(() -> {
+            FicheForm5 newFiche = new FicheForm5();
+            newFiche.setIdMembre(idMembre);
+            return newFiche;
+        });
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche5/edit");
+        model.addAttribute("submitLabel", "Enregistrer");
+        return "fiche/fiche-form5";
+    }
+
+    @PostMapping("/fiche5/edit")
+    public String edit(FicheForm5 fiche) {
+        service.save(fiche);
+        return "redirect:/membres/" + fiche.getIdMembre() + "/fiche";
     }
 
     @PostMapping("/fiche5")
     public String create(@RequestParam Long idMembre,
-                         @RequestParam(required = false) List<String> anarana,
-                         @RequestParam(required = false) List<String> datyNanomezana,
-                         @RequestParam(required = false) List<String> talentaNomena) {
+            @RequestParam(required = false) List<String> anarana,
+            @RequestParam(required = false) List<String> datyNanomezana,
+            @RequestParam(required = false) List<String> talentaNomena) {
         int size = max(sizeOf(anarana), sizeOf(datyNanomezana), sizeOf(talentaNomena));
         for (int i = 0; i < size; i++) {
             String name = valueAt(anarana, i);

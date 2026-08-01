@@ -29,13 +29,35 @@ public class FicheForm2Controller {
     @GetMapping("/fiche2/new")
     public String createForm(@RequestParam Long idMembre, Model model) {
         model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche2");
+        model.addAttribute("submitLabel", "Suivant");
         return "fiche/fiche-form2";
+    }
+
+    @GetMapping("/fiche2/edit")
+    public String editForm(@RequestParam Long idMembre, Model model) {
+        FicheForm2 fiche = service.findByIdMembre(idMembre).orElseGet(() -> {
+            FicheForm2 newFiche = new FicheForm2();
+            newFiche.setIdMembre(idMembre);
+            return newFiche;
+        });
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche2/edit");
+        model.addAttribute("submitLabel", "Enregistrer");
+        return "fiche/fiche-form2";
+    }
+
+    @PostMapping("/fiche2/edit")
+    public String edit(FicheForm2 fiche) {
+        service.save(fiche);
+        return "redirect:/membres/" + fiche.getIdMembre() + "/fiche";
     }
 
     @PostMapping("/fiche2")
     public String create(@RequestParam Long idMembre,
-                         @RequestParam(required = false) List<String> aretinaMpahazo,
-                         @RequestParam(required = false) List<String> fanafodyFampiasa) {
+            @RequestParam(required = false) List<String> aretinaMpahazo,
+            @RequestParam(required = false) List<String> fanafodyFampiasa) {
         int size = Math.max(sizeOf(aretinaMpahazo), sizeOf(fanafodyFampiasa));
         for (int i = 0; i < size; i++) {
             String aretina = valueAt(aretinaMpahazo, i);
