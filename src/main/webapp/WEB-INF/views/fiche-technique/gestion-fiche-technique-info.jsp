@@ -32,6 +32,7 @@
                 <div>
                     <a href="${pageContext.request.contextPath}/fiche-technique" class="btn btn-secondary">Retour</a>
                     <a href="${pageContext.request.contextPath}/fiche-technique/${fiche.id}/info/nouveau" class="btn btn-success">Ajouter information</a>
+                    <a href="${pageContext.request.contextPath}/fiche-technique/${fiche.id}/activites" class="btn btn-primary">Activités</a>
                 </div>
             </div>
 
@@ -39,9 +40,20 @@
                 <div class="card-body">
                     <h5>Informations</h5>
                     <c:if test="${not empty info}">
-                        <p><strong>Faritra:</strong> ${info.faritra}</p>
-                        <p><strong>Tarigetra:</strong> ${info.tarigetra}</p>
-                        <p><strong>Filoha:</strong> ${info.filoha}</p>
+                        <div class="row g-3">
+                            <div class="col-md-6"><strong>Faritra:</strong> ${info.faritra}</div>
+                            <div class="col-md-6"><strong>Filoha:</strong> ${info.filoha}</div>
+                            <div class="col-12"><strong>Tenin Andriamanitra:</strong> ${info.teninAndriamanitra}</div>
+                            <div class="col-12"><strong>Tarigetra:</strong> ${info.tarigetra}</div>
+                            <div class="col-md-6"><strong>Toerana ivoriana:</strong> ${info.toeranaIvoriana}</div>
+                            <div class="col-md-6"><strong>Andro ivoriana:</strong> ${info.androIvoriana}</div>
+                            <div class="col-md-6"><strong>Ora ivoriana:</strong> ${info.oraIvoriana}</div>
+                            <div class="col-md-6"><strong>Ny tonia:</strong> ${info.nyTonia}</div>
+                            <div class="col-md-6"><strong>Komitim pivondronana:</strong> ${info.komitimPivondronana}</div>
+                            <div class="col-md-6"><strong>Daty iraisana:</strong> ${info.datyIraisana}</div>
+                            <div class="col-12"><strong>Objectif:</strong> ${info.objectif}</div>
+                            <div class="col-12"><strong>Tompon andraikitra:</strong> ${info.tomponAndraikitra}</div>
+                        </div>
                     </c:if>
                     <c:if test="${empty info}">
                         <div class="alert alert-warning">Aucune information enregistrée.</div>

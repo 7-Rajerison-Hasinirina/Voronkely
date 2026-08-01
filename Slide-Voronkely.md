@@ -29,7 +29,7 @@ Technologies:
 [ok]        - rakitra 
 [ok]        - type_mouvement
 [ok]        - mouvement_rakitra
-        - mouvement_assurance
+[ok]        - mouvement_assurance
 [ok]        - mouvement_adidy
 [ok]        - fiche_form1
 [ok]        - fiche_form2
@@ -37,11 +37,11 @@ Technologies:
 [ok]        - fiche_form4
 [ok]        - fiche_form5
 [ok]        - fiche_form6
-        - numero_trimestre
-        - fiche_technique
-        - fiche_technique_info
-        - activite_fiche_technique
-        - grade
+[ok]        - numero_trimestre
+[ok]        - fiche_technique
+[ok]        - fiche_technique_info
+[ok]        - activite_fiche_technique
+       - grade
         - camp 
         - camp_info
         - tarika ( misy sary, ex: Voromailala)
@@ -628,14 +628,17 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
     - affchage en mise en forme de la fiche technique:
         - informations de la fiche technique en haut
         - tableau des activites en bas
+[ok]
 
 
 - Module 5: modification et suppression possible pour chaque ligne de activite_fiche_technique
     - Modification: ouvre la form pour modifier les informations de cette activite_fiche_technique
     - Suppression: supprime cette activite_fiche_technique
+[ok]
 
 
 - Module 6: Export PDF de la fiche technique ( informations + tableau des activites )
+[ok]
 
 
 ### PART 08:

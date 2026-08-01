@@ -23,4 +23,8 @@ public class FicheTechniqueInfoService {
         return repository.findById(id);
     }
 
+    public Optional<FicheTechniqueInfo> findByFicheTechniqueId(Long ficheTechniqueId) {
+        return repository.findByFicheTechniqueId(ficheTechniqueId);
+    }
+
 }
