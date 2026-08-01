@@ -775,6 +775,13 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 [ok]
 
 
+### OART - 10 :
+- on va creer une table grade:
+    - id 
+    - grade varchar 100
+    - image 
+
+- on va faire la meme principe a 100% que module galerie : mais il s;agit juste une grade : 
 
 
 =======================================

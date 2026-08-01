@@ -37,12 +37,42 @@ public class FicheForm1Controller {
         fiche.setIdMembre(idMembre);
         model.addAttribute("fiche", fiche);
         model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche1");
+        model.addAttribute("submitLabel", "Suivant");
         return "fiche/fiche-form1";
+    }
+
+    @GetMapping("/fiche1/edit")
+    public String editForm(@RequestParam Long idMembre, Model model) {
+        FicheForm1 fiche = service.findByIdMembre(idMembre).orElseGet(() -> {
+            FicheForm1 newFiche = new FicheForm1();
+            newFiche.setIdMembre(idMembre);
+            return newFiche;
+        });
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche1/edit");
+        model.addAttribute("submitLabel", "Enregistrer");
+        return "fiche/fiche-form1";
+    }
+
+    @PostMapping("/fiche1/edit")
+    public String edit(@ModelAttribute FicheForm1 fiche,
+            @RequestParam(value = "imageFile", required = false) MultipartFile imageFile) throws IOException {
+        if (imageFile != null && !imageFile.isEmpty()) {
+            String filename = Paths.get(imageFile.getOriginalFilename()).getFileName().toString();
+            Path imagesDirectory = Paths.get("src/main/resources/static/images");
+            Files.createDirectories(imagesDirectory);
+            imageFile.transferTo(imagesDirectory.resolve(filename));
+            fiche.setImage(filename);
+        }
+        service.save(fiche);
+        return "redirect:/membres/" + fiche.getIdMembre() + "/fiche";
     }
 
     @PostMapping("/fiche1")
     public String create(@ModelAttribute FicheForm1 fiche,
-                         @RequestParam(value = "imageFile", required = false) MultipartFile imageFile) throws IOException {
+            @RequestParam(value = "imageFile", required = false) MultipartFile imageFile) throws IOException {
         if (imageFile != null && !imageFile.isEmpty()) {
             String filename = Paths.get(imageFile.getOriginalFilename()).getFileName().toString();
             Path imagesDirectory = Paths.get("src/main/resources/static/images");

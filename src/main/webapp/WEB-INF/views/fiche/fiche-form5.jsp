@@ -12,21 +12,21 @@
     <div class="card shadow-sm">
         <div class="card-body">
             <h1 class="h4 mb-4">Form 5 - Mikasika ny talenta</h1>
-            <form action="/fiche5" method="post" data-repeatable>
+            <form action="${formAction}" method="post" data-repeatable>
                 <input type="hidden" name="idMembre" value="${idMembre}">
                 <div data-repeatable-rows>
                     <div class="row g-3 align-items-end mb-3" data-repeatable-row>
                         <div class="col-md-4">
                             <label class="form-label">Anarana</label>
-                            <input type="text" class="form-control" name="anarana" maxlength="100">
+                            <input type="text" class="form-control" name="anarana" maxlength="100" value="${fiche.anarana}">
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Daty nanomezana</label>
-                            <input type="date" class="form-control" name="datyNanomezana">
+                            <input type="date" class="form-control" name="datyNanomezana" value="${fiche.datyNanomezana}">
                         </div>
                         <div class="col-md-3">
                             <label class="form-label">Talenta nomena</label>
-                            <textarea class="form-control" name="talentaNomena"></textarea>
+                            <textarea class="form-control" name="talentaNomena">${fiche.talentaNomena}</textarea>
                         </div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-outline-danger w-100" data-remove-row>Supprimer</button>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="d-flex justify-content-between mt-4">
                     <button type="button" class="btn btn-outline-success" data-add-row>Ajouter</button>
-                    <button type="submit" class="btn btn-success">Suivant</button>
+                    <button type="submit" class="btn btn-success">${submitLabel}</button>
                 </div>
             </form>
         </div>

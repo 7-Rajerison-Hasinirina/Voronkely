@@ -15,6 +15,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FichePresenceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheTechniqueController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/GalerieController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/GradeController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreTarikaController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreTarikaSaveController.java
@@ -47,6 +48,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheTechnique.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheTechniqueInfo.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Galerie.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Grade.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Membre.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/MembreTarika.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/MouvementAdidy.java
@@ -75,6 +77,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheTechniqueInfoRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheTechniqueRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/GalerieRepository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/GradeRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MembreRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MembreTarikaRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MouvementAdidyRepository.java
@@ -102,6 +105,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheTechniqueInfoService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheTechniqueService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/GalerieService.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/GradeService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MembreService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MembreTarikaService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MouvementAdidyService.java

@@ -29,24 +29,48 @@ public class FicheForm4Controller {
     @GetMapping("/fiche4/new")
     public String createForm(@RequestParam Long idMembre, Model model) {
         model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche4");
+        model.addAttribute("submitLabel", "Suivant");
         return "fiche/fiche-form4";
+    }
+
+    @GetMapping("/fiche4/edit")
+    public String editForm(@RequestParam Long idMembre, Model model) {
+        FicheForm4 fiche = service.findByIdMembre(idMembre).orElseGet(() -> {
+            FicheForm4 newFiche = new FicheForm4();
+            newFiche.setIdMembre(idMembre);
+            return newFiche;
+        });
+        model.addAttribute("fiche", fiche);
+        model.addAttribute("idMembre", idMembre);
+        model.addAttribute("formAction", "/fiche4/edit");
+        model.addAttribute("submitLabel", "Enregistrer");
+        return "fiche/fiche-form4";
+    }
+
+    @PostMapping("/fiche4/edit")
+    public String edit(FicheForm4 fiche) {
+        service.save(fiche);
+        return "redirect:/membres/" + fiche.getIdMembre() + "/fiche";
     }
 
     @PostMapping("/fiche4")
     public String create(@RequestParam Long idMembre,
-                         @RequestParam(required = false) List<String> taona,
-                         @RequestParam(required = false) List<String> sekoly,
-                         @RequestParam(required = false) List<String> kilasy,
-                         @RequestParam(required = false) List<String> taranjaManavanana,
-                         @RequestParam(required = false) List<String> taranjaManahirana) {
-        int size = max(sizeOf(taona), sizeOf(sekoly), sizeOf(kilasy), sizeOf(taranjaManavanana), sizeOf(taranjaManahirana));
+            @RequestParam(required = false) List<String> taona,
+            @RequestParam(required = false) List<String> sekoly,
+            @RequestParam(required = false) List<String> kilasy,
+            @RequestParam(required = false) List<String> taranjaManavanana,
+            @RequestParam(required = false) List<String> taranjaManahirana) {
+        int size = max(sizeOf(taona), sizeOf(sekoly), sizeOf(kilasy), sizeOf(taranjaManavanana),
+                sizeOf(taranjaManahirana));
         for (int i = 0; i < size; i++) {
             String year = valueAt(taona, i);
             String school = valueAt(sekoly, i);
             String className = valueAt(kilasy, i);
             String strongSubject = valueAt(taranjaManavanana, i);
             String hardSubject = valueAt(taranjaManahirana, i);
-            if (isBlank(year) && isBlank(school) && isBlank(className) && isBlank(strongSubject) && isBlank(hardSubject)) {
+            if (isBlank(year) && isBlank(school) && isBlank(className) && isBlank(strongSubject)
+                    && isBlank(hardSubject)) {
                 continue;
             }
             FicheForm4 fiche = new FicheForm4();

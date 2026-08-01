@@ -104,6 +104,13 @@
 
         </a>
 
+        <a href="${pageContext.request.contextPath}/grade"
+           class="btn btn-outline-light btn-lg text-start fw-semibold">
+
+            Grade
+
+        </a>
+
         <a href="${pageContext.request.contextPath}/galerie"
            class="btn btn-outline-light btn-lg text-start fw-semibold">
 
