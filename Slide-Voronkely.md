@@ -539,38 +539,79 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 ### PART 07
 - Module 1: Gestion de Fiche technique
+    - creation de tables a mettre dans Tables.sql 
+        - numero_trimestre:
+            * id 
+            * numero_trimestre
+            ( ex: 1er trimestre, 2eme trimestre, 3eme trimestre, 4eme trimestre )
+        - fiche_technique:
+            * id 
+            * titre
+            * annee
+            * id_numero_trimestre
+        - fiche_technique_info:
+            * id 
+            * id_fiche_technique
+            * faritra varchar 100
+            * tenin_andriamanitra text
+            * tarigetra text
+            * toerana_ivoriana varchar 200
+            * andro_ivoriana varchar 100
+            * ora_fvoriana ( varchar 100)
+            * ny_tonia varchar 200
+            * komitim_pivondronana varchar 200
+            * filoha varchar 200 
+            * daty_iraisana text
+            * objectif text 
+            * tompon_andraikitra text 
+        - activite_fiche_technique: ( saisie multiple )
+            * id 
+            * id_fiche_technique
+            * daty date
+            * lohahevitra varchar 200
+            * fomba_fampiasa text
+            * sahanasa text
+            * tomponandraikitra varchar 200
+            * fanamarihana text
+[ok]
+
+
     - Ajout de bouton 'Fiche technique' dans le navbar ( la barre de navigation laterale gauche )
-    - Creation de la page gestion de Fiche technique 
-    - Ajout de bouton 'Nouvelle fiche technique' -> creation de nouvel nom fiche technique
+    - Creation de la page gestion de Fiche technique : views/fiche-technique/page-fiche-technique.jsp
+    - Ajout de bouton 'Nouvelle fiche technique' -> creation de nouvellle fiche technique : fiche-technique-form.jsp
         - fiche_technique:
             - titre
             - annee
-            - numero_trimestre
-            * Bouton 'Creer' -> creation de nouvel nom fiche_technique
+            - numero_trimestre ( liste deroulante de numero_trimestre )
+            * Bouton 'Creer' -> creation de nouvel nom fiche_technique -> insertion dans la table fiche_technique
+            -> apes on reviens a la page page-fiche-technique.jsp
 
 - Module 2: Affichage en card de toutes les fiche technique ( titre + annee + numero_trimestre )
-    - Bouton 'Voir plus' -> ouvre la page de gestion de cette fiche technique
+    - Bouton 'Voir plus' -> ouvre la page gestion-fiche-technique-info.jsp:
+        - ajout de obuotn : Informaiton sur cette fiche technique -> ouvre la page fiche-technique-info-form.jsp
+        contenant:
+            * faritra 
+            * tenin_andriamanitra 
+            * tarigetra 
+            * toerana_ivoriana 
+            * andro_ivoriana
+            * ora_fvoriana
+            * ny_tonia
+            * komitim_pivondronana 
+            * filoha 
+            * daty_iraisana champ text 
+            * objectif 
+            * tompon_andraikitra 
+            - bouton : 'Enregistrer' -> creation de nouvel nom fiche_technique_info
+    - affichage de informationo fiche en bas : format fiche 
+    - ajout de bouton modifier : -> revenir vers la formulaire rmepli dans le cas de modification de cette fiche technique info
 
 
-- Module 2:apres clique de ce card -> ouvre Gestion des informations completes d'une fiche technique ( info_fiche_technique )
-    - Fiche_technique_info:
-        - id_fiche_technique
-        - faritra
-        - tenin_andriamanitra
-        - tarigetra 
-        - toerana_ivoriana
-        - andro_ivoriana
-        - ora_fvoriana ( varchar )
-        - ny_tonia
-        - komitim_pivondronana
-        - filoha 
-        - daty_iraisana textArea
-        - objectif textArea
-        - tompon_andraikitra text
-        * Bouton : 'Enregistrer' -> creation de nouvel nom fiche_technique_info
 
-
+--------------- ON EST ICI ---------------------------- ajout information + activite_fiche_technique + export PDF
 - Module 3: Gestion des activites d'une fiche technique
+    - dans la page gestion-fiche-technique-info.jsp, on va ajouter un bouton : 'Activites ' -> ouvre la page activite-fiche-technique.jsp
+    - ajout de bouton : Creer une activite -> ouvre la page activite-fiche-technique-form.jsp
     - activite_fiche_technique: ( saisie multiple )
         - id_fiche_technique
         - daty
@@ -580,6 +621,7 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - tomponandraikitra
         - fanamarihana
         * Bouton : 'Ajouter' -> creation de nouvelle activite_fiche_technique
+    - affichage de tableau des activites_fiche_technique ( daty, lohahevitra, fomba_fampiasa, sahanasa, tomponandraikitra, fanamarihana )
 
 
 - Module 4: ajout de bouton : Voir fiche technique:

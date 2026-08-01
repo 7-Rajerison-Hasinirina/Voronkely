@@ -82,6 +82,14 @@
         </a>
 
 
+                <a href="${pageContext.request.contextPath}/fiche-technique"
+                   class="btn btn-outline-light btn-lg text-start fw-semibold">
+
+                    Fiche technique
+
+                </a>
+
+
         <a href="#"
            class="btn btn-outline-light btn-lg text-start fw-semibold">
 

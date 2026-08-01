@@ -214,3 +214,50 @@ CREATE TABLE membre_tarika (
     FOREIGN KEY (id_role_tarika)
     REFERENCES role_tarika(id)
 );
+
+
+CREATE TABLE numero_trimestre (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    numero_trimestre VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE fiche_technique (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titre VARCHAR(200) NOT NULL,
+    annee INTEGER NOT NULL,
+    id_numero_trimestre INTEGER,
+    FOREIGN KEY (id_numero_trimestre) REFERENCES numero_trimestre(id)
+);
+
+
+CREATE TABLE fiche_technique_info (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_fiche_technique INTEGER NOT NULL,
+    faritra VARCHAR(100),
+    tenin_andriamanitra TEXT,
+    tarigetra TEXT,
+    toerana_ivoriana VARCHAR(200),
+    andro_ivoriana VARCHAR(100),
+    ora_fvoriana VARCHAR(100),
+    ny_tonia VARCHAR(200),
+    komitim_pivondronana VARCHAR(200),
+    filoha VARCHAR(200),
+    daty_iraisana TEXT,
+    objectif TEXT,
+    tompon_andraikitra TEXT,
+    FOREIGN KEY (id_fiche_technique) REFERENCES fiche_technique(id)
+);
+
+
+CREATE TABLE activite_fiche_technique (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_fiche_technique INTEGER NOT NULL,
+    daty DATE,
+    lohahevitra VARCHAR(200),
+    fomba_fampiasa TEXT,
+    sahanasa TEXT,
+    tomponandraikitra VARCHAR(200),
+    fanamarihana TEXT,
+    FOREIGN KEY (id_fiche_technique) REFERENCES fiche_technique(id)
+);
