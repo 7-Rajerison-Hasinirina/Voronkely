@@ -292,3 +292,15 @@ CREATE TABLE camp_info (
     toerana_hiverenana VARCHAR(200),
     FOREIGN KEY (id_camp) REFERENCES camp(id)
 );
+
+
+CREATE TABLE activite_camp (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_camp INTEGER NOT NULL,
+    antony TEXT,
+    quantite DECIMAL(10,2),
+    prix_unitaire DECIMAL(10,2),
+    montant DECIMAL(10,2),
+    type_mouvement VARCHAR(20),
+    FOREIGN KEY (id_camp) REFERENCES camp(id)
+);

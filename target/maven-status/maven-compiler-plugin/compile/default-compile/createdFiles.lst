@@ -51,6 +51,7 @@ com/voronkely/service/MouvementAdidyService.class
 com/voronkely/controller/RoleTarikaController.class
 com/voronkely/repository/CampRepository.class
 com/voronkely/repository/RakitraRepository.class
+com/voronkely/repository/ActiviteCampRepository.class
 com/voronkely/VoronkelyApplication.class
 com/voronkely/entity/MouvementRakitra.class
 com/voronkely/controller/DashboardController.class
@@ -75,6 +76,7 @@ com/voronkely/controller/RakitraController.class
 com/voronkely/entity/FicheForm3.class
 com/voronkely/controller/FicheForm3Controller.class
 com/voronkely/repository/RoleTarikaRepository.class
+com/voronkely/entity/ActiviteCamp.class
 com/voronkely/controller/FicheTechniqueController.class
 com/voronkely/controller/FicheForm6Controller.class
 com/voronkely/service/CampService.class
@@ -96,6 +98,7 @@ com/voronkely/repository/MouvementRakitraRepository.class
 com/voronkely/service/RoleTarikaService.class
 com/voronkely/service/TypeAssuranceService.class
 com/voronkely/repository/NumeroTrimestreRepository.class
+com/voronkely/service/ActiviteCampService.class
 com/voronkely/repository/VisiteParentRepository.class
 com/voronkely/dto/MembreRechercheDto.class
 com/voronkely/controller/MouvementRakitraController.class

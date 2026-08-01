@@ -13,6 +13,18 @@
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
     <jsp:include page="../common/background.jsp" />
+    <style>
+        .fiche-card {
+            min-height: 360px;
+            aspect-ratio: 1 / 1;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .fiche-card-body {
+            background: rgba(0, 0, 0, 0.45);
+        }
+    </style>
 
 </head>
 

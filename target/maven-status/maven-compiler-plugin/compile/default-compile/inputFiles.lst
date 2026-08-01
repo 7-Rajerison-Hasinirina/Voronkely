@@ -28,6 +28,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/HistoriqueVisiteDto.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/MembreRechercheDto.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/dto/MembreTarikaDto.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/ActiviteCamp.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/ActiviteFicheTechnique.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Adidy.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Assurance.java
@@ -53,6 +54,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/TypeAdidy.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/TypeAssurance.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/VisiteParent.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/ActiviteCampRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/ActiviteFicheTechniqueRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/AdidyRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/AssuranceRepository.java
@@ -78,6 +80,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/TypeAdidyRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/TypeAssuranceRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/VisiteParentRepository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/ActiviteCampService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/AdidyService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/AssuranceService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/CampInfoService.java

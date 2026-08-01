@@ -28,7 +28,10 @@
                     <p class="text-muted mb-1">Lieu : ${camp.lieu}</p>
                     <p class="text-muted mb-0">Début : ${camp.dateDebut} - Fin : ${camp.dateFin}</p>
                 </div>
-                <a href="${pageContext.request.contextPath}/camp/${camp.id}/info/nouveau" class="btn btn-success">Ajouter / modifier infos camp</a>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="${pageContext.request.contextPath}/camp/${camp.id}/activites" class="btn btn-primary">Activités</a>
+                    <a href="${pageContext.request.contextPath}/camp/${camp.id}/info/nouveau" class="btn btn-success">Ajouter / modifier infos camp</a>
+                </div>
             </div>
 
             <div class="card shadow">

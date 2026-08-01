@@ -42,16 +42,17 @@ Technologies:
 [ok]        - fiche_technique_info
 [ok]        - activite_fiche_technique
        - grade
-        - camp 
-        - camp_info
-        - tarika ( misy sary, ex: Voromailala)
-        - role_tarika 
-        - membre_tarika
+[ok]        - camp 
+[ok]        - camp_info
+[ok]        - tarika ( misy sary, ex: Voromailala)
+[ok]        - role_tarika 
+[ok]        - membre_tarika
         - fichier ( sary, pdf, docx, excel ,...)
         - agenda 
     - Data.sql
     - Syntaxe.sql
     - Nettoyage.sql
+    - Views.sql
 
 
 ## 3- Debut des fonctionnalites a realiser 
@@ -713,30 +714,33 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 
 - Module 3: gestion activite d'un camps ( ajout multiple )
+    - creer cette table activite_camp dans Tables.sql
+    - creer cette formulaire: 
+        - activite-camp-form.jsp
     - activite_camp:
         - id
         - id_camp
         - antony text
         - quantite decimal(10,2)
-        - prix_unitaire
-        - montant ( affiche automatiquement par un JS )
-        - type_mouvement ( entree / sortie )
+        - prix_unitaire decimal(10,2)
+        - montant ( affiche automatiquement par un JS ): prix_unitaire * quantite
+        - type_mouvement ( entree / sortie ) 
         * Bouton : 'Ajouter' -> creation de nouvelle activite_camp
+    - affichage de tableau des activites_camp ( antony, quantite, prix_unitaire, montant, type_mouvement )
+    - afficher le total des entree et sorties
+[ok]
 
-
-- Module 4: ajout de bouton : Voir fiche camp:
-    - affchage en mise en forme de la fiche camp:
-        - informations de la fiche camp en haut
-        - tableau des activites en bas
 
 
 - Module 5: modification et suppression possible pour chaque ligne de activite_camp
     - Modification: ouvre la form pour modifier les informations de cette activite_camp
     - Suppression: supprime cette activite_camp
+[ok] 
 
 
-- Module 6: Export PDF de la fiche camp ( informations + tableau des activites )
-
+- Module 6: Export PDF , de la fiche camp ( informations + tableau des activites )
+- Export EXCEl de tableau des activites_camp
+[ok]
 
 ### PART 09:
 - Module 1: Gestion de Agenda ( Activites )
