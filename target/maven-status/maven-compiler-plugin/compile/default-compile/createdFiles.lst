@@ -1,4 +1,5 @@
 com/voronkely/repository/FichePresenceRepository.class
+com/voronkely/controller/TarikaController.class
 com/voronkely/entity/Membre.class
 com/voronkely/service/FicheForm6Service.class
 com/voronkely/controller/TypeAdidyController.class
@@ -11,18 +12,27 @@ com/voronkely/service/MouvementRakitraService.class
 com/voronkely/controller/FicheForm4Controller.class
 com/voronkely/repository/TypeAssuranceRepository.class
 com/voronkely/controller/MembreController.class
+com/voronkely/service/TarikaService.class
 com/voronkely/repository/FicheForm1Repository.class
+com/voronkely/service/MembreTarikaService.class
 com/voronkely/dto/HistoriqueAssuranceDto.class
 com/voronkely/entity/TypeAssurance.class
+com/voronkely/dto/MembreTarikaDto.class
 com/voronkely/service/FicheForm1Service.class
+com/voronkely/controller/MembreTarikaController.class
 com/voronkely/entity/FicheForm4.class
 com/voronkely/controller/MouvementAdidyController.class
+com/voronkely/repository/TarikaRepository.class
 com/voronkely/repository/AssuranceRepository.class
+com/voronkely/entity/Tarika.class
+com/voronkely/entity/MembreTarika.class
 com/voronkely/entity/FicheForm1.class
 com/voronkely/controller/FicheForm2Controller.class
 com/voronkely/controller/FicheForm5Controller.class
 com/voronkely/entity/TypeAdidy.class
 com/voronkely/service/MembreService.class
+com/voronkely/entity/RoleTarika.class
+com/voronkely/repository/MembreTarikaRepository.class
 com/voronkely/controller/TypeAssuranceController.class
 com/voronkely/controller/VisiteParentController.class
 com/voronkely/repository/FicheForm6Repository.class
@@ -30,6 +40,7 @@ com/voronkely/entity/FicheForm2.class
 com/voronkely/repository/MembreRepository.class
 com/voronkely/service/AdidyService.class
 com/voronkely/service/MouvementAdidyService.class
+com/voronkely/controller/RoleTarikaController.class
 com/voronkely/repository/RakitraRepository.class
 com/voronkely/VoronkelyApplication.class
 com/voronkely/entity/MouvementRakitra.class
@@ -51,6 +62,7 @@ com/voronkely/config/JspConfig.class
 com/voronkely/controller/RakitraController.class
 com/voronkely/entity/FicheForm3.class
 com/voronkely/controller/FicheForm3Controller.class
+com/voronkely/repository/RoleTarikaRepository.class
 com/voronkely/controller/FicheForm6Controller.class
 com/voronkely/service/TypeAdidyService.class
 com/voronkely/service/FicheForm5Service.class
@@ -63,6 +75,7 @@ com/voronkely/controller/AdidyController.class
 com/voronkely/controller/AssuranceController.class
 com/voronkely/entity/MouvementAdidy.class
 com/voronkely/repository/MouvementRakitraRepository.class
+com/voronkely/service/RoleTarikaService.class
 com/voronkely/service/TypeAssuranceService.class
 com/voronkely/repository/VisiteParentRepository.class
 com/voronkely/dto/MembreRechercheDto.class

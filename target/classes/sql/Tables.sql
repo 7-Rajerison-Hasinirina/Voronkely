@@ -185,3 +185,32 @@ CREATE TABLE mouvement_adidy (
     FOREIGN KEY (id_adidy)
         REFERENCES adidy(id)
 );
+
+
+CREATE TABLE role_tarika (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE tarika (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR(100) NOT NULL,
+    image VARCHAR(200) NOT NULL,
+    date_creation DATE NOT NULL
+);
+
+
+CREATE TABLE membre_tarika (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_tarika INTEGER NOT NULL,
+    id_membre INTEGER NOT NULL,
+    id_role_tarika INTEGER NOT NULL,
+    date DATE NOT NULL,
+    FOREIGN KEY (id_tarika)
+    REFERENCES tarika(id),
+    FOREIGN KEY (id_membre)
+    REFERENCES membre(id),
+    FOREIGN KEY (id_role_tarika)
+    REFERENCES role_tarika(id)
+);

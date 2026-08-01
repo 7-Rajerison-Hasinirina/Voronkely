@@ -1,70 +1,210 @@
 package com.voronkely.service;
 
 import com.voronkely.dto.MembreRechercheDto;
+import com.voronkely.entity.FicheForm1;
 import com.voronkely.entity.Membre;
+import com.voronkely.repository.FicheForm1Repository;
 import com.voronkely.repository.MembreRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 public class MembreService {
 
+
     private final MembreRepository membreRepository;
 
-    public MembreService(MembreRepository membreRepository) {
+    private final FicheForm1Repository ficheForm1Repository;
+
+
+
+    public MembreService(
+            MembreRepository membreRepository,
+            FicheForm1Repository ficheForm1Repository
+    ){
+
         this.membreRepository = membreRepository;
+        this.ficheForm1Repository = ficheForm1Repository;
+
     }
 
-    /**
-     * Liste de tous les membres
-     */
-    public List<Membre> findAll() {
+
+
+
+
+
+    public List<Membre> findAll(){
+
         return membreRepository.findAll();
+
     }
 
-    /**
-     * Recherche par identifiant
-     */
-    public Optional<Membre> findById(Long id) {
+
+
+
+
+
+    public Optional<Membre> findById(Long id){
+
         return membreRepository.findById(id);
+
     }
 
-    /**
-     * Enregistrement d'un membre
-     */
-    public Membre save(Membre membre) {
+
+
+
+
+
+    public Membre save(Membre membre){
+
         return membreRepository.save(membre);
+
     }
 
-    /**
-     * Suppression
-     */
-    public void deleteById(Long id) {
+
+
+
+
+
+    public void deleteById(Long id){
+
         membreRepository.deleteById(id);
+
     }
 
-    /**
-     * Recherche utilisée pour l'autocomplétion
-     */
-    public List<MembreRechercheDto> rechercheVisite(String mot) {
+
+
+
+
+
+    public List<MembreRechercheDto> rechercheVisite(String mot){
+
         return membreRepository.rechercheVisite(mot);
+
     }
 
-    /**
-     * Recherche d'un membre par référence
-     */
-    public Optional<MembreRechercheDto> rechercheReference(String reference) {
+
+
+
+
+
+
+    public Optional<MembreRechercheDto> rechercheReference(String reference){
+
         return membreRepository.rechercheReference(reference);
+
     }
 
-    /**
-     * Recherche de l'entité Membre par référence
-     * (peut encore servir ailleurs dans l'application)
-     */
-    public Optional<Membre> findByReference(String reference) {
+
+
+
+
+
+
+
+    public Optional<Membre> findByReference(String reference){
+
         return membreRepository.findByReference(reference);
+
     }
+
+
+
+
+
+
+
+
+    public MembreRechercheDto rechercheReferenceAvecImage(
+            String reference
+    ){
+
+
+
+        Optional<Membre> membre =
+                membreRepository.findByReference(reference);
+
+
+
+        if(membre.isEmpty()){
+
+            return null;
+
+        }
+
+
+
+        Membre m =
+                membre.get();
+
+
+
+
+        MembreRechercheDto dto =
+                new MembreRechercheDto();
+
+
+
+
+        dto.setId(
+                m.getId()
+        );
+
+
+
+        dto.setNomPrenom(
+                m.getNomPrenom()
+        );
+
+
+
+        dto.setReference(
+                m.getReference()
+        );
+
+
+
+
+        String image =
+                "profile-female.png";
+
+
+
+
+        Optional<FicheForm1> fiche =
+                ficheForm1Repository
+                .findFirstByIdMembreOrderByIdDesc(
+                        m.getId()
+                );
+
+
+
+        if(fiche.isPresent()
+                && fiche.get().getImage()!=null
+                && !fiche.get().getImage().isEmpty()){
+
+
+            image =
+                    fiche.get().getImage();
+
+        }
+
+
+
+
+        dto.setImage(
+                image
+        );
+
+
+
+        return dto;
+
+    }
+
 
 }

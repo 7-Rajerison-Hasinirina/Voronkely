@@ -74,6 +74,13 @@
 
 
 
+                <a href="${pageContext.request.contextPath}/tarika"
+        class="btn btn-outline-light btn-lg text-start fw-semibold">
+
+            Tarika
+
+        </a>
+
 
         <a href="#"
            class="btn btn-outline-light btn-lg text-start fw-semibold">

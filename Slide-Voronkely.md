@@ -478,36 +478,52 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 
 - Module 4: Liste de Tarika 
-    - Ajout de menu 'Gestion Tarika' dans le navbar ( la barre de navigation laterale gauche )
-    - Creation de la page gestion de Tarika 
-    - Ajout de bouton 'Nouvel Tarika' -> creation de nouvel nom tarika
+    - Creer les tables: 
+        - role_tarika:
+            * id
+            * role varchar 100 ( LT, ZT , kibony )
+        - tarika:
+            * id 
+            * nom varchar 100 not null
+            * image varchar 100 not null 
+            * date_creation 
+        - membre_tarika:
+            * id 
+            * id_tarika
+            * id_membre
+            * id_role_tarika
+            * date 
+    - creer son entity, repository, service, controler 
+    - Ajout de menu 'Tarika' dans le navbar ( la barre de navigation laterale gauche ) 
+    - Creation de la page gestion de Tarika: page-tarika.jsp
+    - Ajout de bouton 'Nouvel Tarika' -> creation de nouvel nom tarika : tarika-form.jsp
         - Nom
-        - images 
-        - Bpitpm 'Creer' 
+        - images ( parcourir ) -> et on recupere le nom : exemple ( photo.jpg ) ( images se trouves dans src/main/resources/static/images)
+        - date de creation : 
+        - Bpitpm 'Creer' -> insertion dans la table  dans la table tarika 
+[ok]
 
 
 - Module 5:
         - Affichage en card des Tarika
             - Image de Tarika
-            - Nom de tarika
-            - nom et prenom : Lohan'ny tarika
+            - Nom de tarika 
             - Effectif 
             - Bouton 'Membre Tarika'
+[ok]
 
 
 - Module 6: Membre Tarika
-    - Ajout de bouton 'Nouvel membre Tarika' -> ouvre la form_tarika ( recuperation de id_tarika )
+    - Ajout de bouton 'Membre Tarika' -> ouvre la page-membre-tarika.jsp  ( recuperation de id_tarika ):
+    - ajout de bouton 'Ajouter un membre' -> recuperer cet id_tarike et ouvre membre-tarika-form.jsp: ( si on doit utiliser javascript, on va peut creer membre-tarika.js a mettre dans src/main/resources/static/javascript
+ mmembre-tarika.js ):
         * reference_membre : 
-            - Affichge par javascript de l'information de cet membre
+            - Affichge par javascript ( membre-tarika.js )de l'information de cet membre ( en recuperant le id_membre )
                 - image ( profile feminine par defaut s'il n'y en a pas )
-                - nom et prenom
-        * role_tarika : zokin tarika, zandrin tarika , kibony 
-        * Bouton ok ( saisie multiple )
+                - nom et prenom 
+        * role_tarika : zokin tarika, zandrin tarika , kibony ( le id_role_tarika )
+        * Bouton Ajouter ( saisie multiple ) 
         * Bouton enregistrer:
-            - Si efa anaty tarika:
-                - update role_tarika
-                - update reference tarika ( ou id_tarika)
-            - Si mbola tsy anaty tarika: ajoutena daans membre tarika 
 
 
 - Module 7: Affichage des membre d'un Tarika par son role_tarika ( image, nom et prenom )
@@ -740,17 +756,13 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
     - Module : 7
     - Fonctionnalite: Modificaiton de la fiche -> revenir a la formulaire + Suppression
 --------------------------------------------------------------
-- PART : 
-    - Module : 
-    - Fonctionnalite: Planification de visites de parents 
---------------------------------------------------------------
 - PART : 04
     - Module : 2 
     - Fonctionnalite: rehcerhce de membre multiciritere 
 --------------------------------------------------------------
-- PART : 
-    - Module : 
-    - Fonctionnalite: 
+- PART : 06
+    - Module : 1, 2, 3
+    - Fonctionnalite:  Export en EXCEL, CSV, PDF des lsite eleves, cheftaines , etc.... 
 --------------------------------------------------------------
 - PART : 
     - Module : 
