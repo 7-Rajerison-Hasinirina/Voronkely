@@ -643,26 +643,57 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 ### PART 08:
 - Module 1: Gestion de Camp ( Lasy )
-    - Ajout de bouton 'Gestion de Camp' dans le navbar ( la barre de navigation laterale gauche )
-    - Creation de la page gestion de Camp 
-    - Ajout de bouton 'Nouvelle Camp' -> creation de nouvel nom Camp
+    - creation de tables a mettre dans Tables.sql 
+        - camp:
+            * id 
+            * titre
+            * date_debut
+            * date_fin
+            * lieu
+        - camp_info:
+            * id 
+            * id_camp
+            * sampana varchar 100
+            * faritany varchar 100
+            * faritra varchar 100
+            * fivondronana varchar 100
+            * andiany varchar 100
+            * tarigetra text
+            * tenin_andriamanitra text
+            * objectif text 
+            * fandraharahana text 
+            * fitaovana text 
+            * ara_panahy text 
+            * fientanana text 
+            * fahasalamana text 
+            * isa_mpilasy int 
+            * fitanterana text 
+            * toerana_hiaingana varchar 200
+            * toerana_hiverenana varchar 200
+    - Ajout de bouton 'Camp' dans le navbar ( la barre de navigation laterale gauche )
+    - Creation de la page gestion de Camp views/camp/page-camp.jsp
+    - Ajout de bouton 'Nouvelle Camp' -> creation de nouvel nom Camp: camp-form.jsp
         - titre
         - date_debut
         - date_fin
         - lieu
-        * Bouton 'Creer' -> creation de nouvel camp dans la table camp
+        * Bouton 'Creer' -> creation de nouvel camp dans la table camp 
+        -> affichage de la liste des camps dans page-camp.jsp en format card ( titre + date_debut + date_fin + lieu ) utilser image pour tout : camp.jpeg ( deja dans src/main/resources/static/images)
+        - ajouter bouton : Voir plus -> ouvre la page gestion-camp-info.jsp ( recuperation de id_camp )
+            - y ajouter un bouton ajouter une informatinon sur ce camp -> ouvre la page camp-info-form.jsp
+            ( meme prinicpe que pour la fiche technique )
+[ok]
 
     
 - Module 2: gestion informatiion d'un camp
     - camp_info:
-        - id_camp
-        - sampana
-        - faritany
+        - sampana 
+        - faritany 
         - faritra
         - fivondronana
-        - andiany
+        - andiany 
         - tarigetra
-        - tenin_andriamanitra
+        - tenin_andriamanitra 
         - objectif text
         - fandraharahana
         - fitaovana
@@ -673,14 +704,20 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - fitanterana
         - toerana_hiaingana
         - toerana_hiverenana
-        * Bouton : enregistrer -> creation de nouvel nom camp_info
+        * Bouton : enregistrer -> creation de nouvel nom camp_info 
+
+    -> affichage de informationo camp en bas : format fiche 
+    - ajout de bouton modifier : -> revenir vers la formulaire rmepli dans le cas de modification de cette camp_info
+[ok]
+
 
 
 - Module 3: gestion activite d'un camps ( ajout multiple )
     - activite_camp:
-        - id_camp_info
-        - antony
-        - quantite
+        - id
+        - id_camp
+        - antony text
+        - quantite decimal(10,2)
         - prix_unitaire
         - montant ( affiche automatiquement par un JS )
         - type_mouvement ( entree / sortie )

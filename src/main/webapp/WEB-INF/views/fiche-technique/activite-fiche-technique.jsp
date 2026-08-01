@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <title>Activités Fiche Technique</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+    <jsp:include page="../common/background.jsp" />
     <style>
         .table-prewrap td {
             white-space: pre-wrap;

@@ -12,6 +12,7 @@
 
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+    <jsp:include page="../common/background.jsp" />
 
 </head>
 
@@ -53,15 +54,15 @@
 
                     <div class="col-md-4 mb-4">
 
-                        <div class="card shadow h-100">
+                        <div class="card text-white shadow h-100" style="background-image: url('${pageContext.request.contextPath}/images/fiche-technique.jpeg'); background-size: cover; background-position: center;">
 
-                            <div class="card-body">
+                            <div class="card-body d-flex flex-column justify-content-end" style="background: rgba(0, 0, 0, 0.45);">
 
                                 <h5 class="card-title">${fiche.titre}</h5>
 
-                                <p class="text-muted mb-2">Année : ${fiche.annee}</p>
+                                <p class="text-light mb-2">Année : ${fiche.annee}</p>
 
-                                <a href="${pageContext.request.contextPath}/fiche-technique/${fiche.id}" class="btn btn-primary">Voir plus</a>
+                                <a href="${pageContext.request.contextPath}/fiche-technique/${fiche.id}" class="btn btn-light btn-sm">Voir plus</a>
 
                             </div>
 

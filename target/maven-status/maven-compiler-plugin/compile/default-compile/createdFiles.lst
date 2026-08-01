@@ -22,16 +22,21 @@ com/voronkely/dto/MembreTarikaDto.class
 com/voronkely/service/FicheForm1Service.class
 com/voronkely/controller/MembreTarikaController.class
 com/voronkely/entity/FicheForm4.class
+com/voronkely/entity/CampInfo.class
 com/voronkely/controller/MouvementAdidyController.class
 com/voronkely/repository/TarikaRepository.class
 com/voronkely/repository/AssuranceRepository.class
 com/voronkely/entity/Tarika.class
+com/voronkely/repository/CampInfoRepository.class
 com/voronkely/entity/MembreTarika.class
 com/voronkely/entity/FicheForm1.class
 com/voronkely/controller/FicheForm2Controller.class
 com/voronkely/controller/FicheForm5Controller.class
 com/voronkely/entity/TypeAdidy.class
 com/voronkely/service/MembreService.class
+com/voronkely/controller/CampController.class
+com/voronkely/service/CampInfoService.class
+com/voronkely/entity/Camp.class
 com/voronkely/entity/RoleTarika.class
 com/voronkely/repository/FicheTechniqueInfoRepository.class
 com/voronkely/repository/MembreTarikaRepository.class
@@ -44,6 +49,7 @@ com/voronkely/repository/MembreRepository.class
 com/voronkely/service/AdidyService.class
 com/voronkely/service/MouvementAdidyService.class
 com/voronkely/controller/RoleTarikaController.class
+com/voronkely/repository/CampRepository.class
 com/voronkely/repository/RakitraRepository.class
 com/voronkely/VoronkelyApplication.class
 com/voronkely/entity/MouvementRakitra.class
@@ -71,6 +77,7 @@ com/voronkely/controller/FicheForm3Controller.class
 com/voronkely/repository/RoleTarikaRepository.class
 com/voronkely/controller/FicheTechniqueController.class
 com/voronkely/controller/FicheForm6Controller.class
+com/voronkely/service/CampService.class
 com/voronkely/service/TypeAdidyService.class
 com/voronkely/controller/MembreTarikaSaveController.class
 com/voronkely/service/FicheForm5Service.class

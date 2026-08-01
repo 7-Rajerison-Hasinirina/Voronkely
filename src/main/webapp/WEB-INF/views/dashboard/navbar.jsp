@@ -89,6 +89,13 @@
 
                 </a>
 
+        <a href="${pageContext.request.contextPath}/camp"
+           class="btn btn-outline-light btn-lg text-start fw-semibold">
+
+            Camp
+
+        </a>
+
 
         <a href="#"
            class="btn btn-outline-light btn-lg text-start fw-semibold">

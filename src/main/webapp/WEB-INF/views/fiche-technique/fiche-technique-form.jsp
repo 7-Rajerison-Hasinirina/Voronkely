@@ -12,6 +12,7 @@
 
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+    <jsp:include page="../common/background.jsp" />
 
 </head>
 

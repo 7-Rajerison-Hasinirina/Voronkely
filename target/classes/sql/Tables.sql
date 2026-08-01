@@ -261,3 +261,34 @@ CREATE TABLE activite_fiche_technique (
     fanamarihana TEXT,
     FOREIGN KEY (id_fiche_technique) REFERENCES fiche_technique(id)
 );
+
+CREATE TABLE camp (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titre VARCHAR(200) NOT NULL,
+    date_debut DATE,
+    date_fin DATE,
+    lieu VARCHAR(200)
+);
+
+CREATE TABLE camp_info (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_camp INTEGER NOT NULL,
+    sampana VARCHAR(100),
+    faritany VARCHAR(100),
+    faritra VARCHAR(100),
+    fivondronana VARCHAR(100),
+    andiany VARCHAR(100),
+    tarigetra TEXT,
+    tenin_andriamanitra TEXT,
+    objectif TEXT,
+    fandraharahana TEXT,
+    fitaovana TEXT,
+    ara_panahy TEXT,
+    fientanana TEXT,
+    fahasalamana TEXT,
+    isa_mpilasy INTEGER,
+    fitanterana TEXT,
+    toerana_hiaingana VARCHAR(200),
+    toerana_hiverenana VARCHAR(200),
+    FOREIGN KEY (id_camp) REFERENCES camp(id)
+);
