@@ -19,7 +19,7 @@ public class MembreTarikaSaveController {
 
     private final MembreTarikaService membreTarikaService;
 
-    public MembreTarikaSaveController(MembreTarikaService membreTarikaService){
+    public MembreTarikaSaveController(MembreTarikaService membreTarikaService) {
         this.membreTarikaService = membreTarikaService;
     }
 
@@ -27,29 +27,30 @@ public class MembreTarikaSaveController {
     public String save(
             @RequestParam Long idTarika,
             @RequestParam(required = false) List<String> idMembre,
-            @RequestParam(required = false) List<String> idRoleTarika
-    ){
+            @RequestParam(required = false) List<String> idRoleTarika) {
 
-        if(idMembre == null || idRoleTarika == null){
+        if (idMembre == null || idRoleTarika == null) {
             return "redirect:/membre-tarika/" + idTarika;
         }
 
         int size = Math.min(idMembre.size(), idRoleTarika.size());
 
-        for(int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
 
             String membreStr = idMembre.get(i);
             String roleStr = idRoleTarika.get(i);
 
-            if(membreStr == null || membreStr.trim().isEmpty()) continue;
-            if(roleStr == null || roleStr.trim().isEmpty()) continue;
+            if (membreStr == null || membreStr.trim().isEmpty())
+                continue;
+            if (roleStr == null || roleStr.trim().isEmpty())
+                continue;
 
             Long idM = null;
             Long idR = null;
-            try{
+            try {
                 idM = Long.valueOf(membreStr);
                 idR = Long.valueOf(roleStr);
-            }catch(NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 continue;
             }
 
