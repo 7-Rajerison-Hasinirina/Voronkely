@@ -304,3 +304,20 @@ CREATE TABLE activite_camp (
     type_mouvement VARCHAR(20),
     FOREIGN KEY (id_camp) REFERENCES camp(id)
 );
+
+
+CREATE TABLE agenda (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titre VARCHAR(200) NOT NULL,
+    date_creation DATE NOT NULL,
+    date_utilisation DATE NOT NULL,
+    contenu TEXT
+);
+
+
+CREATE TABLE galerie (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titre VARCHAR(200) NOT NULL,
+    date DATE NOT NULL,
+    image_name VARCHAR(200)
+);

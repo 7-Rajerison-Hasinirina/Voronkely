@@ -744,14 +744,22 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
 
 ### PART 09:
 - Module 1: Gestion de Agenda ( Activites )
-    - Ajout de bouton 'Gestion de Agenda' dans le navbar ( la barre de navigation laterale gauche )
-    - Creation de la page gestion de Agenda
+    - creation de table agenda:
+        - id
+        - titre
+        - date_creation datetime now()
+        - date_utilisation datetime
+        - contenu text
+    - Ajout de bouton 'Agenda' dans le navbar ( la barre de navigation laterale gauche ) 
+    - Creation de la page gestion de Agenda: views/agenda/page-agenda.jsp:
     - Ajout de bouton 'Nouvelle Activite' -> creation de nouvel nom Activite
         - titre
-        - date_creation
+        - date_creation now()
         - date_utilisation
         - contenu 
         * Bouton 'Creer' -> creation de nouvel Activite dans la table agenda
+    - affichage de la liste des Activites dans page-agenda.jsp en format card ( titre + date_utilisation + contenu ) ordre decroissant par date_utilisation ( ordre par le plus proche de la date_utilisation )
+[ok]    
 
 
 - Module 2: Dans agenda.jsp par exmeple, affichage en card rectangulaire de toutes les acitvites dans agenda :
@@ -760,12 +768,13 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
     - affichage 1 jour avant la date_utilisation : couleur rouge
     - sinon , on affiche pas 
     + filtre date min max pour voir les activites deja passées
+[ok]
 
 
-### PART 10:
-- Module 1: Gestion de Background
-    - ajout de theme :
-        - theme sombre : activer ou desactiver
+- Module 3: Export PDF de la liste des activites dans agenda
+[ok]
+
+
 
 
 =======================================

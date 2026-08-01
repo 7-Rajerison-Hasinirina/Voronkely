@@ -39,11 +39,11 @@
                                 <input name="quantite" type="number" step="0.01" value="${activite.quantite}" class="form-control" id="quantite" />
                             </div>
                             <div class="col-md-4">
-                                <label class="form-label">Prix unitaire</label>
+                                <label class="form-label">Prix unitaire (Ar)</label>
                                 <input name="prixUnitaire" type="number" step="0.01" value="${activite.prixUnitaire}" class="form-control" id="prixUnitaire" />
                             </div>
                             <div class="col-md-4">
-                                <label class="form-label">Montant</label>
+                                <label class="form-label">Montant (Ar)</label>
                                 <input name="montant" type="number" step="0.01" value="${activite.montant}" class="form-control" id="montant" readonly />
                             </div>
                             <div class="col-md-6">

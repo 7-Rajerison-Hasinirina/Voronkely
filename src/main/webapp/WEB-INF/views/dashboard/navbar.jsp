@@ -97,13 +97,19 @@
         </a>
 
 
-        <a href="#"
+        <a href="${pageContext.request.contextPath}/agenda"
            class="btn btn-outline-light btn-lg text-start fw-semibold">
 
             Agenda
 
         </a>
 
+        <a href="${pageContext.request.contextPath}/galerie"
+           class="btn btn-outline-light btn-lg text-start fw-semibold">
+
+            Galerie
+
+        </a>
 
     </div>
 

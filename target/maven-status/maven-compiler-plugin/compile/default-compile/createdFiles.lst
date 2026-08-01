@@ -8,9 +8,11 @@ com/voronkely/repository/AdidyRepository.class
 com/voronkely/repository/MouvementAdidyRepository.class
 com/voronkely/service/RakitraService.class
 com/voronkely/service/FicheTechniqueInfoService.class
+com/voronkely/service/AgendaService.class
 com/voronkely/controller/FicheForm1Controller.class
 com/voronkely/service/MouvementRakitraService.class
 com/voronkely/controller/FicheForm4Controller.class
+com/voronkely/controller/GalerieController.class
 com/voronkely/repository/TypeAssuranceRepository.class
 com/voronkely/controller/MembreController.class
 com/voronkely/service/TarikaService.class
@@ -23,6 +25,7 @@ com/voronkely/service/FicheForm1Service.class
 com/voronkely/controller/MembreTarikaController.class
 com/voronkely/entity/FicheForm4.class
 com/voronkely/entity/CampInfo.class
+com/voronkely/repository/AgendaRepository.class
 com/voronkely/controller/MouvementAdidyController.class
 com/voronkely/repository/TarikaRepository.class
 com/voronkely/repository/AssuranceRepository.class
@@ -35,6 +38,7 @@ com/voronkely/controller/FicheForm5Controller.class
 com/voronkely/entity/TypeAdidy.class
 com/voronkely/service/MembreService.class
 com/voronkely/controller/CampController.class
+com/voronkely/service/GalerieService.class
 com/voronkely/service/CampInfoService.class
 com/voronkely/entity/Camp.class
 com/voronkely/entity/RoleTarika.class
@@ -48,6 +52,7 @@ com/voronkely/repository/FicheTechniqueRepository.class
 com/voronkely/repository/MembreRepository.class
 com/voronkely/service/AdidyService.class
 com/voronkely/service/MouvementAdidyService.class
+com/voronkely/entity/Galerie.class
 com/voronkely/controller/RoleTarikaController.class
 com/voronkely/repository/CampRepository.class
 com/voronkely/repository/RakitraRepository.class
@@ -60,6 +65,7 @@ com/voronkely/repository/ActiviteFicheTechniqueRepository.class
 com/voronkely/entity/VisiteParent.class
 com/voronkely/repository/FicheForm3Repository.class
 com/voronkely/entity/Assurance.class
+com/voronkely/controller/AgendaController.class
 com/voronkely/entity/ActiviteFicheTechnique.class
 com/voronkely/entity/FichePresence.class
 com/voronkely/service/FichePresenceService.class
@@ -69,6 +75,7 @@ com/voronkely/entity/Rakitra.class
 com/voronkely/controller/FichePresenceController.class
 com/voronkely/entity/FicheForm6.class
 com/voronkely/service/FicheForm4Service.class
+com/voronkely/entity/Agenda.class
 com/voronkely/config/SecurityConfig.class
 com/voronkely/service/FicheTechniqueService.class
 com/voronkely/config/JspConfig.class
@@ -77,6 +84,7 @@ com/voronkely/entity/FicheForm3.class
 com/voronkely/controller/FicheForm3Controller.class
 com/voronkely/repository/RoleTarikaRepository.class
 com/voronkely/entity/ActiviteCamp.class
+com/voronkely/repository/GalerieRepository.class
 com/voronkely/controller/FicheTechniqueController.class
 com/voronkely/controller/FicheForm6Controller.class
 com/voronkely/service/CampService.class

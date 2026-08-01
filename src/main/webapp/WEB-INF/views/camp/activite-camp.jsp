@@ -91,8 +91,8 @@
                                     <tr class="${act.typeMouvement == 'entree' || act.typeMouvement == 'ENTREE' ? 'table-success' : (act.typeMouvement == 'sortie' || act.typeMouvement == 'SORTIE' ? 'table-warning' : '')}">
                                         <td>${act.antony}</td>
                                         <td>${act.quantite}</td>
-                                        <td>${act.prixUnitaire}</td>
-                                        <td>${act.montant}</td>
+                                        <td>${act.prixUnitaire} Ar</td>
+                                        <td>${act.montant} Ar</td>
                                         <td>${act.typeMouvement}</td>
                                         <td>
                                             <a href="${pageContext.request.contextPath}/camp/${camp.id}/activites/${act.id}/edit" class="btn btn-sm btn-outline-primary mb-1">Modifier</a>

@@ -2,6 +2,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/JspConfig.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/config/SecurityConfig.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/AdidyController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/AgendaController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/AssuranceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/CampController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/DashboardController.java
@@ -13,6 +14,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheForm6Controller.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FichePresenceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FicheTechniqueController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/GalerieController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreTarikaController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreTarikaSaveController.java
@@ -31,6 +33,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/ActiviteCamp.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/ActiviteFicheTechnique.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Adidy.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Agenda.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Assurance.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Camp.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/CampInfo.java
@@ -43,6 +46,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FichePresence.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheTechnique.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/FicheTechniqueInfo.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Galerie.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/Membre.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/MembreTarika.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/entity/MouvementAdidy.java
@@ -57,6 +61,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/ActiviteCampRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/ActiviteFicheTechniqueRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/AdidyRepository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/AgendaRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/AssuranceRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/CampInfoRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/CampRepository.java
@@ -69,6 +74,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FichePresenceRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheTechniqueInfoRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/FicheTechniqueRepository.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/GalerieRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MembreRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MembreTarikaRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/MouvementAdidyRepository.java
@@ -82,6 +88,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/repository/VisiteParentRepository.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/ActiviteCampService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/AdidyService.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/AgendaService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/AssuranceService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/CampInfoService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/CampService.java
@@ -94,6 +101,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FichePresenceService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheTechniqueInfoService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/FicheTechniqueService.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/GalerieService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MembreService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MembreTarikaService.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/service/MouvementAdidyService.java
