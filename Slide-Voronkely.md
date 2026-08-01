@@ -524,6 +524,8 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         * role_tarika : zokin tarika, zandrin tarika , kibony ( le id_role_tarika )
         * Bouton Ajouter ( saisie multiple ) 
         * Bouton enregistrer:
+[ok]
+
 
 
 - Module 7: Affichage des membre d'un Tarika par son role_tarika ( image, nom et prenom )
@@ -531,6 +533,8 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
         - zokin'ny tarika
         - kibony
         - zandrin'ny tarika
+[ok]
+
 
 
 ### PART 07

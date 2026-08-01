@@ -1,5 +1,5 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 text-white"
-     style="width:250px; min-height:100vh; background-color:#0f5132;">
+    style="width:250px; min-height:100vh; background-image: linear-gradient(rgba(15,81,50,0.86), rgba(15,81,50,0.86)), url('${pageContext.request.contextPath}/images/tente.jpg'); background-size: cover; background-position: center;">
 
 
     <a href="#"

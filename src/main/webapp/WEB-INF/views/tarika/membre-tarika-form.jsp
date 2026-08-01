@@ -69,6 +69,18 @@ Ajouter des membres au Tarika
 
 </div>
 
+<div class="p-3">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <button type="button" class="btn btn-outline-secondary" onclick="history.back()">Retour</button>
+            <a href="${pageContext.request.contextPath}/tarika" class="btn btn-outline-primary">Liste Tarika</a>
+        </div>
+        <div>
+            <a href="${pageContext.request.contextPath}/membre-tarika/${idTarika}" class="btn btn-secondary">Retour au Tarika</a>
+        </div>
+    </div>
+</div>
+
 
 
 <div class="card-body">

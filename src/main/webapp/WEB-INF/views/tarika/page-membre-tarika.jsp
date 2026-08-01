@@ -148,15 +148,12 @@ href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
 
 
 
-        <a
-        href="${pageContext.request.contextPath}/membre-tarika/${tarika.id}/nouveau"
-        class="btn btn-success">
-
-
-            Ajouter un membre
-
-
-        </a>
+        <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-secondary" onclick="history.back()">Retour</button>
+            <a href="${pageContext.request.contextPath}/tarika" class="btn btn-outline-primary">Liste Tarika</a>
+            <a href="${pageContext.request.contextPath}/" class="btn btn-outline-dark">Dashboard</a>
+            <a href="${pageContext.request.contextPath}/membre-tarika/${tarika.id}/nouveau" class="btn btn-success">Ajouter un membre</a>
+        </div>
 
 
 
