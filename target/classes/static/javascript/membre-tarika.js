@@ -168,7 +168,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         return;
                     }
 
-                    if (idMembreHidden) idMembreHidden.value = membre.id;
+                    if (idMembreHidden) {
+                        idMembreHidden.value = membre.id;
+                        idMembreHidden.disabled = false;
+                    }
                     if (nomPrenom) nomPrenom.textContent = membre.nomPrenom;
                     if (referenceAffiche) referenceAffiche.textContent = membre.reference;
 
@@ -183,6 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             photo.src = '';
                         }
                     }
+
+                    // enable role select in this row
+                    const select = row.querySelector('select[name="idRoleTarika"]');
+                    if (select) select.disabled = false;
 
                     updateSubmitState();
 
@@ -207,18 +214,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const clone = first.cloneNode(true);
 
-            // clear inputs in clone
+            // clear inputs in clone and disable hidden id and role select until member found
             clone.querySelectorAll('input').forEach(i => {
-                if (i.type === 'hidden') i.value = '';
+                if (i.type === 'hidden') { i.value = ''; i.disabled = true; }
                 else if (i.type === 'text') i.value = '';
             });
 
-            clone.querySelectorAll('select').forEach(s => s.selectedIndex = 0);
+            clone.querySelectorAll('select').forEach(s => { s.selectedIndex = 0; s.disabled = true; });
 
-            clone.querySelectorAll('.photo').forEach(p => {
-                p.style.display = 'none';
-                p.src = '';
-            });
+            clone.querySelectorAll('.photo').forEach(p => { p.style.display = 'none'; p.src = ''; });
 
             clone.querySelectorAll('.nomPrenom').forEach(n => n.textContent = 'Aucun membre');
             clone.querySelectorAll('.referenceAffiche').forEach(r => r.textContent = '--');

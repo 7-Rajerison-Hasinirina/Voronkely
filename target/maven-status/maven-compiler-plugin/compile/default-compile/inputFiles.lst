@@ -13,6 +13,7 @@
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/FichePresenceController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreTarikaController.java
+/home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MembreTarikaSaveController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MouvementAdidyController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/MouvementRakitraController.java
 /home/hasina/Musique/Voronkely/src/main/java/com/voronkely/controller/RakitraController.java

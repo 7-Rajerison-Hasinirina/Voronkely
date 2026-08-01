@@ -65,6 +65,7 @@ com/voronkely/controller/FicheForm3Controller.class
 com/voronkely/repository/RoleTarikaRepository.class
 com/voronkely/controller/FicheForm6Controller.class
 com/voronkely/service/TypeAdidyService.class
+com/voronkely/controller/MembreTarikaSaveController.class
 com/voronkely/service/FicheForm5Service.class
 com/voronkely/dto/HistoriqueVisiteDto.class
 com/voronkely/service/FicheForm3Service.class

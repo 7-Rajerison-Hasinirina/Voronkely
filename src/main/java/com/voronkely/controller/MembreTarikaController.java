@@ -95,6 +95,11 @@ public class MembreTarikaController {
                 membreTarikaService.findByTarika(idTarika)
         );
 
+        model.addAttribute(
+                "membresTarikaDto",
+                membreTarikaService.findDtoByTarika(idTarika)
+        );
+
 
 
         return "tarika/page-membre-tarika";

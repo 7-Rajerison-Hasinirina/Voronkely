@@ -76,7 +76,7 @@ Ajouter des membres au Tarika
 
 
 <form method="post"
-      action="${pageContext.request.contextPath}/membre-tarika">
+    action="${pageContext.request.contextPath}/membre-tarika/save">
 
 
 
@@ -118,8 +118,9 @@ Référence membre
 
 
 <input type="hidden"
-       name="idMembre"
-       class="idMembre">
+    name="idMembre"
+    class="idMembre"
+    disabled>
 
 
 
@@ -165,8 +166,9 @@ Rôle Tarika
 
 
 <select name="idRoleTarika"
-        class="form-select"
-        required>
+    class="form-select"
+    required
+    disabled>
 
 
 <option value="">
