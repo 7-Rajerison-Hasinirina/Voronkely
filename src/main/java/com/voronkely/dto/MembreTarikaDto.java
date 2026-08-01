@@ -2,29 +2,40 @@ package com.voronkely.dto;
 
 public class MembreTarikaDto {
 
-    private Long id;
+    private Long membreTarikaId;
+    private Long membreId;
     private String reference;
     private String nomPrenom;
     private String image;
     private String role;
+    private Long tarikaId;
+    private String tarikaNom;
 
     public MembreTarikaDto(
-            Long id,
+            Long membreTarikaId,
+            Long membreId,
             String reference,
             String nomPrenom,
             String image,
-            String role
-    ){
-        this.id = id;
+            String role,
+            Long tarikaId,
+            String tarikaNom) {
+        this.membreTarikaId = membreTarikaId;
+        this.membreId = membreId;
         this.reference = reference;
         this.nomPrenom = nomPrenom;
         this.image = image;
         this.role = role;
+        this.tarikaId = tarikaId;
+        this.tarikaNom = tarikaNom;
     }
 
+    public Long getMembreTarikaId() {
+        return membreTarikaId;
+    }
 
-    public Long getId() {
-        return id;
+    public Long getMembreId() {
+        return membreId;
     }
 
     public String getReference() {
@@ -42,4 +53,13 @@ public class MembreTarikaDto {
     public String getRole() {
         return role;
     }
+
+    public Long getTarikaId() {
+        return tarikaId;
+    }
+
+    public String getTarikaNom() {
+        return tarikaNom;
+    }
+
 }

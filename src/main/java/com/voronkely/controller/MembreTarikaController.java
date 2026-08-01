@@ -72,6 +72,9 @@ public class MembreTarikaController {
                                 "membresTarikaDto",
                                 membreTarikaService.findDtoByTarika(idTarika));
 
+                model.addAttribute("tarikas", tarikaService.findAll());
+                model.addAttribute("roles", roleTarikaService.findAll());
+
                 return "tarika/page-membre-tarika";
 
         }
@@ -130,6 +133,35 @@ public class MembreTarikaController {
                                         membreTarika);
 
                 }
+
+                return "redirect:/membre-tarika/" + idTarika;
+
+        }
+
+        @PostMapping("/changer")
+        public String changer(
+                        @RequestParam Long membreTarikaId,
+                        @RequestParam Long idTarika,
+                        @RequestParam Long idRoleTarika) {
+
+                var opt = membreTarikaService.findById(membreTarikaId);
+
+                if (opt.isEmpty()) {
+                        return "redirect:/membre-tarika/" + idTarika;
+                }
+
+                var mt = opt.get();
+
+                Tarika t = new Tarika();
+                t.setId(idTarika);
+
+                RoleTarika r = new RoleTarika();
+                r.setId(idRoleTarika);
+
+                mt.setTarika(t);
+                mt.setRoleTarika(r);
+
+                membreTarikaService.save(mt);
 
                 return "redirect:/membre-tarika/" + idTarika;
 
