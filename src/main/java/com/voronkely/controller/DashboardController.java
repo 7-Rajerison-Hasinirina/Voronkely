@@ -1,6 +1,5 @@
 package com.voronkely.controller;
 
-import com.voronkely.entity.Adidy;
 import com.voronkely.entity.Assurance;
 import com.voronkely.service.AdidyService;
 import com.voronkely.service.AssuranceService;
@@ -33,16 +32,14 @@ public class DashboardController {
         this.visiteParentService = visiteParentService;
     }
 
-    @GetMapping("/")
+    @GetMapping({ "/", "/dashboard" })
     public String dashboard(Model model) {
         long totalMembres = membreService.findAll().size();
         long visitesEnAttente = visiteParentService.findEnAttente().size();
         double montantAssurance = assuranceService.findAll().stream()
                 .mapToDouble(Assurance::getMontant)
                 .sum();
-        double montantAdidy = adidyService.findAll().stream()
-                .mapToDouble(Adidy::getMontant)
-                .sum();
+        double montantAdidy = adidyService.montantTotal();
         long nombreTarika = tarikaService.findAll().size();
 
         model.addAttribute("totalMembres", totalMembres);

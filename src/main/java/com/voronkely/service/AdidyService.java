@@ -11,10 +11,7 @@ import java.util.Optional;
 @Service
 public class AdidyService {
 
-
     private final AdidyRepository adidyRepository;
-
-
 
     public AdidyService(AdidyRepository adidyRepository) {
 
@@ -22,15 +19,24 @@ public class AdidyService {
 
     }
 
-
-
     public List<Adidy> findAll() {
 
-        return adidyRepository.findAllByOrderByDateAjoutDesc();
+        List<Adidy> adidys = adidyRepository.findAllByOrderByDateAjoutDesc();
+        List<Adidy> result = new java.util.ArrayList<>();
+
+        for (Adidy adidy : adidys) {
+            try {
+                if (adidy.getMembre() != null && adidy.getTypeAdidy() != null) {
+                    result.add(adidy);
+                }
+            } catch (RuntimeException ex) {
+                // Ignore broken records so the dashboard still renders.
+            }
+        }
+
+        return result;
 
     }
-
-
 
     public Optional<Adidy> findById(Long id) {
 
@@ -38,23 +44,17 @@ public class AdidyService {
 
     }
 
-
-
     public Adidy save(Adidy adidy) {
 
         return adidyRepository.save(adidy);
 
     }
 
-
-
     public void deleteById(Long id) {
 
         adidyRepository.deleteById(id);
 
     }
-
-
 
     public List<Adidy> findDisponible() {
 
@@ -63,8 +63,6 @@ public class AdidyService {
 
     }
 
-
-
     public List<Adidy> findByMembre(Long idMembre) {
 
         return adidyRepository
@@ -72,7 +70,10 @@ public class AdidyService {
 
     }
 
-
+    public double montantTotal() {
+        Double total = adidyRepository.montantGlobal();
+        return total != null ? total : 0.0;
+    }
 
     public Double montantGlobalRestant() {
 
@@ -80,18 +81,15 @@ public class AdidyService {
 
     }
 
-
     public List<Adidy> rechercher(
-        LocalDate dateMin,
-        LocalDate dateMax,
-        String reference
-    ) {
+            LocalDate dateMin,
+            LocalDate dateMax,
+            String reference) {
 
         return adidyRepository.rechercher(
                 dateMin,
                 dateMax,
-                reference
-        );
+                reference);
 
     }
 

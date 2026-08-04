@@ -1,4 +1,5 @@
 com/voronkely/controller/RakitraControllerTest.class
+com/voronkely/service/AssuranceServiceTest.class
 com/voronkely/service/CampServiceTest.class
 com/voronkely/service/FicheTechniqueServiceTest.class
 com/voronkely/service/MembreGradeServiceTest.class
