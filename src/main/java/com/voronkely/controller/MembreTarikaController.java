@@ -138,6 +138,24 @@ public class MembreTarikaController {
 
         }
 
+        @GetMapping("/{membreTarikaId}/changer")
+        public String changerPage(
+                        @PathVariable Long membreTarikaId,
+                        Model model) {
+
+                var opt = membreTarikaService.findById(membreTarikaId);
+                if (opt.isEmpty()) {
+                        return "redirect:/tarika";
+                }
+
+                MembreTarika membreTarika = opt.get();
+                model.addAttribute("membreTarika", membreTarika);
+                model.addAttribute("tarikas", tarikaService.findAll());
+                model.addAttribute("roles", roleTarikaService.findAll());
+
+                return "tarika/changer-tarika-page";
+        }
+
         @PostMapping("/changer")
         public String changer(
                         @RequestParam Long membreTarikaId,
