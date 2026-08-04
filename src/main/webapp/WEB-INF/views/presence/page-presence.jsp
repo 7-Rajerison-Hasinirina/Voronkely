@@ -12,19 +12,18 @@
 
     <title>Présence des membres</title>
 
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+    <jsp:include page="../common/background.jsp" />
 
     <style>
+        body { min-height: 100vh; }
 
-        body {
-            background-color:#f1fdf6;
+        .page-shell {
+            background: rgba(255,255,255,0.93);
+            border-radius: 1.25rem;
+            box-shadow: 0 1rem 2rem rgba(15,81,50,.12);
+            backdrop-filter: blur(6px);
         }
-
-        .presence-header {
-            background-color:#0f5132;
-        }
-
 
         .avatar-placeholder {
             width:90px;
@@ -35,7 +34,6 @@
             font-weight:700;
         }
 
-
         .member-photo {
             width:90px;
             height:90px;
@@ -43,23 +41,25 @@
             border:3px solid #d6eadc;
         }
 
-
         .presence-check {
             width:1.4rem;
             height:1.4rem;
             cursor:pointer;
         }
-
-
     </style>
 
 </head>
 
-
 <body>
-
-
-<div class="container py-5">
+<div class="container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-auto px-0">
+            <div class="position-sticky top-0" style="height:100vh;">
+                <jsp:include page="../dashboard/navbar.jsp" />
+            </div>
+        </div>
+        <div class="col p-3 p-lg-4">
+            <div class="page-shell p-4 p-lg-5">
 
 
     <!-- HEADER -->
@@ -267,12 +267,12 @@
     </form>
 
 
+            </div>
+        </div>
+    </div>
 </div>
 
-
-
-<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="${pageContext.request.contextPath}/javascript/presence.js"></script>
 
 

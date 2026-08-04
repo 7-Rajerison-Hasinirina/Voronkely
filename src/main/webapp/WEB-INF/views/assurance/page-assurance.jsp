@@ -12,11 +12,19 @@
 
 <link rel="stylesheet"
       href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+<jsp:include page="../common/background.jsp" />
 
 <style>
 
 body {
-    background-color: #f1fdf6;
+    min-height: 100vh;
+}
+
+.page-shell {
+    background: rgba(255,255,255,0.93);
+    border-radius: 1.25rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.08);
+    backdrop-filter: blur(6px);
 }
 
 .card-dashboard {
@@ -26,7 +34,7 @@ body {
 }
 
 .header-page {
-    background-color: #0f5132;
+    background: linear-gradient(135deg, #0f5132, #198754);
     color: white;
     padding: 20px 30px;
     border-radius: 10px;
@@ -41,29 +49,18 @@ body {
 
 </head>
 
-
 <body>
 
-
-<div class="container-fluid">
-
-
-<div class="row">
-
-
-<div class="col-auto px-0">
-
-    <jsp:include page="../dashboard/navbar.jsp"/>
-
-</div>
-
-
-
-<div class="col p-4">
-
-
-
-<div class="header-page mb-4">
+<div class="container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-auto px-0">
+            <div class="position-sticky top-0" style="height:100vh;">
+                <jsp:include page="../dashboard/navbar.jsp"/>
+            </div>
+        </div>
+        <div class="col p-3 p-lg-4">
+            <div class="page-shell p-4 p-lg-5">
+                <div class="header-page mb-4">
 
 
 <div class="d-flex justify-content-between align-items-center">

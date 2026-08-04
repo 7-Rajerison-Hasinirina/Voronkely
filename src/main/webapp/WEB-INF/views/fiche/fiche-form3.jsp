@@ -13,6 +13,7 @@
         <div class="card-body">
             <h1 class="h4 mb-4">Form 3 - Toetra amam-pihetsika fototra</h1>
             <form action="${formAction}" method="post" data-repeatable>
+                <input type="hidden" name="id" value="${fiche.id}">
                 <input type="hidden" name="idMembre" value="${idMembre}">
                 <div data-repeatable-rows>
                     <div class="row g-3 mb-3" data-repeatable-row>

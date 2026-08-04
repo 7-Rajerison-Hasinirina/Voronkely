@@ -13,8 +13,19 @@
 
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+    <jsp:include page="../common/background.jsp" />
 
     <style>
+        body {
+            min-height: 100vh;
+        }
+
+        .page-shell {
+            background: rgba(255, 255, 255, 0.93);
+            border-radius: 1.25rem;
+            box-shadow: 0 1rem 2rem rgba(15,81,50,.12);
+            backdrop-filter: blur(6px);
+        }
 
         .member-card{
             border:none;
@@ -35,133 +46,91 @@
 
 </head>
 
-<body class="bg-light">
+<body>
 
-<div class="container py-5">
-
-    <div class="d-flex justify-content-between align-items-center mb-4">
-
-        <div>
-
-            <h2>Visites de parents</h2>
-
-            <p class="text-muted">
-                Membres en attente de visite.
-            </p>
-
+<div class="container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-auto px-0">
+            <div class="position-sticky top-0" style="height:100vh;">
+                <jsp:include page="../dashboard/navbar.jsp" />
+            </div>
         </div>
-
-        <a href="${pageContext.request.contextPath}/visite/nouveau"
-           class="btn btn-success">
-            Nouvelle visite
-        </a>
-
-        <a href="${pageContext.request.contextPath}/visite/historique"
-            class="btn btn-primary">
-
-            Voir historique
-
-         </a>
-
-    </div>
-
-
-    <div class="row g-4">
-
-        <c:forEach items="${visites}" var="visite">
-
-            <c:set var="membre" value="${membres[visite.idMembre]}"/>
-            <c:set var="fiche" value="${fiches[visite.idMembre]}"/>
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <div class="card member-card h-100">
-
-                    <div class="card-body text-center">
-
-                        <c:choose>
-
-                            <c:when test="${not empty fiche.image}">
-
-                                <img
-                                        src="${pageContext.request.contextPath}/images/${fiche.image}"
-                                        class="rounded-circle mx-auto d-block mb-3 shadow-sm"
-                                        style="width:90px;height:90px;object-fit:cover;border:3px solid #d6eadc;"
-                                        alt="${membre.nomPrenom}">
-
-                            </c:when>
-
-                            <c:otherwise>
-
-                                <div class="avatar-placeholder rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
-
-                                    ${fn:substring(membre.nomPrenom,0,1)}
-
-                                </div>
-
-                            </c:otherwise>
-
-                        </c:choose>
-
-
-                        <h5 class="card-title">
-
-                            ${membre.nomPrenom}
-
-                        </h5>
-
-                        <p class="text-muted mb-1">
-
-                            Référence :
-                            <strong>${membre.reference}</strong>
-
+        <div class="col p-3 p-lg-4">
+            <div class="page-shell p-4 p-lg-5">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                    <div>
+                        <h2 class="mb-1 text-success">Visites de parents</h2>
+                        <p class="text-muted mb-0">
+                            Membres en attente de visite.
                         </p>
-
-                        <p class="mb-1">
-
-                            Date visite :
-                            <strong>${visite.dateVisite}</strong>
-
-                        </p>
-                        <div class="d-flex justify-content-center gap-2 mt-3">
-
-                           <span class="badge bg-warning text-dark align-self-center">
-
-                              ${visite.statut}
-
-                           </span>
-
-                           <form method="post"
-                                 action="${pageContext.request.contextPath}/visite/${visite.id}/terminer">
-
-                              <button
-                                       class="btn btn-success btn-sm">
-
-                                    Terminer
-
-                              </button>
-
-                           </form>
-
-                        </div>
-
-                        <a href="${pageContext.request.contextPath}/membres/${membre.id}/fiche"
-                           class="btn btn-outline-success btn-sm">
-
-                            Voir la fiche
-
-                        </a>
-
                     </div>
-
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="${pageContext.request.contextPath}/visite/nouveau"
+                           class="btn btn-success">
+                            Nouvelle visite
+                        </a>
+                        <a href="${pageContext.request.contextPath}/visite/historique"
+                            class="btn btn-primary">
+                            Voir historique
+                         </a>
+                    </div>
                 </div>
 
+                <div class="row g-4">
+                    <c:forEach items="${visites}" var="visite">
+                        <c:set var="membre" value="${membres[visite.idMembre]}"/>
+                        <c:set var="fiche" value="${fiches[visite.idMembre]}"/>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="card member-card h-100">
+                                <div class="card-body text-center">
+                                    <c:choose>
+                                        <c:when test="${not empty fiche.image}">
+                                            <img
+                                                    src="${pageContext.request.contextPath}/images/${fiche.image}"
+                                                    class="rounded-circle mx-auto d-block mb-3 shadow-sm"
+                                                    style="width:90px;height:90px;object-fit:cover;border:3px solid #d6eadc;"
+                                                    alt="${membre.nomPrenom}">
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="avatar-placeholder rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3">
+                                                ${fn:substring(membre.nomPrenom,0,1)}
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <h5 class="card-title">
+                                        ${membre.nomPrenom}
+                                    </h5>
+                                    <p class="text-muted mb-1">
+                                        Référence :
+                                        <strong>${membre.reference}</strong>
+                                    </p>
+                                    <p class="mb-1">
+                                        Date visite :
+                                        <strong>${visite.dateVisite}</strong>
+                                    </p>
+                                    <div class="d-flex justify-content-center gap-2 mt-3">
+                                       <span class="badge bg-warning text-dark align-self-center">
+                                          ${visite.statut}
+                                       </span>
+                                       <form method="post"
+                                             action="${pageContext.request.contextPath}/visite/${visite.id}/terminer">
+                                          <button class="btn btn-success btn-sm">
+                                                Terminer
+                                          </button>
+                                       </form>
+                                    </div>
+                                    <a href="${pageContext.request.contextPath}/membres/${membre.id}/fiche"
+                                       class="btn btn-outline-success btn-sm mt-3">
+                                        Voir la fiche
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
-
-        </c:forEach>
-
+        </div>
     </div>
-
 </div>
 
 <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -13,6 +13,7 @@
         <div class="card-body">
             <h1 class="h4 mb-4">Form 5 - Mikasika ny talenta</h1>
             <form action="${formAction}" method="post" data-repeatable>
+                <input type="hidden" name="id" value="${fiche.id}">
                 <input type="hidden" name="idMembre" value="${idMembre}">
                 <div data-repeatable-rows>
                     <div class="row g-3 align-items-end mb-3" data-repeatable-row>

@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #f1fdf6;
+            background-image: linear-gradient(135deg, rgba(241, 253, 246, 0.88), rgba(255, 255, 255, 0.86)), url('/images/tente.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #24342c;
         }
 
@@ -138,12 +141,12 @@
             <button type="button" class="btn btn-primary" onclick="window.print()">Export PDF</button>
         </div>
         <div class="d-flex flex-wrap gap-2 mt-3">
-            <a href="/fiche1/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 1</a>
-            <a href="/fiche2/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 2</a>
-            <a href="/fiche3/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 3</a>
-            <a href="/fiche4/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 4</a>
-            <a href="/fiche5/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 5</a>
-            <a href="/fiche6/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier fiche form 6</a>
+            <a href="/fiche1/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Information</a>
+            <a href="/fiche2/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Fahasalamana</a>
+            <a href="/fiche3/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Toe-tena</a>
+            <a href="/fiche4/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Fianarana</a>
+            <a href="/fiche5/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Maha Voronkely</a>
+            <a href="/fiche6/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Rendu visite parent</a>
         </div>
     </div>
 

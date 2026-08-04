@@ -13,6 +13,7 @@
         <div class="card-body">
             <h1 class="h4 mb-4">Création de la fiche individuelle - Form 1</h1>
             <form action="${formAction}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="${fiche.id}">
                 <input type="hidden" name="idMembre" value="${fiche.idMembre}">
 
                 <h2 class="h5 mb-3">Mikasika azy manokana</h2>

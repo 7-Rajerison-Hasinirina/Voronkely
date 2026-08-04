@@ -48,7 +48,7 @@ Technologies:
 [ok]        - role_tarika 
 [ok]        - membre_tarika
         - fichier ( sary, pdf, docx, excel ,...)
-        - agenda 
+[ok]        - agenda 
     - Data.sql
     - Syntaxe.sql
     - Nettoyage.sql

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,6 +32,14 @@ body {
     border:1px solid #e9ecef;
     border-radius:0.75rem;
     box-shadow:0 0.25rem 0.5rem rgba(0,0,0,0.04);
+}
+
+.card-dashboard.card-member {
+    border-left: 5px solid #f4b400;
+}
+
+.card-dashboard.card-visit {
+    border-left: 5px solid #198754;
 }
 </style>
 
@@ -76,104 +85,69 @@ body {
 
 </header>
 
-
 <main class="p-4">
-
 <div class="row g-4">
+    <div class="col-12 col-xl-4">
+        <section class="card card-dashboard card-member p-4 h-100">
+            <a href="${pageContext.request.contextPath}/membres" class="text-decoration-none text-reset d-block">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                        <p class="text-uppercase text-muted small mb-2">Membre</p>
+                        <h2 class="h1 fw-bold mb-0">${totalMembres}</h2>
+                    </div>
+                    <span class="badge bg-warning text-dark">Membres</span>
+                </div>
+                <p class="mb-0 text-muted">Nombre total de membres enregistrés.</p>
+            </a>
+        </section>
+    </div>
 
-<div class="col-12 col-lg-8">
-
-<section class="card card-dashboard p-4 mb-4">
-
-<h2 class="h5 mb-3">
-Résumé du dashboard
-</h2>
-
-<div class="row row-cols-1 row-cols-md-2 g-3">
-
-<div class="col">
-<div class="p-3 bg-white rounded shadow-sm">
-<h3 class="h6 text-success">Membres</h3>
-<p class="mb-0 text-muted">Nombre total, statut et informations essentielles.</p>
+    <div class="col-12 col-xl-8">
+        <section class="card card-dashboard card-visit p-4 h-100">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <p class="text-uppercase text-muted small mb-2">Visite de parents</p>
+                    <h2 class="h1 fw-bold mb-0">${visitesEnAttente}</h2>
+                </div>
+                <span class="badge bg-success">En attente</span>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3">
+                    <a href="${pageContext.request.contextPath}/visite/visite-parent" class="text-decoration-none text-reset d-block">
+                        <div class="p-3 rounded border border-primary border-3 bg-white h-100">
+                            <div class="small text-muted">Visites</div>
+                            <div class="fw-semibold fs-5">${visitesEnAttente}</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <a href="${pageContext.request.contextPath}/assurance" class="text-decoration-none text-reset d-block">
+                        <div class="p-3 rounded border border-info border-3 bg-white h-100">
+                            <div class="small text-muted">Assurance</div>
+                            <div class="fw-semibold fs-5">${montantAssurance} Ar</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <a href="${pageContext.request.contextPath}/adidy" class="text-decoration-none text-reset d-block">
+                        <div class="p-3 rounded border border-success border-3 bg-white h-100">
+                            <div class="small text-muted">Adidy</div>
+                            <div class="fw-semibold fs-5">${montantAdidy} Ar</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <a href="${pageContext.request.contextPath}/tarika" class="text-decoration-none text-reset d-block">
+                        <div class="p-3 rounded border border-secondary border-3 bg-white h-100">
+                            <div class="small text-muted">Tarika</div>
+                            <div class="fw-semibold fs-5">${nombreTarika}</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
-</div>
-
-<div class="col">
-<div class="p-3 bg-white rounded shadow-sm">
-<h3 class="h6 text-success">Assurance</h3>
-<p class="mb-0 text-muted">Suivi des assurances beazina, mpiandraikitra, RAD.</p>
-</div>
-</div>
-
-<div class="col">
-<div class="p-3 bg-white rounded shadow-sm">
-<h3 class="h6 text-success">Présence</h3>
-<p class="mb-0 text-muted">Historique et présence hebdomadaire.</p>
-</div>
-</div>
-
-<div class="col">
-<div class="p-3 bg-white rounded shadow-sm">
-<h3 class="h6 text-success">Rakitra</h3>
-<p class="mb-0 text-muted">Gestion des montants et mouvements.</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-</div>
-
-
-<div class="col-12 col-lg-4">
-
-<section class="card card-dashboard p-4 mb-4">
-
-<h2 class="h5 mb-3">
-Actions rapides
-</h2>
-
-<div class="list-group">
-
-<a href="#" class="list-group-item list-group-item-action">
-Nouvel membre
-</a>
-
-<a href="#" class="list-group-item list-group-item-action">
-Nouvelle assurance
-</a>
-
-<a href="#" class="list-group-item list-group-item-action">
-Suivi de présence
-</a>
-
-<a href="${pageContext.request.contextPath}/rakitra/nouveau"
-   class="list-group-item list-group-item-action">
-Nouvelle rakitra
-</a>
-
-</div>
-
-</section>
-
-
-<section class="card card-dashboard p-4">
-
-<h2 class="h5 mb-3">
-Statut
-</h2>
-
-<p class="mb-0 text-muted">
-Le tableau de bord est accessible sans authentification.
-</p>
-
-</section>
-
-</div>
-
-</div>
-
 </main>
 
 </div>

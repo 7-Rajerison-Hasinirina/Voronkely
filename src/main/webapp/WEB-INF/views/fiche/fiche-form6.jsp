@@ -13,6 +13,7 @@
         <div class="card-body">
             <h1 class="h4 mb-4">Form 6 - Fifampidinihana tamin'ny Ray aman-dReny</h1>
             <form action="${formAction}" method="post">
+                <input type="hidden" name="id" value="${fiche.id}">
                 <input type="hidden" name="idMembre" value="${idMembre}">
                 <div class="mb-3">
                     <label class="form-label">Daty</label>
