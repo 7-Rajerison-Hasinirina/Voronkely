@@ -30,12 +30,12 @@ public class MembreController {
     private final FicheForm6Service ficheForm6Service;
 
     public MembreController(MembreService membreService,
-                            FicheForm1Service ficheForm1Service,
-                            FicheForm2Service ficheForm2Service,
-                            FicheForm3Service ficheForm3Service,
-                            FicheForm4Service ficheForm4Service,
-                            FicheForm5Service ficheForm5Service,
-                            FicheForm6Service ficheForm6Service) {
+            FicheForm1Service ficheForm1Service,
+            FicheForm2Service ficheForm2Service,
+            FicheForm3Service ficheForm3Service,
+            FicheForm4Service ficheForm4Service,
+            FicheForm5Service ficheForm5Service,
+            FicheForm6Service ficheForm6Service) {
         this.membreService = membreService;
         this.ficheForm1Service = ficheForm1Service;
         this.ficheForm2Service = ficheForm2Service;
@@ -44,8 +44,6 @@ public class MembreController {
         this.ficheForm5Service = ficheForm5Service;
         this.ficheForm6Service = ficheForm6Service;
     }
-
-
 
     @GetMapping("/membres")
     public String listMembres(Model model) {
@@ -78,6 +76,12 @@ public class MembreController {
         return "membre/view";
     }
 
+    @GetMapping("/membres/{id}/supprimer")
+    public String supprimerMembre(@PathVariable Long id) {
+        membreService.deleteById(id);
+        return "redirect:/membres";
+    }
+
     @GetMapping("/membres/{id}/fiche")
     public String ficheMembre(@PathVariable Long id, Model model) {
         membreService.findById(id).ifPresent(membre -> model.addAttribute("membre", membre));
@@ -90,16 +94,14 @@ public class MembreController {
         return "membre/fiche-membre";
     }
 
+    @GetMapping("/api/membres/reference/{reference}")
+    @ResponseBody
+    public Membre chercherReference(
+            @PathVariable String reference) {
 
-@GetMapping("/api/membres/reference/{reference}")
-@ResponseBody
-public Membre chercherReference(
-        @PathVariable String reference
-){
+        return membreService
+                .findByReference(reference)
+                .orElseThrow();
 
-    return membreService
-            .findByReference(reference)
-            .orElseThrow();
-
-}
+    }
 }

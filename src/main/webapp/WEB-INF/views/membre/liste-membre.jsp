@@ -83,10 +83,21 @@
                                         <strong>${membre.reference}</strong>
                                     </p>
 
-                                    <a href="${pageContext.request.contextPath}/membres/${membre.id}/fiche"
-                                    class="btn btn-outline-success btn-sm">
-                                        Fiche individuelle
-                                    </a>
+                                    <div class="d-flex justify-content-center gap-2 mt-2 flex-wrap">
+                                        <a href="${pageContext.request.contextPath}/membres/${membre.id}/fiche"
+                                        class="btn btn-outline-success btn-sm">
+                                            Fiche individuelle
+                                        </a>
+                                        <a href="${pageContext.request.contextPath}/membres/${membre.id}/grades"
+                                        class="btn btn-outline-primary btn-sm">
+                                            Voir grade
+                                        </a>
+                                        <a href="${pageContext.request.contextPath}/membres/${membre.id}/supprimer"
+                                        class="btn btn-outline-danger btn-sm"
+                                        onclick="return confirm('Supprimer ce membre ?');">
+                                            Supprimer
+                                        </a>
+                                    </div>
 
                                 </div>
                             </div>

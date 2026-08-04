@@ -296,6 +296,12 @@ public class FicheTechniqueController {
         return "redirect:/fiche-technique/" + id + "/activites";
     }
 
+    @GetMapping("/{id}/supprimer")
+    public String supprimerFiche(@PathVariable Long id) {
+        ficheService.delete(id);
+        return "redirect:/fiche-technique";
+    }
+
     @GetMapping("/{id}/activites/{activiteId}/supprimer")
     public String supprimerActivite(@PathVariable Long id, @PathVariable Long activiteId) {
         var activiteOpt = activiteRepo.findById(activiteId);

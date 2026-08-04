@@ -50,8 +50,9 @@
                                     <p class="mb-0">Début : ${camp.dateDebut}</p>
                                     <p class="mb-0">Fin : ${camp.dateFin}</p>
                                 </div>
-                                <div>
+                                <div class="d-flex gap-2">
                                     <a href="${pageContext.request.contextPath}/camp/${camp.id}" class="btn btn-light btn-sm">Voir plus</a>
+                                    <a href="${pageContext.request.contextPath}/camp/${camp.id}/supprimer" class="btn btn-outline-danger btn-sm" onclick="return confirm('Supprimer ce camp ?');">Supprimer</a>
                                 </div>
                             </div>
                         </div>

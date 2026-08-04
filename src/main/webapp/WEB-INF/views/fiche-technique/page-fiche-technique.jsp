@@ -74,7 +74,10 @@
 
                                 <p class="text-light mb-2">Année : ${fiche.annee}</p>
 
-                                <a href="${pageContext.request.contextPath}/fiche-technique/${fiche.id}" class="btn btn-light btn-sm">Voir plus</a>
+                                <div class="d-flex gap-2 mt-2">
+                                    <a href="${pageContext.request.contextPath}/fiche-technique/${fiche.id}" class="btn btn-light btn-sm">Voir plus</a>
+                                    <a href="${pageContext.request.contextPath}/fiche-technique/${fiche.id}/supprimer" class="btn btn-outline-danger btn-sm" onclick="return confirm('Supprimer cette fiche technique ?');">Supprimer</a>
+                                </div>
 
                             </div>
 

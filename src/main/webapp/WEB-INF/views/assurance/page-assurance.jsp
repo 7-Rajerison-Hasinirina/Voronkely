@@ -182,7 +182,7 @@ ${assurance.date}
 
 <td>
 
-${assurance.membre.reference}
+${empty assurance.membre ? 'N/A' : assurance.membre.reference}
 
 </td>
 
@@ -191,7 +191,7 @@ ${assurance.membre.reference}
 
 <td>
 
-${assurance.membre.nomPrenom}
+${empty assurance.membre ? 'Membre introuvable' : assurance.membre.nomPrenom}
 
 </td>
 
@@ -200,7 +200,7 @@ ${assurance.membre.nomPrenom}
 
 <td>
 
-${assurance.typeAssurance.libelle}
+${empty assurance.typeAssurance ? 'N/A' : assurance.typeAssurance.libelle}
 
 </td>
 

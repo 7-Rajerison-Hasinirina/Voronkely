@@ -321,6 +321,15 @@ CREATE TABLE grade (
     image_name VARCHAR(200)
 );
 
+CREATE TABLE membre_grade (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_membre INTEGER NOT NULL,
+    id_grade INTEGER NOT NULL,
+    date DATE NOT NULL,
+    FOREIGN KEY (id_membre) REFERENCES membre(id),
+    FOREIGN KEY (id_grade) REFERENCES grade(id)
+);
+
 CREATE TABLE galerie (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     titre VARCHAR(200) NOT NULL,

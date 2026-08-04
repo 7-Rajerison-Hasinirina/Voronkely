@@ -264,6 +264,12 @@ public class CampController {
         return "redirect:/camp/" + id + "/activites";
     }
 
+    @GetMapping("/{id}/supprimer")
+    public String supprimerCamp(@PathVariable Long id) {
+        campService.delete(id);
+        return "redirect:/camp";
+    }
+
     @GetMapping("/{id}/activites/{activiteId}/supprimer")
     public String supprimerActiviteCamp(@PathVariable Long id, @PathVariable Long activiteId) {
         ActiviteCamp activite = activiteCampService.findById(activiteId).orElse(null);

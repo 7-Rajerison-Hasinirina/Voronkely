@@ -41,11 +41,13 @@ com/voronkely/entity/Rakitra.class
 com/voronkely/controller/FichePresenceController.class
 com/voronkely/service/GradeService.class
 com/voronkely/service/FicheTechniqueService.class
+com/voronkely/controller/MembreGradeController.class
 com/voronkely/controller/RakitraController.class
 com/voronkely/repository/RoleTarikaRepository.class
 com/voronkely/entity/ActiviteCamp.class
 com/voronkely/repository/GalerieRepository.class
 com/voronkely/service/CampService.class
+com/voronkely/entity/MembreGrade.class
 com/voronkely/service/TypeAdidyService.class
 com/voronkely/controller/MembreTarikaSaveController.class
 com/voronkely/service/FicheForm5Service.class
@@ -53,6 +55,7 @@ com/voronkely/repository/FicheForm4Repository.class
 com/voronkely/entity/Adidy.class
 com/voronkely/controller/AdidyController.class
 com/voronkely/service/NumeroTrimestreService.class
+com/voronkely/repository/MembreGradeRepository.class
 com/voronkely/repository/MouvementRakitraRepository.class
 com/voronkely/service/RoleTarikaService.class
 com/voronkely/service/TypeAssuranceService.class
@@ -105,6 +108,7 @@ com/voronkely/config/JspConfig.class
 com/voronkely/entity/FicheForm3.class
 com/voronkely/controller/FicheForm3Controller.class
 com/voronkely/controller/FicheTechniqueController.class
+com/voronkely/service/MembreGradeService.class
 com/voronkely/controller/FicheForm6Controller.class
 com/voronkely/dto/HistoriqueVisiteDto.class
 com/voronkely/service/FicheForm3Service.class

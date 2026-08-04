@@ -56,16 +56,22 @@ Technologies:
     - Views.sql
 
 
-
-
-- Regler dans page-membre-tarika
-car j'ai clique sur un bouton : changement taria -> un form s'affiche en arriere plan , cette formuliare pour changement tarika , faut regler cela car elle est intouchable 
-
-- ajouter uassi une foncitonnalite suppresion dans la page-fiche-tehnique.jsp
-et de meme pour la page-camps.jsp
-
-- 
-
+### PART 00:
+- Module 1: creation de table dans Tables.sqo: membre_grade:
+    - id
+    - id_membre
+    - id_grade
+    - date 
+    2- creer son entity, repository, service, controller
+    2 - ajouter dans mmebre/liste-membre.jsp :
+        dans la liste des membre , ajouter un bouton "Voir grade" -> ouvre la page membre/membre-grade.jsp ( recuperation de id_membre )
+    3- creer la page membre/membre-grade.jsp :
+        - affichage de la liste des grade de ce membre ( date + grade + son image )
+            comme ce qu'on a fait pendant la module grade 
+        - ajout de bouton : "Ajouter un grade" -> ouvre la page membre/membre-grade-form.jsp
+            - date 
+            - grade ( liste deroulante de grade )
+            - bouton : enregistrer -> enregistrement dans la table membre_grade
 
 
 

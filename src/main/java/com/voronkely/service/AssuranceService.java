@@ -6,49 +6,43 @@ import com.voronkely.repository.AssuranceRepository;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import com.voronkely.dto.HistoriqueAssuranceDto;
+import com.voronkely.entity.Membre;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 
 @Service
 public class AssuranceService {
 
-
     private final AssuranceRepository assuranceRepository;
 
-
     public AssuranceService(
-            AssuranceRepository assuranceRepository
-    ){
+            AssuranceRepository assuranceRepository) {
 
         this.assuranceRepository = assuranceRepository;
 
     }
 
-
     // public List<HistoriqueAssuranceDto> historique(
 
-    //         LocalDate dateMin,
+    // LocalDate dateMin,
 
-    //         LocalDate dateMax){
+    // LocalDate dateMax){
 
-    //     // return assuranceRepository.historique(
-    //     //         dateMin,
-    //     //         dateMax);
+    // // return assuranceRepository.historique(
+    // // dateMin,
+    // // dateMax);
 
-    //                     return assuranceRepository.historique(
-    //             );
+    // return assuranceRepository.historique(
+    // );
 
     // }
-
 
     public List<HistoriqueAssuranceDto> historique() {
         return assuranceRepository.historique();
     }
-
-
 
     public List<HistoriqueAssuranceDto> historique(
 
@@ -56,7 +50,7 @@ public class AssuranceService {
 
             LocalDate dateMin,
 
-            LocalDate dateMax){
+            LocalDate dateMax) {
 
         return assuranceRepository.historique(
                 reference,
@@ -65,68 +59,57 @@ public class AssuranceService {
 
     }
 
+    public List<Assurance> findAll() {
 
-    public List<Assurance> findAll(){
+        List<Assurance> assurances = assuranceRepository.findAllByOrderByDateDesc();
+        List<Assurance> result = new ArrayList<>();
 
-        return assuranceRepository.findAllByOrderByDateDesc();
+        for (Assurance assurance : assurances) {
+            try {
+                if (assurance.getMembre() != null) {
+                    result.add(assurance);
+                }
+            } catch (RuntimeException ex) {
+                // Ignore the broken record so the page can still render.
+            }
+        }
+
+        return result;
 
     }
 
-
-
-
-
-    public Optional<Assurance> findById(Long id){
+    public Optional<Assurance> findById(Long id) {
 
         return assuranceRepository.findById(id);
 
     }
 
-
-
-
-
-    public Assurance save(Assurance assurance){
+    public Assurance save(Assurance assurance) {
 
         return assuranceRepository.save(assurance);
 
     }
 
-
-
-
-
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
 
         assuranceRepository.deleteById(id);
 
     }
 
-
-
-
-
-    public List<Assurance> findByMembre(Long membreId){
+    public List<Assurance> findByMembre(Long membreId) {
 
         return assuranceRepository.findByMembreIdOrderByDateDesc(
-                membreId
-        );
+                membreId);
 
     }
 
-
-
-
-
     public List<Assurance> findByDateBetween(
             LocalDate dateMin,
-            LocalDate dateMax
-    ){
+            LocalDate dateMax) {
 
         return assuranceRepository.findByDateBetweenOrderByDateDesc(
                 dateMin,
-                dateMax
-        );
+                dateMax);
 
     }
 
