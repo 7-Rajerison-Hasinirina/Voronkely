@@ -58,8 +58,9 @@ body { min-height: 100vh; }
                                         </c:choose>
                                     </p>
                                 </div>
-                                <div class="card-footer bg-white">
+                                <div class="card-footer bg-white d-grid gap-2">
                                     <a href="${pageContext.request.contextPath}/membre-tarika/${tarika.id}" class="btn btn-primary w-100">Membre Tarika</a>
+                                    <a href="${pageContext.request.contextPath}/tarika/${tarika.id}/supprimer" class="btn btn-outline-danger w-100" onclick="return confirm('Supprimer ce Tarika ?');">Supprimer</a>
                                 </div>
                             </div>
                         </div>

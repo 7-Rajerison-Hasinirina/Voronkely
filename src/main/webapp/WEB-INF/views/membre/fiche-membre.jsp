@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fiche individuelle</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+    <jsp:include page="../common/background.jsp" />
     <style>
         body {
             background-image: linear-gradient(135deg, rgba(241, 253, 246, 0.88), rgba(255, 255, 255, 0.86)), url('/images/tente.jpg');
@@ -133,7 +134,16 @@
     </style>
 </head>
 <body>
-<div class="container py-5">
+<div class="container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-auto px-0">
+            <div class="position-sticky top-0" style="height:100vh;">
+                <jsp:include page="../dashboard/navbar.jsp" />
+            </div>
+        </div>
+        <div class="col p-3 p-lg-4">
+            <div class="page-shell p-4 p-lg-5">
+                <div class="container py-5">
     <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center mb-4 no-print toolbar">
         <a href="/membres" class="btn btn-outline-secondary">Retour</a>
         <div class="d-flex flex-column flex-sm-row gap-2">
@@ -453,5 +463,9 @@
     </div>
 </div>
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.voronkely.controller;
 
 import com.voronkely.entity.Rakitra;
 import com.voronkely.service.RakitraService;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,21 +19,25 @@ public class RakitraController {
         this.rakitraService = rakitraService;
     }
 
-
     @GetMapping
-    public String pageRakitra(Model model) {
+    public String pageRakitra(
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateMin,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dateMax,
+            Model model) {
 
         model.addAttribute(
                 "rakitras",
-                rakitraService.findAll());
+                rakitraService.findByDateRange(dateMin, dateMax));
 
         model.addAttribute(
                 "montantGlobal",
                 rakitraService.montantGlobalRestant());
 
+        model.addAttribute("dateMin", dateMin);
+        model.addAttribute("dateMax", dateMax);
+
         return "rakitra/page-rakitra";
     }
-
 
     @GetMapping("/nouveau")
     public String nouveau(Model model) {
@@ -52,7 +57,6 @@ public class RakitraController {
         return "rakitra/rakitra-form";
     }
 
-
     @PostMapping
     public String creer(
             @ModelAttribute Rakitra rakitra) {
@@ -66,14 +70,12 @@ public class RakitraController {
         return "redirect:/rakitra";
     }
 
-
-@GetMapping("/{id}")
+    @GetMapping("/{id}")
     public String detail(
             @PathVariable Long id,
-            Model model
-    ){
+            Model model) {
 
-        return "redirect:/mouvement-rakitra/"+id;
+        return "redirect:/mouvement-rakitra/" + id;
 
     }
 

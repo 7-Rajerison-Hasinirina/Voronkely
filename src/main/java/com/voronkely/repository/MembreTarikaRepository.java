@@ -9,8 +9,8 @@ import java.util.List;
 @Repository
 public interface MembreTarikaRepository extends JpaRepository<MembreTarika, Long> {
 
-
     List<MembreTarika> findByTarikaId(Long idTarika);
 
+    void deleteByTarikaId(Long idTarika);
 
 }

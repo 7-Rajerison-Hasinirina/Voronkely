@@ -20,7 +20,7 @@ Technologies:
         - status ( actif , inactif )
         - talenta
 [ok]        - fiche_presence
-        - agenda ( listes des activites )
+[ok]        - agenda ( listes des activites )
 [ok]        - visite_parent
 [ok]        - type_assurance ( ex: RAD, beazina, mpiandraikitra )
 [ok]        - type_adidy
@@ -41,7 +41,7 @@ Technologies:
 [ok]        - fiche_technique
 [ok]        - fiche_technique_info
 [ok]        - activite_fiche_technique
-       - grade
+[ok]        - grade
 [ok]        - camp 
 [ok]        - camp_info
 [ok]        - tarika ( misy sary, ex: Voromailala)
@@ -49,10 +49,26 @@ Technologies:
 [ok]        - membre_tarika
         - fichier ( sary, pdf, docx, excel ,...)
 [ok]        - agenda 
+
     - Data.sql
     - Syntaxe.sql
     - Nettoyage.sql
     - Views.sql
+
+
+
+
+- Regler dans page-membre-tarika
+car j'ai clique sur un bouton : changement taria -> un form s'affiche en arriere plan , cette formuliare pour changement tarika , faut regler cela car elle est intouchable 
+
+- ajouter uassi une foncitonnalite suppresion dans la page-fiche-tehnique.jsp
+et de meme pour la page-camps.jsp
+
+- 
+
+
+
+
 
 
 ## 3- Debut des fonctionnalites a realiser 

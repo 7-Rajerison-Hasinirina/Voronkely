@@ -6,6 +6,7 @@ import com.voronkely.entity.MembreTarika;
 import com.voronkely.repository.MembreTarikaRepository;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -91,6 +92,18 @@ public class MembreTarikaService {
                         Long id) {
 
                 repository.deleteById(id);
+
+        }
+
+        @Transactional
+        public void deleteByTarika(
+                        Long idTarika) {
+
+                List<MembreTarika> associations = repository.findByTarikaId(idTarika);
+
+                if (!associations.isEmpty()) {
+                        repository.deleteAll(associations);
+                }
 
         }
 

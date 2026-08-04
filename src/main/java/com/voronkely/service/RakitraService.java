@@ -4,6 +4,7 @@ import com.voronkely.entity.Rakitra;
 import com.voronkely.repository.RakitraRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +35,19 @@ public class RakitraService {
 
     public List<Rakitra> findDisponible() {
         return rakitraRepository.findByMontantRestantGreaterThanOrderByDateAjoutDesc(0.0);
+    }
+
+    public List<Rakitra> findByDateRange(LocalDate dateMin, LocalDate dateMax) {
+        if (dateMin == null && dateMax == null) {
+            return findAll();
+        }
+        if (dateMin == null) {
+            return rakitraRepository.findByDateAjoutLessThanEqualOrderByDateAjoutDesc(dateMax);
+        }
+        if (dateMax == null) {
+            return rakitraRepository.findByDateAjoutGreaterThanEqualOrderByDateAjoutDesc(dateMin);
+        }
+        return rakitraRepository.findByDateAjoutBetweenOrderByDateAjoutDesc(dateMin, dateMax);
     }
 
     public Double montantGlobalRestant() {

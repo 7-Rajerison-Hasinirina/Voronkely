@@ -11,6 +11,7 @@
 
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+    <jsp:include page="../common/background.jsp" />
 
     <style>
 
@@ -33,9 +34,17 @@
 
 </head>
 
-<body class="bg-light">
-
-<div class="container py-5">
+<body>
+<div class="container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-auto px-0">
+            <div class="position-sticky top-0" style="height:100vh;">
+                <jsp:include page="../dashboard/navbar.jsp" />
+            </div>
+        </div>
+        <div class="col p-3 p-lg-4">
+            <div class="page-shell p-4 p-lg-5">
+                <div class="container py-5">
 
     <div class="row justify-content-center">
 
@@ -204,6 +213,10 @@
 
     </div>
 
+</div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.bundle.min.js"></script>

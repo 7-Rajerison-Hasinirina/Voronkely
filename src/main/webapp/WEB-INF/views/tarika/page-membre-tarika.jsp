@@ -17,16 +17,32 @@
 
 <link rel="stylesheet"
 href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
-
+<jsp:include page="../common/background.jsp" />
+<style>
+body { min-height: 100vh; }
+.page-shell {
+    background: rgba(255,255,255,0.93);
+    border-radius: 1.25rem;
+    box-shadow: 0 1rem 2rem rgba(15,81,50,.12);
+    backdrop-filter: blur(6px);
+}
+</style>
 
 </head>
 
 
 
-<body class="bg-light">
-
-
-<div class="container py-4">
+<body>
+<div class="container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-auto px-0">
+            <div class="position-sticky top-0" style="height:100vh;">
+                <jsp:include page="../dashboard/navbar.jsp" />
+            </div>
+        </div>
+        <div class="col p-3 p-lg-4">
+            <div class="page-shell p-4 p-lg-5">
+                <div class="container py-4">
 
 
 
@@ -107,40 +123,50 @@ href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
                     const selectTarika = document.getElementById('selectTarika');
                     const selectRole = document.getElementById('selectRole');
 
+                    const openChangerModal = (source) => {
+                        const mtId = source.getAttribute('data-mt-id');
+                        const nom = source.getAttribute('data-nom');
+                        const reference = source.getAttribute('data-reference');
+                        const image = source.getAttribute('data-image');
+                        const currentTarika = source.getAttribute('data-current-tarika');
+                        const role = source.getAttribute('data-role');
+
+                        mtIdInput.value = mtId;
+                        modalNom.textContent = nom || 'Nom';
+                        modalRef.textContent = 'Réf : ' + (reference || '--');
+                        if(image && image !== 'profile-female.png'){
+                            modalImage.src = '${pageContext.request.contextPath}/images/' + image;
+                            modalImage.style.display = 'block';
+                        } else {
+                            modalImage.src = '${pageContext.request.contextPath}/images/profile-female.png';
+                            modalImage.style.display = 'block';
+                        }
+
+                        if(currentTarika){
+                            selectTarika.value = currentTarika;
+                        } else {
+                            selectTarika.selectedIndex = 0;
+                        }
+
+                        if(role){
+                            Array.from(selectRole.options).forEach(o => {
+                                o.selected = o.text === role;
+                            });
+                        }
+
+                        modal.show();
+                    };
+
                     document.querySelectorAll('.changer-btn').forEach(btn => {
-                        btn.addEventListener('click', () => {
-                            const mtId = btn.getAttribute('data-mt-id');
-                            const nom = btn.getAttribute('data-nom');
-                            const reference = btn.getAttribute('data-reference');
-                            const image = btn.getAttribute('data-image');
-                            const currentTarika = btn.getAttribute('data-current-tarika');
-                            const role = btn.getAttribute('data-role');
+                        btn.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            openChangerModal(btn);
+                        });
+                    });
 
-                            mtIdInput.value = mtId;
-                            modalNom.textContent = nom || 'Nom';
-                            modalRef.textContent = 'Réf : ' + (reference || '--');
-                            if(image && image !== 'profile-female.png'){
-                                modalImage.src = '${pageContext.request.contextPath}/images/' + image;
-                                modalImage.style.display = 'block';
-                            } else {
-                                modalImage.src = '${pageContext.request.contextPath}/images/profile-female.png';
-                                modalImage.style.display = 'block';
-                            }
-
-                            if(currentTarika){
-                                selectTarika.value = currentTarika;
-                            } else {
-                                selectTarika.selectedIndex = 0;
-                            }
-
-                            // select role if matches
-                            if(role){
-                                Array.from(selectRole.options).forEach(o => {
-                                    if(o.text === role) o.selected = true;
-                                });
-                            }
-
-                            modal.show();
+                    document.querySelectorAll('.changer-card').forEach(card => {
+                        card.addEventListener('click', () => {
+                            openChangerModal(card);
                         });
                     });
                 });
@@ -176,7 +202,14 @@ href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
 
                     <div class="col-12 col-md-6 col-lg-4">
 
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm changer-card"
+                             style="cursor:pointer;"
+                             data-mt-id="${mt.membreTarikaId}"
+                             data-nom="${mt.nomPrenom}"
+                             data-reference="${mt.reference}"
+                             data-image="${mt.image}"
+                             data-role="${mt.role}"
+                             data-current-tarika="${mt.tarikaId}">
 
                             <div class="card-body text-center">
 
@@ -252,6 +285,10 @@ href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
 
 <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 
