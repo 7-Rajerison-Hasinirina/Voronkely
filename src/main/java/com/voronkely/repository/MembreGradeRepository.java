@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface MembreGradeRepository extends JpaRepository<MembreGrade, Long> {
     List<MembreGrade> findByMembreIdOrderByDateDesc(Long membreId);
+
+    boolean existsByGradeId(Long gradeId);
 }

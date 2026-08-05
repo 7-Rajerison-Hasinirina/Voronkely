@@ -31,13 +31,23 @@
                 <c:forEach items="${gradesMembre}" var="assignation">
                     <div class="col-md-4">
                         <div class="card h-100 shadow-sm">
-                            <c:if test="${not empty assignation.grade.imageName}">
-                                <img src="${pageContext.request.contextPath}/images/grade/${assignation.grade.imageName}" class="card-img-top" alt="${assignation.grade.grade}" style="height:220px;object-fit:cover;">
-                            </c:if>
-                            <div class="card-body">
-                                <h5 class="card-title">${assignation.grade.grade}</h5>
-                                <p class="mb-0"><strong>Date :</strong> ${assignation.date}</p>
-                            </div>
+                            <c:choose>
+                                <c:when test="${not empty assignation.grade}">
+                                    <c:if test="${not empty assignation.grade.imageName}">
+                                        <img src="${pageContext.request.contextPath}/images/grade/${assignation.grade.imageName}" class="card-img-top" alt="${assignation.grade.grade}" style="height:220px;object-fit:cover;">
+                                    </c:if>
+                                    <div class="card-body">
+                                        <h5 class="card-title">${assignation.grade.grade}</h5>
+                                        <p class="mb-0"><strong>Date :</strong> ${assignation.date}</p>
+                                    </div>
+                                </c:when>
+                                <c:otherwise>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Grade supprimé</h5>
+                                        <p class="mb-0"><strong>Date :</strong> ${assignation.date}</p>
+                                    </div>
+                                </c:otherwise>
+                            </c:choose>
                         </div>
                     </div>
                 </c:forEach>
