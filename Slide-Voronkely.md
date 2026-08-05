@@ -900,3 +900,22 @@ fiche-form1.jsp -> fiche-form2 ->...... -> fiche-form6.jsp
     - Module : 
     - Fonctionnalite: 
 --------------------------------------------------------------
+
+
+### A regler:
+1- regler un peu la module : tarika 
+foncitonalites: changmeent tarika 
+http://localhost:8080/membre-tarika/2
+
+Il semble y avoir un problème sur ce site
+
+Le serveur à l’adresse localhost:8080 a renvoyé une erreur : 404 Not Found
+Que pouvez-vous faire ?
+
+    Assurez-vous d’avoir saisi correctement l’adresse du site web.
+    Le site est peut-être temporairement indisponible ou surchargé. Réessayez plus tard ;
+
+
+
+
+2- 
