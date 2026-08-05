@@ -9,8 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -27,13 +29,16 @@ public class MembreTarikaSaveController {
     public String save(
             @RequestParam Long idTarika,
             @RequestParam(required = false) List<String> idMembre,
-            @RequestParam(required = false) List<String> idRoleTarika) {
+            @RequestParam(required = false) List<String> idRoleTarika,
+            RedirectAttributes redirectAttributes) {
 
         if (idMembre == null || idRoleTarika == null) {
             return "redirect:/membre-tarika/" + idTarika;
         }
 
         int size = Math.min(idMembre.size(), idRoleTarika.size());
+        List<String> duplicateMessages = new ArrayList<>();
+        boolean savedAny = false;
 
         for (int i = 0; i < size; i++) {
 
@@ -54,6 +59,15 @@ public class MembreTarikaSaveController {
                 continue;
             }
 
+            var existing = membreTarikaService.findByMembreId(idM);
+            if (existing.isPresent()) {
+                var mt = existing.get();
+                String membreLabel = mt.getMembre() != null ? mt.getMembre().getReference() : "Ce membre";
+                String tarikaLabel = mt.getTarika() != null ? mt.getTarika().getNom() : "un autre tarika";
+                duplicateMessages.add(membreLabel + " est déjà dans le tarika " + tarikaLabel + ".");
+                continue;
+            }
+
             MembreTarika membreTarika = new MembreTarika();
 
             Tarika tarika = new Tarika();
@@ -71,7 +85,14 @@ public class MembreTarikaSaveController {
             membreTarika.setDate(LocalDate.now());
 
             membreTarikaService.save(membreTarika);
+            savedAny = true;
+        }
 
+        if (savedAny) {
+            redirectAttributes.addFlashAttribute("successMessage", "Membre(s) ajouté(s) avec succès.");
+        }
+        if (!duplicateMessages.isEmpty()) {
+            redirectAttributes.addFlashAttribute("errorMessage", String.join(" ", duplicateMessages));
         }
 
         return "redirect:/membre-tarika/" + idTarika;
