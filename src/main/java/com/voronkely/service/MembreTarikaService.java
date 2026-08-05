@@ -30,15 +30,16 @@ public class MembreTarikaService {
         public List<MembreTarika> findByTarika(
                         Long idTarika) {
 
-                return repository.findByTarikaId(idTarika);
+                return repository.findByTarikaIdWithMembre(idTarika);
 
         }
 
         public List<MembreTarikaDto> findDtoByTarika(
                         Long idTarika) {
 
-                return repository.findByTarikaId(idTarika)
+                return repository.findByTarikaIdWithMembre(idTarika)
                                 .stream()
+                                .filter(mt -> mt.getMembre() != null)
                                 .map(mt -> {
 
                                         String image = "profile-female.png";
@@ -82,6 +83,10 @@ public class MembreTarikaService {
 
                 return repository.saveAll(membres);
 
+        }
+
+        public java.util.Optional<MembreTarika> findByMembreId(Long idMembre) {
+                return repository.findByMembreId(idMembre);
         }
 
         public java.util.Optional<MembreTarika> findById(Long id) {

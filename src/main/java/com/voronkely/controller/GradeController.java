@@ -73,8 +73,12 @@ public class GradeController {
 
     @PostMapping("/supprimer/{id}")
     public String deleteGrade(@PathVariable Long id, RedirectAttributes redirectAttributes) {
-        gradeService.deleteGrade(id);
-        redirectAttributes.addFlashAttribute("successMessage", "Grade supprimé avec succès.");
+        try {
+            gradeService.deleteGrade(id);
+            redirectAttributes.addFlashAttribute("successMessage", "Grade supprimé avec succès.");
+        } catch (IllegalStateException e) {
+            redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
+        }
         return "redirect:/grade";
     }
 }

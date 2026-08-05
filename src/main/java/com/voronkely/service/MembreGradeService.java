@@ -22,4 +22,8 @@ public class MembreGradeService {
     public MembreGrade save(MembreGrade membreGrade) {
         return repository.save(membreGrade);
     }
+
+    public boolean existsByGradeId(Long gradeId) {
+        return repository.existsByGradeId(gradeId);
+    }
 }
