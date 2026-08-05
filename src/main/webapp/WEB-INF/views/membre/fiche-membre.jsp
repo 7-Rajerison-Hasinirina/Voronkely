@@ -144,37 +144,34 @@
         <div class="col p-3 p-lg-4">
             <div class="page-shell p-4 p-lg-5">
                 <div class="container py-5">
-    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center mb-4 no-print toolbar">
-        <a href="/membres" class="btn btn-outline-secondary">Retour</a>
-        <div class="d-flex flex-column flex-sm-row gap-2">
-            <a href="/fiche1/new?idMembre=${membre.id}" class="btn btn-success">Créer une fiche individuelle</a>
-            <button type="button" class="btn btn-primary" onclick="window.print()">Export PDF</button>
-        </div>
-        <div class="d-flex flex-wrap gap-2 mt-3">
-            <a href="/fiche1/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Information</a>
-            <a href="/fiche2/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Fahasalamana</a>
-            <a href="/fiche3/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Toe-tena</a>
-            <a href="/fiche4/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Fianarana</a>
-            <a href="/fiche5/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Maha Voronkely</a>
-            <a href="/fiche6/edit?idMembre=${membre.id}" class="btn btn-outline-primary btn-sm">Modifier Rendu visite parent</a>
-        </div>
-    </div>
-
-    <header class="page-header mb-4">
-        <div class="d-flex flex-column flex-md-row justify-content-between gap-3">
+        <div class="d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center mb-4 no-print toolbar">
             <div>
-                <p class="text-uppercase fw-semibold mb-2 member-reference">Fiche membre</p>
-                <h1 class="h2 mb-2">Fiche individuelle</h1>
-                <p class="mb-0 member-reference">${membre.nomPrenom} - ${membre.reference}</p>
+                <p class="text-uppercase fw-semibold mb-2 member-reference">Fiche individuelle</p>
+                <h1 class="h2 mb-1">FICHE INDIVIDUELE</h1>
+                <p class="mb-1">${membre.nomPrenom}</p>
+                <p class="text-muted mb-0">Référence : ${membre.reference}</p>
             </div>
-            <div class="text-md-end">
-                <div class="small text-uppercase member-reference">Référence</div>
-                <div class="h5 mb-0">${membre.reference}</div>
+            <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2">
+                <a href="/membres" class="btn btn-outline-secondary">Retour</a>
+                <button type="button" class="btn btn-primary" onclick="window.print()">Export PDF</button>
+                <a href="/fiche1/new?idMembre=${membre.id}" class="btn btn-success">Créer une fiche individuelle</a>
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="ficheEditDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Modifier la fiche
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="ficheEditDropdown">
+                        <li><a class="dropdown-item" href="/fiche1/edit?idMembre=${membre.id}">Modifier Information</a></li>
+                        <li><a class="dropdown-item" href="/fiche2/edit?idMembre=${membre.id}">Modifier Fahasalamana</a></li>
+                        <li><a class="dropdown-item" href="/fiche3/edit?idMembre=${membre.id}">Modifier Toe-tena</a></li>
+                        <li><a class="dropdown-item" href="/fiche4/edit?idMembre=${membre.id}">Modifier Fianarana</a></li>
+                        <li><a class="dropdown-item" href="/fiche5/edit?idMembre=${membre.id}">Modifier Maha Voronkely</a></li>
+                        <li><a class="dropdown-item" href="/fiche6/edit?idMembre=${membre.id}">Modifier Rendu visite parent</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </header>
 
-    <div class="card fiche-card">
+        <div class="card fiche-card">
         <div class="card-body p-4 p-lg-5">
             <section class="info-section">
                 <h2 class="h5 section-title">Membre</h2>
