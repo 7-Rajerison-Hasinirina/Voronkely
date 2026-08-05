@@ -120,7 +120,7 @@
                                        </form>
                                     </div>
                                     <a href="${pageContext.request.contextPath}/membres/${membre.id}/fiche"
-                                       class="btn btn-outline-success btn-sm mt-3">
+                                       class="btn btn-outline-success btn-sm mt-3 w-100">
                                         Voir la fiche
                                     </a>
                                 </div>
