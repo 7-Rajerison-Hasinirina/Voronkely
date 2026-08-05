@@ -1,0 +1,16 @@
+<launch4jConfig>
+  <headerType>console</headerType>
+  <outfile>Voronkely.exe</outfile>
+  <jar>voronkely.jar</jar>
+  <dontWrapJar>false</dontWrapJar>
+  <errTitle>Voronkely</errTitle>
+  <cmdLine>--spring.main.web-application-type=servlet</cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <stayAlive>true</stayAlive>
+  <icon>voronkely.ico</icon>
+  <jre>
+    <path>../jre</path>
+    <minVersion>17</minVersion>
+  </jre>
+</launch4jConfig>
